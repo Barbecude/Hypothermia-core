@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "fiahi",
+  "version": "3.1.6-fabric",
+  "name": "Freeze It And Heat It",
+  "description": "Cold Sweat addon: Adds food decay and freezing mechanics, leftover foods, food pouch, and breath particle effects in cold weather. Fabric 1.21 Native Port.",
+  "authors": [
+    "Viola Siemens",
+    "Fabric Ported Native"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Viola-Siemens/Freeze-It-And-Heat-It"
+  },
+  "license": "GPL-3.0",
+  "icon": "logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.hexagram2021.fiahi.FreezeItAndHeatItFabric"
+    ],
+    "client": [
+      "com.hexagram2021.fiahi.client.FreezeItAndHeatItClientFabric"
+    ]
+  },
+  "mixins": [
+    "fiahi.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric": "*",
+    "minecraft": ">=1.21 <=1.21.1",
+    "cold_sweat": ">=2.4.3",
+    "java": ">=21"
+  }
+}

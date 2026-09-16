@@ -1,28 +1,28 @@
 # Graph Report - Hypothermia core  (2026-09-16)
 
 ## Corpus Check
-- 1497 files · ~220,950 words
+- 1499 files · ~221,170 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 50 file(s) not represented in the graph (top: (none) 12, .properties 10, .accesswidener 4)
 
 ## Summary
-- 10499 nodes · 33359 edges · 512 communities (396 shown, 104 thin omitted)
+- 10506 nodes · 33381 edges · 491 communities (380 shown, 99 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 103 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ec8288bc`
+- Built from commit: `0274e158`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - What You Must Do When Invoked
-- net.minecraft.client.gui.GuiGraphics
+- org.spongepowered.asm.mixin.gen.Invoker
 - org.objectweb.asm.tree.ClassNode
 - graphify reference: extra exports and benchmark
 - org.slf4j.Logger
 - graphify reference: query, path, explain
-- ClientLevelInject.java
+- ServerLevelInject.java
 - gradlew
 - graphify reference: add a URL and watch a folder
 - graphify reference: commit hook and native CLAUDE.md integration
@@ -41,123 +41,123 @@
 - MinecraftServerInject
 - App.tsx
 - org.spongepowered.asm.mixin.injection.Inject
-- HierarchicalModelInject.java
+- org.spongepowered.asm.mixin.Shadow
 - com.llamalad7.mixinextras.injector.wrapoperation.Operation
-- net.minecraft.world.entity.LivingEntity
-- NaturalSpawnerInject.java
-- net.minecraft.world.item.ItemStack
-- net.minecraft.sounds.SoundSource
+- CreateInitializer
+- NaturalSpawnerRemap.kt
+- net.minecraft.client.gui.GuiGraphics
+- com.llamalad7.mixinextras.sugar.ref.LocalFloatRef
 - net.minecraft.world.phys.AABB
-- net.minecraft.tags.TagKey
-- FaceBakeryInject.java
+- net.minecraft.core.Registry
+- net.neoforged.neoforge.network.connection.ConnectionType
 - net.minecraft.core.BlockPos
 - .createMixinException
 - org.spongepowered.asm.mixin.Mixin
-- BlockBehaviourInject.java
-- org.spongepowered.asm.mixin.injection.callback.CallbackInfo
+- LevelInject.java
+- CrashReportInject
 - org.spongepowered.asm.mixin.gen.Accessor
 - .run
-- net.minecraft.server.level.ServerPlayer
-- ComputerCraftAPIImplMixin.java
-- com.llamalad7.mixinextras.sugar.ref.LocalIntRef
+- net.minecraft.network.protocol.Packet
+- LevelChunkInject.java
+- LevelInjection
 - net.minecraft.resources.ResourceKey
-- net.minecraft.tags.TagBuilder
+- net.minecraft.tags.TagEntry
 - KiltRemapper
-- ClientPacketListenerInject.java
-- net.minecraft.client.gui.Font
+- ClientConfigurationPacketListenerImplInject.java
+- GuiGraphicsInject.java
 - NeoForgeMod
 - com.llamalad7.mixinextras.injector.ModifyReturnValue
-- TypeInject
+- net.minecraft.server.packs.resources.ResourceManager
 - ScreenInject.java
 - net.minecraft.network.codec.StreamCodec
 - AbstractContainerScreenInject
-- ServerLevelInject.java
+- DerivedLevelDataInject
 - LevelRendererInject
 - net.minecraft.client.renderer.texture.TextureAtlasSprite
 - ConnectionInject
-- net.neoforged.neoforge.network.connection.ConnectionType
+- net.minecraft.network.RegistryFriendlyByteBuf
 - net.minecraft.network.chat.Component
 - LevelSliceMixin.java
-- MangrovePropaguleBlockInject.java
-- RenderChunkRegionInject.java
+- MushroomBlockInject.java
+- SectionRenderDispatcherInject.java
 - net.minecraft.world.item.crafting.Ingredient
 - com.mojang.serialization.Codec
 - net.minecraft.client.renderer.item.ItemPropertyFunction
 - PotionBrewingInject.java
-- MipmapGeneratorInject.java
+- SpriteResourceLoaderInject.java
 - KiltLoader
 - ReloadableServerResourcesInject.java
 - org.spongepowered.asm.mixin.injection.Redirect
-- CreateStatic
+- net.minecraft.client.resources.sounds.SoundInstance
 - net.minecraft.server.MinecraftServer
-- EmiAgnosFabricMixin.java
-- net.minecraft.core.component.DataComponentMap
-- CreativeModeInventoryScreenInject.java
-- EntityInject
+- debug/SystemReportMixin.java
+- ItemInject.java
+- Type
+- net.minecraft.world.entity.Entity
 - ASMAPI
 - DamageScalingInject
 - PortingLibBlockExtensionsMixin.java
-- net.minecraft.client.renderer.MultiBufferSource
+- HumanoidArmorLayerInject.java
 - net.minecraft.server.packs.repository.PackRepository
 - RegistryDataLoaderInject.java
 - ServerConfigurationPacketListenerImplInject
-- CreateInitializer
+- CreateStatic
 - org.spongepowered.asm.mixin.Intrinsic
 - BlockElementInject.java
 - IngredientInject
 - AccessTransformerProcessor
-- net.minecraft.client.particle.Particle
+- AABBInjection
 - org.spongepowered.asm.mixin.Mutable
 - WorldCreationContextInject.java
 - ITransformerVotingContext
-- AbstractFurnaceBlockEntityInject.java
+- net.minecraft.core.RegistryAccess
 - net.minecraft.client.Minecraft
-- BiomeInject
-- PlayerListInject
+- java.util.function.Supplier
+- net.minecraft.network.Connection
 - FabricModFileWrapper
 - ModifiedCloneWorkaroundLoader
 - MinecraftInject
 - PortingLibItemExtensionsMixin
 - Kilt.kt
-- net.minecraft.world.entity.Mob
-- java.util.function.Supplier
+- TrialSpawnerInject.java
+- net.minecraft.world.effect.MobEffectInstance
 - ForgeSingleSlotStorage
 - TransferInterop.kt
-- ShearsDispenseItemBehaviorInject.java
+- KeyBindsScreenInject.java
 - org.spongepowered.asm.mixin.injection.ModifyArg
 - net.minecraft.nbt.CompoundTag
 - net.minecraft.core.Holder
 - net.minecraft.world.entity.MobCategory
-- net.minecraft.client.renderer.blockentity.BlockEntityRenderer
-- KeyMappingInject
-- AbstractButtonInject.java
+- SpawnerRendererInject.java
+- net.neoforged.neoforge.client.settings.KeyModifier
+- KeyBindsListInject.java
 - net.minecraft.world.level.LevelReader
 - LevelStorageSourceInject.java
 - ServerPlayerInject
-- org.spongepowered.asm.mixin.Unique
-- net.neoforged.neoforge.fluids.FluidType
+- net.neoforged.neoforge.client.GlStateBackup
+- PistonHeadRendererInject.java
 - ItemEntityInject
-- net.minecraft.sounds.SoundEvent
+- RecipeManagerInject.java
 - com.mojang.serialization.Lifecycle
 - MobEffectInstanceInject.java
 - LootPoolInject
-- net.minecraft.world.level.block.state.properties.WoodType
+- net.minecraft.sounds.SoundEvent
 - net.minecraft.network.protocol.status.ServerStatus
 - MeshBakedModel.kt
 - LootTableInject.java
 - ScreenEffectRendererInject.java
 - AbstractMinecartInject
 - net.minecraft.client.RecipeBookCategories
-- IEnvironment
+- ILaunchPluginService
 - VanillaModelEncoderMixin.java
 - MobEffectInject.java
 - TagsProviderInject.java
 - net.minecraft.world.level.chunk.LevelChunk
 - MobInject
-- VillagerInject.java
+- net.minecraft.server.level.ServerLevel
 - PersistentEntitySectionManagerInject.java
 - net.minecraft.resources.ResourceLocation
-- CoreMod
+- CoreModLoader.kt
 - Key
 - ItemFrameRendererInject.java
 - org.jetbrains.annotations.Nullable
@@ -169,84 +169,84 @@
 - SoundEngineInject.java
 - KiltHelper
 - DataGeneratorInject
-- PlayerInject
-- Type
+- org.spongepowered.asm.mixin.injection.callback.CallbackInfo
+- .bake
 - ConfigParserTransform.java
 - PrimaryLevelDataInject
-- net.minecraft.world.item.ItemDisplayContext
+- ItemDisplayContextInjection
 - PreMixin
-- net.minecraft.tags.TagEntry
-- GrassColorModifierInject
+- AbstractButtonInject.java
+- Extends
 - LootContextInject.java
-- .compile
-- net.minecraft.core.Registry
-- FoxInject.java
+- ServerAdvancementManagerInject.java
+- RegistrySetBuilderInject.java
+- BlockStatePredictionHandlerInject.java
 - EntityBuilderAdapter
 - ParticleEngineInject.java
 - CombatTrackerInject.java
-- ITransformer
+- TargetType
 - TransformingList
 - KiltLoomPlugin
 - VertexConsumerInject.java
 - LockableObjectArrayList
 - LambdaExceptionUtils
-- net.minecraft.world.level.block.entity.BlockEntity
+- LevelInject
 - .add
 - IrlRedactorConfigPersistence
-- ComposterBlockInject.java
-- SimpleBakedModelInject
-- FluidStackMixin
+- ComposterBlockInject
+- SimpleBakedModelInject.java
+- ComputerCraftAPIImplMixin.java
 - net.minecraft.core.registries.Registries
 - PoiTypesInject.java
-- org.spongepowered.asm.mixin.Shadow
+- net.minecraft.client.renderer.MultiBufferSource
 - net.minecraft.client.KeyMapping
 - WrappedGeometryBakingContext
 - net.minecraft.world.flag.FeatureFlagSet
 - ServerStatusInject.java
 - StorageView
 - FabricStorageWrapper
-- MenuScreensInject.java
+- net.minecraft.world.inventory.MenuType
 - net.minecraft.world.inventory.RecipeBookType
-- ModelManagerInject
+- ModelBakeryInject.java
 - ModelBakerImplInject
-- SectionRenderDispatcherInject.java
+- EntityTypeInject
 - net.minecraft.core.component.DataComponentType
-- com.bawnorton.mixinsquared.TargetHandler
+- ItemRendererMixin.java
 - EnumExtensionLoader.kt
-- ItemInject.java
-- multiplayer/CommonListenerCookieInject.java
-- LocalPlayerInject.java
+- ItemInject
+- ServerDataInject
+- KiltHelper.kt
 - RarityInject
-- net.minecraft.client.renderer.chunk.RenderChunkRegion
+- net.minecraft.world.flag.FeatureFlag
 - KiltEarlyRiser.kt
 - EnchantmentInject.java
-- com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef
+- CrafterBlockInject.java
 - FabricResourcefulRegistryMixin.java
-- GameRendererInject.java
-- FabricLevelAccessMixin.java
+- ShaderInstanceInject.java
+- ClientPacketListenerInject
 - WrappedModFluidHelper.kt
 - ForcedChunksSavedDataInject
 - NbtAccounterInjection
 - net.minecraft.server.packs.PackLocationInfo
 - StructureInject
-- RecipeManagerInject.java
+- SimplePreparableReloadListenerInject.java
 - KiltArchitecturyApiCompat.kt
 - FabricFluidStorageCapability
 - ModBridgeStrategy
 - LootTableProviderInjection
 - net.minecraft.server.packs.repository.Pack
-- net.minecraft.core.SectionPos
+- RailStateInject.java
 - TagLoaderInject
 - FlowerPotBlockInject
 - net.minecraft.commands.CommandSourceStack
 - WrappedFabricModContainer
-- GeometryLoaderManagerAccessor.java
+- EnvironmentRemapper.kt
 - GrindstoneMenuInject.java
-- net.minecraft.world.item.enchantment.Enchantment
-- ModelBakeryInject.java
+- AnvilMenuInject
+- DebugLevelSourceAccessor
 - TagEntryInjection
 - WorldSelectionListInject.java
-- ItemDisplayContextInject
+- TypeInject
 - SpawnPlacementsInject.java
 - FabricLookupAsItemCapabilityProvider
 - FAQ
@@ -255,47 +255,47 @@
 - LayeredDrawMixin
 - ResyncingHashMap
 - ChunkGeneratorInject.java
-- net.minecraft.world.item.Item
+- net.minecraft.world.entity.ai.goal.Goal
 - MappedRegistryMixin
 - KiltCreateCompatMixinPlugin
 - KiltFabricCompatsMixinPlugin
 - KiltForgeCompatMixinPlugin
-- ServerPlayerInject.java
+- PlayerInjection
 - PackSelectionModelInject.java
-- CrashReportCategoryInject
-- EntityCapabilityAccessor.java
+- TextureAtlasInject.java
+- PackInject.java
 - LayerDefinitionsInject.java
-- java.util.HashMap
-- CoreModLoader.kt
+- PluginDetectorImplMixin.java
+- ChestRendererInject.java
 - KiltLoaderConfig.kt
 - VanillaRenderMaterial
 - FabricLookupAsSlottedBlockCapabilityProvider.kt
 - BlockLightEngineInject.java
-- TransformationInject
+- FabricInjectedInterface
 - AbstractTextureInjection
 - ScaleTypeMixin
 - ComponentAccessImplMixin.java
 - LiquidBlockInject.java
 - ParticleRenderTypeInject
 - LanguageManagerInject
-- BuiltInRegistriesAccessor.java
+- net.minecraft.core.component.DataComponentPatch
 - ArgumentTypeInfosInject.java
 - net.minecraft.core.particles.BlockParticleOption
 - net.minecraft.world.item.UseAnim
 - net.minecraft.world.level.block.entity.BlockEntityType
-- ChunkStatusInject
+- ServerChunkCacheThreadFixMixin.java
 - ItemContainerContentsInject
 - RenderTargetInject
-- StructureBlockRendererInject.java
+- net.minecraft.network.ProtocolInfo
 - RemoldedResourceManagerMixin
-- com.llamalad7.mixinextras.injector.ModifyReceiver
-- org.joml.Vector3f
-- SwordItemInject.java
-- BlockModelShaperInject.java
-- PackRepositoryInject.java
-- ShulkerBoxColoringInject.java
+- EndDragonFightInject
+- PredicateVisitor
+- ItemStackInject
+- ServerConfigurationNetworkAddonMixin.java
+- LayeredDrawInjection
+- PackMetadataSectionInject.java
 - IgnoreSignatureResourceRemapper
-- IClientFluidTypeExtensionsMixin.java
+- FabricFluidTypeExtensions.kt
 - .getAllTags
 - .getAllTags
 - ForgeConfigApiPortCompat
@@ -305,90 +305,90 @@
 - FabricLookupAsBlockCapabilityProvider.kt
 - FabricItemStorageCapability
 - net.minecraft.world.level.block.Block
-- LightningBoltInject.java
+- LightningBoltInject
 - net.minecraft.core.NonNullList
 - PlayerDataStorageInject.java
 - AlterGroundDecoratorInject.java
-- NeoForgeCatnipServicesMixin.java
+- TranslatableContentsInject.java
 - NoopLanguageLoader
 - WindowMixin.java
 - DataFixersInject.java
 - ContextNbtProviderInject.java
 - SectionStorageInject
-- net.minecraft.world.inventory.MenuType
-- ItemEnchantmentsPredicateInject.java
+- BundleItemInject.java
+- TransformerVotingContext
 - net.minecraft.client.gui.screens.Screen
 - ConnectionProtocolInject
-- BossHealthOverlayInject.java
-- FabricInjectedInterface
-- BrushableBlockRendererInject.java
-- ConduitRendererInject.java
-- DecoratedPotRendererInject.java
+- FlashlightBeamHelper
+- WalkNodeEvaluatorInject.java
+- PatchedDataComponentMapInject
+- MouseHandlerInjection
+- ElytraLayerInject
 - IteratorWrapper
 - BlockLootSubProviderInject.java
-- com.llamalad7.mixinextras.sugar.ref.LocalRef
+- IntrinsicTagAppenderInject
 - BreakDoorGoalInject.java
-- .getFluidSprites
+- FluidRenderHandlerRegistryImplMixin.java
 - WrappedModelAsHumanoid.kt
-- EnchantTableRendererInject.java
+- net.minecraft.world.item.Rarity
 - .onInitialize
-- net.minecraft.core.HolderSet
+- BiomeInject
 - SkullBlockRendererInject.java
-- LecternRendererInject.java
-- SignRendererInject.java
+- SpectreConfigTrackerFixMixin.java
+- MinecraftServerInjection
 - AbstractSelectionListInjection
-- ModelResourceLocationInject.java
-- MagmaCubeInject.java
+- ClickEventInject.java
+- SpectreConfigValueFixMixin.java
 - java.lang.reflect.Method
 - CameraInject
-- InventoryScreenInject.java
+- JsonParserMixin.java
 - TadpoleInject.java
-- .kilt$dispatchCurrentTypeStage
-- RaiderTypeAccessor.java
+- AnnotationValueVisitor
+- RaiderTypeAccessor
 - Lazy
 - KiltEnhancedRemapper.kt
 - ITransformingClassLoaderBuilder
 - KiltModContainer.kt
-- ChunkStatusTasksInject.java
+- BlockTagsInject.java
 - MKBKeyConflictContextWrapper
-- BootstrapContextInjection
+- LootContextParamSetsInject.java
 - com.mojang.brigadier.CommandDispatcher
 - com.mojang.serialization.Dynamic
 - KiltMixinModifier.kt
-- ConfigurationTaskInject.java
-- AmecsKeyModifiersApiMixin.java
-- PortingLibBlockEntityExtensionsMixin.java
-- LevelRendererInjection
+- V2832Inject.java
+- FontInject
+- BlockEntityInject
+- KeyboardHandlerInject.java
 - RecipeOutputInject.java
-- Target
+- ITransformer
 - AttributeInject.java
 - ShulkerInject.java
 - net.minecraft.world.entity.player.Player
 - net.minecraft.server.packs.resources.PreparableReloadListener
-- ItemParticleOptionInject.java
+- BlockEntityRenderersInject.java
 - EntryWithSourceInjection
 - CaseInsensitiveStringHashSet
 - ClassNameHashSet
-- ItemAttributeModifiersPredicateInject.java
+- BootstrapInject.java
 - net.minecraft.world.level.GameType
 - RenderBuffersInject.java
 - EvokerWololoSpellGoalInject
-- MilkBucketItemMixin.java
+- MilkBucketItemInject.java
 - Contribution Guidelines
-- ZombieInject.java
+- ResultSlotInject.java
 - WeatheringCopperInject.java
-- net.minecraft.world.inventory.AbstractContainerMenu
-- ItemStackInject
-- AttributesInject.java
+- BrewingStandBlockEntityInject.java
+- net.minecraft.tags.TagKey
+- GameRendererBlurFixMixin.java
 - GiveGiftToHeroInject.java
-- KiltFluidTags.kt
+- net.neoforged.neoforge.common.extensions.IItemExtension
 - ServerWatchdogInject.java
 - EntitySelectorParserInject.java
 - Domain
 - LayeredStackTracker
 - AttachmentHolderWorkaround.kt
 - SpriteSourcesInject.java
-- ModListEntryMixin.java
+- EditBoxInjection
 - net.minecraft.client.multiplayer.ClientPacketListener
 - FireworkParticlesInject
 - GameTestInject
@@ -396,28 +396,28 @@
 - KiltModCompatBridgeManager
 - ToastComponentInject.java
 - MapRendererInject
-- net.neoforged.neoforge.client.extensions.common.IClientItemExtensions
+- RenderTypeInjection
 - net.minecraft.client.multiplayer.ClientLevel
 - MessageArgumentInject.java
 - RegistryPatchGeneratorInject.java
-- DefaultAttributesInject.java
+- LevelStorageAccessInjection
 - GeckoLibEvents
-- org.spongepowered.asm.mixin.Pseudo
+- com.moulberry.mixinconstraints.annotations.IfModLoaded
 - RabbitInject.java
 - StopHoldingItemIfNoLongerAdmiringInject.java
-- AttachedStemBlockInject.java
+- SnowVariantMixin.java
 - HoneycombItemInject.java
-- EntityLootSubProviderInject.java
+- ClientBrandRetrieverInject.java
 - ClientStartingCallback
 - ConcurrentFloatReference
-- EventBusesHooks.kt
-- BundleContentsInject.java
+- GameNarratorInject.java
+- BundleContentsInject
 - BiomeTagsProviderInject.java
 - KiltDedicatedServer
 - KiltCreateCompat
 - KiltCreateCompatMixinCanceller
-- net.minecraft.world.item.ProjectileWeaponItem
-- NeoForgeTypes
+- EnchantmentScreenInject.java
+- PauseScreenInject.java
 - EntityDataSerializersInject.java
 - KiltFabricCompats
 - KiltFabricCompatsClient
@@ -425,83 +425,64 @@
 - Kilt-version-1.21.1/gradlew
 - ItemTagsProviderInject.java
 - ChunkMapInject.java
-- IForgeBlockStateMixin.java
+- WorldCreationUiStateInject.java
 - WorldPresetTagsProviderInject.java
-- .kilt$transformQuadFromForge
+- WorldOpenFlowsInject.java
 - BoatDispenseItemBehaviorInject.java
 - ComponentSerializationInject.java
 - ServerboundSelectKnownPacksInject.java
-- CompressionEncoderInject.java
+- KnownPacksManagerInject.java
 - DispensibleContainerItemInject.java
-- net.minecraft.world.entity.Entity
+- NoteBlockInject.java
 - net.minecraft.world.level.block.piston.PistonMovingBlockEntity
 - net.minecraft.world.entity.boss.EnderDragonPart
 - RemoveModulesFixer.kt
 - RealmsNotificationsScreenInject.java
 - FabricGameTest
-- IForgeItemStackMixin.java
-- .kilt$onlyRegisterIfNotNull
+- FishingHookRendererInject.java
+- LanServerDetectionInject.java
 - PathNavigationInject.java
 - TransformerVoteResult
 - Kilt Compatibility Modules
-- MinecartSpawnerInject.java
-- BrushItemInject.java
+- LanServerPingerInject.java
+- GameEventTagsProviderInject.java
 - ChatScreenInject.java
-- ShieldItemInject.java
+- WorldGenRegionInject.java
 - HangingSignEditScreenInject.java
-- SpyglassItemInject.java
+- SynchronizeRegistriesTaskInject.java
 - LoadingOverlayInject.java
-- GLVersionSpecifierFixer.kt
-- TridentItemInject.java
-- IForgeBlockMixin.java
-- MerchantScreenInject.java
-- StitcherInject.java
-- TrunkPlacerInject.java
-- ByteBufCodecsInject.java
+- StructuresBecomeConfiguredFixInject.java
+- VillagerMakeLoveInject.java
+- CatSpawnerInject.java
+- net.minecraft.world.entity.player.Abilities
+- SculkSensorBlockInject.java
+- SculkShriekerBlockInject.java
+- VibrationSystemInject.java
 - AdvancementProviderInject.java
 - VillagerTradesInject.java
 - CatVariantTagsProviderInject.java
 - UserInject.java
-- DamageTypeTagsProviderInject.java
+- SmeltItemFunctionInject.java
 - .isBlockAttachedTowards
 - EntityTypeTagsProviderInject.java
-- RegistriesDatapackGeneratorInject.java
 - HashCacheInject.java
 - PaintingVariantTagsProviderInject.java
-- FileUtilInject.java
-- AbstractFurnaceMenuInject.java
-- SynchedEntityDataInject.java
+- net.minecraft.world.item.crafting.RecipeType
 - FluidTagsProviderInject.java
 - DefaultedHashMap
-- PoiTypeTagsProviderInject.java
 - ReportTypeInject.java
 - ForceLoadCommandInject.java
 - PacketBundleUnpackerInject.java
 - DedicatedServerPropertiesInject.java
 - RedStoneOreBlockInject
 - SetSpawnCommandInject.java
-- WorldLoaderInject.java
 - SettingsInject.java
-- net.minecraft.world.entity.Shearable
 - main/MainInject.java
-- AddressCheckInject.java
 - RconClientInject.java
-- BeaconMenuInject.java
 - SpawnUtilInject.java
-- ShulkerBoxSlotInject.java
-- BannerDuplicateRecipeInject.java
-- SimpleCookingSerializerInject.java
 - SpawnerBlockInject.java
-- data/MainInject.java
 - BannerPatternTagsProviderInject.java
-- EnchantmentTagsProviderInject.java
-- FlatLevelGeneratorPresetTagsProviderInject.java
-- net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration
-- InstrumentTagsProviderInject.java
-- TripWireHookBlockInject.java
-- PalettedContainerInject.java
 - StructureStartInject.java
-- ClassPredicate
 - TestingMoreShit
 - CapabilityInvalidationWorkaround
 - TransformingThrowablePatternConverter
@@ -511,11 +492,9 @@
 - FluidInjection.java
 - Constants.kt
 - MultiPackResourceManagerInject.java
-- FeatureFlagsInject.java
+- ExperimentsScreenInject.java
 - RailBlockInject.java
-- TurtleEggBlockInject.java
 - SpawnPlacementsAccessor.java
-- RenderLayerData
 
 ## God Nodes (most connected - your core abstractions)
 1. `CreateStatic` - 170 edges
@@ -532,27 +511,27 @@
 ## Surprising Connections (you probably didn't know these)
 - `KiltLoader` --calls--> `KiltLoaderConfig`  [INFERRED]
   Kilt-version-1.21.1/src/main/kotlin/xyz/bluspring/kilt/loader/KiltLoader.kt → Kilt-version-1.21.1/src/main/kotlin/xyz/bluspring/kilt/loader/KiltLoaderConfig.kt
+- `KiltCreateCompatWrappedNeoContainer` --implements--> `KiltWrappedModContainerEntrypoint`  [EXTRACTED]
+  Kilt-version-1.21.1/compat/create-compat/src/main/kotlin/xyz/bluspring/kilt/compat/create/KiltCreateCompatWrappedNeoContainer.kt → Kilt-version-1.21.1/src/main/kotlin/xyz/bluspring/kilt/api/KiltWrappedModContainerEntrypoint.kt
 - `ArmorMixin` --references--> `Extends`  [EXTRACTED]
   Kilt-version-1.21.1/compat/fabric-compats/src/main/java/xyz/bluspring/kilt/compat/fabric/mixin/geckolib/GeoRenderEventMixin.java → Kilt-version-1.21.1/src/main/java/xyz/bluspring/kilt/helpers/mixin/Extends.java
 - `BlockMixin` --references--> `Extends`  [EXTRACTED]
   Kilt-version-1.21.1/compat/fabric-compats/src/main/java/xyz/bluspring/kilt/compat/fabric/mixin/geckolib/GeoRenderEventMixin.java → Kilt-version-1.21.1/src/main/java/xyz/bluspring/kilt/helpers/mixin/Extends.java
 - `EntityMixin` --references--> `Extends`  [EXTRACTED]
   Kilt-version-1.21.1/compat/fabric-compats/src/main/java/xyz/bluspring/kilt/compat/fabric/mixin/geckolib/GeoRenderEventMixin.java → Kilt-version-1.21.1/src/main/java/xyz/bluspring/kilt/helpers/mixin/Extends.java
-- `ItemMixin` --references--> `Extends`  [EXTRACTED]
-  Kilt-version-1.21.1/compat/fabric-compats/src/main/java/xyz/bluspring/kilt/compat/fabric/mixin/geckolib/GeoRenderEventMixin.java → Kilt-version-1.21.1/src/main/java/xyz/bluspring/kilt/helpers/mixin/Extends.java
 
 ## Import Cycles
 - None detected.
 
-## Communities (512 total, 104 thin omitted)
+## Communities (491 total, 99 thin omitted)
 
 ### Community 0 - "What You Must Do When Invoked"
 Cohesion: 0.08
 Nodes (24): For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Honesty Rules, Interpreter guard for subcommands, Part A - Structural extraction for code files (+16 more)
 
-### Community 1 - "net.minecraft.client.gui.GuiGraphics"
-Cohesion: 0.07
-Nodes (18): Biome.ClimateSettings, TooltipRenderUtilInjection, Override, TooltipRenderUtilInject, TitleScreenInject, PanoramaRendererInject, AbstractContainerScreenAccessor, LocalPlayerAccessor (+10 more)
+### Community 1 - "org.spongepowered.asm.mixin.gen.Invoker"
+Cohesion: 0.09
+Nodes (14): Biome.ClimateSettings, TooltipRenderUtilInjection, TooltipRenderUtilInject, ItemDisplayContextAccessor, SuppressWarnings, LocalPlayerAccessor, ReloadableResources, MinecraftServerAccessor (+6 more)
 
 ### Community 2 - "org.objectweb.asm.tree.ClassNode"
 Cohesion: 0.10
@@ -563,16 +542,16 @@ Cohesion: 0.22
 Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
 
 ### Community 4 - "org.slf4j.Logger"
-Cohesion: 0.14
-Nodes (11): com.mojang.authlib.minecraft.UserApiService, AccountProfileKeyPairManagerInject, BlockableEventLoopInject, UtilInject, net.fabricmc.api.ModInitializer, net.minecraft.client.multiplayer.AccountProfileKeyPairManager, net.minecraft.Util, net.minecraft.util.thread.BlockableEventLoop (+3 more)
+Cohesion: 0.10
+Nodes (17): com.mojang.authlib.minecraft.UserApiService, com.mojang.brigadier.ParseResults, AccountProfileKeyPairManagerInject, CommandsInject, CommandSelection, UtilInject, EntityStorageInject, net.fabricmc.api.ModInitializer (+9 more)
 
 ### Community 5 - "graphify reference: query, path, explain"
 Cohesion: 0.33
 Nodes (5): For /graphify explain, For /graphify path, graphify reference: query, path, explain, Step 0 — Constrained query expansion (REQUIRED before traversal), Step 1 — Traversal
 
-### Community 6 - "ClientLevelInject.java"
-Cohesion: 0.08
-Nodes (17): ClientLevelData, it.unimi.dsi.fastutil.ints.Int2ObjectMap, it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap, ClientLevelInjection, Override, ServerLevelInjection, ClientLevelInject, Override (+9 more)
+### Community 6 - "ServerLevelInject.java"
+Cohesion: 0.05
+Nodes (33): ClientLevelData, it.unimi.dsi.fastutil.ints.Int2ObjectMap, it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap, ClientLevelInjection, ClientLevelInject, Override, DimensionSpecialEffectsInject, Context (+25 more)
 
 ### Community 7 - "gradlew"
 Cohesion: 0.83
@@ -595,20 +574,20 @@ Cohesion: 0.50
 Nodes (3): Example Mod, License, Setup
 
 ### Community 19 - "com.llamalad7.mixinextras.injector.ModifyExpressionValue"
-Cohesion: 0.03
-Nodes (63): ClickEvent.Action, com.llamalad7.mixinextras.expression.Definition, com.llamalad7.mixinextras.expression.Expression, com.llamalad7.mixinextras.injector.ModifyExpressionValue, ProjectileUtilMixin, HumanoidArmorLayerMixin, GuiInject, ApiStatus.Internal (+55 more)
+Cohesion: 0.02
+Nodes (67): com.llamalad7.mixinextras.expression.Definition, com.llamalad7.mixinextras.expression.Expression, com.llamalad7.mixinextras.injector.ModifyExpressionValue, com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef, com.llamalad7.mixinextras.sugar.ref.LocalRef, CreativeModeTab.ItemDisplayBuilder, InteractionKeyMappingTriggered, it.unimi.dsi.fastutil.objects.Object2FloatMap (+59 more)
 
 ### Community 20 - "net.minecraft.util.RandomSource"
 Cohesion: 0.05
-Nodes (61): com.mojang.blaze3d.vertex.PoseStack, com.mojang.blaze3d.vertex.VertexConsumer, com.moulberry.mixinconstraints.annotations.IfModAbsent, com.moulberry.mixinconstraints.annotations.IfModLoaded, dev.engine_room.flywheel.lib.model.SimpleModel, dev.ryanhcode.sable.fabric.platform.SableSubLevelRenderPlatformImpl, dev.ryanhcode.sable.sublevel.render.vanilla.SingleBlockSubLevelWrapper, BakedModelBuffererMixin (+53 more)
+Nodes (62): com.mojang.blaze3d.vertex.PoseStack, com.mojang.blaze3d.vertex.VertexConsumer, com.moulberry.mixinconstraints.annotations.IfModAbsent, dev.engine_room.flywheel.lib.model.SimpleModel, dev.ryanhcode.sable.fabric.platform.SableSubLevelRenderPlatformImpl, dev.ryanhcode.sable.sublevel.render.vanilla.SingleBlockSubLevelWrapper, BakedModelBuffererMixin, FabricMeshEmitterManagerAccessor (+54 more)
 
 ### Community 22 - "net.minecraft.world.level.Level"
-Cohesion: 0.03
-Nodes (69): EntityBuilderExtension, EntityTypeInjection, SpawnEggItemInjection, AllayInject, AnimalInject, CatInject, OcelotInject, WolfInject (+61 more)
+Cohesion: 0.02
+Nodes (98): Fox.FoxEatBerriesGoal, ItemFishedEvent, EntityBuilderExtension, EntityTypeInjection, SlimeInjection, SpawnEggItemInjection, EatBlockGoalInject, AllayInject (+90 more)
 
 ### Community 23 - "MinecraftServerInject"
-Cohesion: 0.10
-Nodes (8): com.llamalad7.mixinextras.sugar.ref.LocalLongRef, ReloadableResources, MinecraftServerInjection, Frozen, Override, ReloadableResources, MinecraftServerInject, net.minecraft.server.players.PlayerList
+Cohesion: 0.15
+Nodes (5): Frozen, Override, ReloadableResources, MinecraftServerInject, net.minecraft.server.players.PlayerList
 
 ### Community 24 - "App.tsx"
 Cohesion: 0.38
@@ -616,111 +595,111 @@ Nodes (4): App(), TaskItem, TASKS, JAR_BASE64
 
 ### Community 26 - "org.spongepowered.asm.mixin.injection.Inject"
 Cohesion: 0.02
-Nodes (63): BlockEntityTagOutput, com.terraformersmc.modmenu.api.ConfigScreenFactory, com.terraformersmc.modmenu.ModMenu, foundry.veil.fabric.platform.FabricRegistrationFactory, foundry.veil.platform.registry.RegistrationProvider, foundry.veil.platform.registry.RegistryObject, ShadedBlockSbbBuilderMixin, UniversalMeshEmitterMixin (+55 more)
+Nodes (37): BlockEntityTagOutput, com.mojang.blaze3d.vertex.BufferBuilder, ShadedBlockSbbBuilderMixin, UniversalMeshEmitterMixin, ConcretePowderBlockMixin, FrustumInject, Override, RenderTypeInject (+29 more)
 
-### Community 27 - "HierarchicalModelInject.java"
-Cohesion: 0.26
-Nodes (7): HierarchicalModelInjection, HierarchicalModelInject, Override, net.minecraft.client.animation.AnimationDefinition, net.minecraft.client.model.HierarchicalModel, net.minecraft.world.entity.AnimationState, net.neoforged.neoforge.client.entity.animation.json.AnimationHolder
+### Community 27 - "org.spongepowered.asm.mixin.Shadow"
+Cohesion: 0.08
+Nodes (17): HierarchicalModelInjection, InventoryScreenInject, Vector3f, HierarchicalModelInject, Override, BlockableEventLoopInject, BoneMealItemInject, net.minecraft.client.animation.AnimationDefinition (+9 more)
 
 ### Community 28 - "com.llamalad7.mixinextras.injector.wrapoperation.Operation"
-Cohesion: 0.02
-Nodes (49): Axis, BiomeGenerationSettings.PlainBuilder, com.llamalad7.mixinextras.injector.wrapoperation.Operation, com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation, io.github.fabricators_of_create.porting_lib.loot.LootModifierManager, RegistrarManagerImplMixin, WorldCreationUiStateInject, Reason (+41 more)
+Cohesion: 0.01
+Nodes (74): BiomeGenerationSettings.PlainBuilder, com.google.common.collect.BiMap, com.llamalad7.mixinextras.injector.wrapoperation.Operation, com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation, EffectParticleModificationEvent, Hands, PotionItemMixin, ElytraLayerMixin (+66 more)
 
-### Community 29 - "net.minecraft.world.entity.LivingEntity"
-Cohesion: 0.03
-Nodes (27): com.llamalad7.mixinextras.injector.v2.WrapWithCondition, EffectParticleModificationEvent, Hands, LivingEntityRendererInject, BooleanValue, Override, LivingEntityInject, ArmorSlotInject (+19 more)
+### Community 29 - "CreateInitializer"
+Cohesion: 0.08
+Nodes (19): CreateInitializer, HumanoidModelArmPoseInjection, RaidRaiderTypeInjection, ArmPoseInject, HumanoidModelInject, HumanoidModel.ArmPose, Override, RavagerInject (+11 more)
 
-### Community 30 - "NaturalSpawnerInject.java"
-Cohesion: 0.18
-Nodes (10): FluidTags, Entity, EntityType, LevelAccessor, LevelReader, Mob, MobSpawnType, NaturalSpawnerInject (+2 more)
+### Community 31 - "net.minecraft.client.gui.GuiGraphics"
+Cohesion: 0.04
+Nodes (26): BossEventProgress, com.google.gson.JsonParseException, ItemEntityRendererInjection, EnchantmentHelperInjection, ItemStackInjection, BossHealthOverlayInject, GuiInject, ApiStatus.Internal (+18 more)
 
-### Community 31 - "net.minecraft.world.item.ItemStack"
-Cohesion: 0.03
-Nodes (41): CreativeModeTab.ItemDisplayBuilder, ElytraLayerMixin, ItemEntityRendererInjection, ElytraLayerInjection, ArrowItemInjection, EnchantmentHelperInjection, ItemStackInjection, MapItemInjection (+33 more)
-
-### Community 32 - "net.minecraft.sounds.SoundSource"
-Cohesion: 0.25
-Nodes (4): MushroomCowInject, net.minecraft.sounds.SoundSource, net.minecraft.world.entity.animal.Cow, net.minecraft.world.entity.animal.MushroomCow
+### Community 32 - "com.llamalad7.mixinextras.sugar.ref.LocalFloatRef"
+Cohesion: 0.22
+Nodes (5): com.llamalad7.mixinextras.sugar.ref.LocalFloatRef, MushroomCowInject, net.minecraft.sounds.SoundSource, net.minecraft.world.entity.animal.Cow, net.minecraft.world.entity.animal.MushroomCow
 
 ### Community 33 - "net.minecraft.world.phys.AABB"
-Cohesion: 0.09
-Nodes (20): ParticleInjection, AABBInjection, Override, Vec3, ParticleInject, BeaconRendererInject, AABB, Override (+12 more)
+Cohesion: 0.04
+Nodes (62): ParticleInjection, Override, Vec3, ParticleInject, BannerRendererInject, Override, BeaconRendererInject, AABB (+54 more)
 
-### Community 34 - "net.minecraft.tags.TagKey"
-Cohesion: 0.07
-Nodes (20): it.unimi.dsi.fastutil.objects.Object2ObjectMap, FluidTagsInjection, BoatInjection, FluidTagsInject, FallingBlockEntityInject, Override, PickaxeItemInject, SpongeBlockInject (+12 more)
+### Community 34 - "net.minecraft.core.Registry"
+Cohesion: 0.12
+Nodes (18): com.mojang.serialization.MapCodec, foundry.veil.fabric.platform.FabricRegistrationFactory, foundry.veil.platform.registry.RegistrationProvider, foundry.veil.platform.registry.RegistryObject, FabricRegistrationFactoryMixin, FabricRegistrationFactoryProviderMixin, RegistryLookup, RegistryOpsInjection (+10 more)
+
+### Community 35 - "net.neoforged.neoforge.network.connection.ConnectionType"
+Cohesion: 0.12
+Nodes (12): CommonListenerCookieInjection, CommonListenerCookieInjection, CommonListenerCookieInject, Frozen, Override, Override, CommonListenerCookieInject, Override (+4 more)
 
 ### Community 36 - "net.minecraft.core.BlockPos"
 Cohesion: 0.02
-Nodes (70): it.unimi.dsi.fastutil.objects.Reference2BooleanLinkedOpenHashMap, FlywheelBackendXplatImplMixin, BlockRenderContextInjection, CropBlockInjection, FireBlockInjection, LiquidBlockRendererInject, VillageSiegeInject, WitherSkullInject (+62 more)
+Nodes (63): Axis, BlockModelShaperInjection, BlockRenderContextInjection, CropBlockInjection, FireBlockInjection, TerrainParticleInject, BlockModelShaperInject, Override (+55 more)
 
 ### Community 37 - ".createMixinException"
-Cohesion: 0.03
-Nodes (18): EditBoxInjection, GuiInjection, Layer, LayeredDrawInjection, LivingEntityInjection, RaidRaiderTypeInjection, TypeInjection, BuilderInjection (+10 more)
+Cohesion: 0.05
+Nodes (10): CameraInjection, GuiGraphicsInjection, GuiInjection, LevelRendererInjection, LivingEntityInjection, TypeInjection, BuilderInjection, CreativeModeTabInjection (+2 more)
 
 ### Community 38 - "org.spongepowered.asm.mixin.Mixin"
-Cohesion: 0.04
-Nodes (60): SnowVariantMixin, BlockEntityMixin, ClientBrandRetrieverInject, GameNarratorInject, ConnectScreenInject, EnchantmentScreenInject, PauseScreenInject, PresetEditorInject (+52 more)
+Cohesion: 0.03
+Nodes (88): com.terraformersmc.modmenu.gui.widget.entries.ModListEntry, com.terraformersmc.modmenu.util.mod.Mod, io.github.fabricators_of_create.porting_lib.loot.LootModifierManager, BlockEntityMixin, ConnectScreenInject, MerchantScreenInject, PresetEditorInject, AddressCheckInject (+80 more)
 
-### Community 39 - "BlockBehaviourInject.java"
-Cohesion: 0.10
-Nodes (13): BlockBehaviour.BlockStateBase, BlockBehaviourInjection, BlockStateBaseInjection, PropertiesInjection, BlockBehaviourInject, BlockStateBaseInject, Override, PropertiesInject (+5 more)
+### Community 39 - "LevelInject.java"
+Cohesion: 0.06
+Nodes (20): BlockBehaviour.BlockStateBase, ExplosionInteraction, BlockBehaviourInjection, BlockStateBaseInjection, PropertiesInjection, Shadow, BlockBehaviourInject, BlockStateBaseInject (+12 more)
 
-### Community 40 - "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
-Cohesion: 0.04
-Nodes (31): com.illusivesoulworks.spectrelib.EntrypointUtils, com.llamalad7.mixinextras.sugar.ref.LocalDoubleRef, dan200.computercraft.shared.ComputerCraft, ComputerCraftMixin, EntityCallbacksInject, BlockEntityRenderersInject, Context, CrashReportInject (+23 more)
+### Community 40 - "CrashReportInject"
+Cohesion: 0.40
+Nodes (3): CrashReportInject, StackTraceElement, net.minecraft.CrashReport
 
 ### Community 41 - "org.spongepowered.asm.mixin.gen.Accessor"
-Cohesion: 0.05
-Nodes (18): io.github.fabricators_of_create.porting_lib.fluids.FluidType, io.github.fabricators_of_create.porting_lib.fluids.sound.SoundAction, ButtonBuilderAccessor, Button.Builder, CreateNarration, OnPress, DyeColorAccessor, FluidTypeAccessor (+10 more)
+Cohesion: 0.06
+Nodes (18): io.github.fabricators_of_create.porting_lib.fluids.FluidType, io.github.fabricators_of_create.porting_lib.fluids.sound.SoundAction, io.github.fabricators_of_create.porting_lib.models.geometry.GeometryLoaderManager, io.github.fabricators_of_create.porting_lib.models.geometry.IGeometryLoader, AbstractHorseAccessor, ButtonBuilderAccessor, Button.Builder, CreateNarration (+10 more)
 
 ### Community 42 - ".run"
-Cohesion: 0.06
-Nodes (23): LocalPair, AccessorModifier, MethodNode, AnnotationBasedModifier, JustIgnoreItAnnotationModifier, AnnotationNode, ClassInfo, NameRemappingAnnotationModifier (+15 more)
+Cohesion: 0.05
+Nodes (28): DetectedGLVersion, ModuleLayer, ServiceRunner, LocalPair, AccessorModifier, MethodNode, AnnotationBasedModifier, JustIgnoreItAnnotationModifier (+20 more)
 
-### Community 43 - "net.minecraft.server.level.ServerPlayer"
-Cohesion: 0.08
-Nodes (24): ServerEntityInjection, EndDragonFightInjection, BundlePacketInject, Override, PacketAndPayloadAcceptor, ServerEntityInject, EndDragonFightInject, Override (+16 more)
-
-### Community 44 - "ComputerCraftAPIImplMixin.java"
-Cohesion: 0.32
-Nodes (8): dan200.computercraft.api.detail.DetailRegistry, dan200.computercraft.impl.ComputerCraftAPIForgeService, dan200.computercraft.impl.ComputerCraftAPIImpl, ComputerCraftAPIImplMixin, Override, net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant, net.fabricmc.fabric.api.transfer.v1.storage.StorageView, net.neoforged.neoforge.fluids.FluidStack
-
-### Community 45 - "com.llamalad7.mixinextras.sugar.ref.LocalIntRef"
+### Community 43 - "net.minecraft.network.protocol.Packet"
 Cohesion: 0.11
-Nodes (11): com.google.common.collect.Ordering, com.llamalad7.mixinextras.sugar.ref.LocalIntRef, PotionItemMixin, EffectRenderingInventoryScreenInject, InventoryInject, CocoaBlockInject, net.minecraft.client.gui.screens.inventory.AbstractContainerScreen, net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen (+3 more)
+Nodes (16): ServerEntityInjection, BundlePacketInject, Override, PacketAndPayloadAcceptor, ServerEntityInject, ICommonPacketListenerMixin, Override, ServerCommonPacketListenerImplMixin (+8 more)
+
+### Community 44 - "LevelChunkInject.java"
+Cohesion: 0.13
+Nodes (13): VillagerTypeInject, ImposterProtoChunkInject, Override, LevelChunkInject, CommonLevelWorkaround, net.minecraft.world.entity.npc.VillagerType, net.minecraft.world.level.biome.Biome, net.minecraft.world.level.chunk.ImposterProtoChunk (+5 more)
+
+### Community 45 - "LevelInjection"
+Cohesion: 0.10
+Nodes (4): Override, ServerLevelInjection, LevelInjection, net.neoforged.neoforge.capabilities.ICapabilityInvalidationListener
 
 ### Community 46 - "net.minecraft.resources.ResourceKey"
 Cohesion: 0.07
-Nodes (25): IntrinsicHolderTagsProvider.IntrinsicTagAppender, it.unimi.dsi.fastutil.objects.Reference2IntMap, Reference, MappedRegistryInjection, DefaultedMappedRegistryInject, Override, InnerRegistryLookupInject, Named (+17 more)
+Nodes (24): HolderLookup.RegistryLookup.Delegate, it.unimi.dsi.fastutil.objects.Reference2IntMap, RegistryLookupInjection, Reference, MappedRegistryInjection, DelegateInject, HolderLookup.RegistryLookup, Override (+16 more)
 
-### Community 47 - "net.minecraft.tags.TagBuilder"
-Cohesion: 0.13
-Nodes (10): TagAppenderInjection, TagBuilderInjection, TagsProvider.TagAppender, TagAppenderInject, Override, TagBuilderInject, TagsProvider.TagAppender, TagAppenderAccessor (+2 more)
+### Community 47 - "net.minecraft.tags.TagEntry"
+Cohesion: 0.07
+Nodes (24): TagAppenderInjection, TagBuilderInjection, TagFileInjection, EntryWithSource, TagLoaderInjection, TagsProvider.TagAppender, TagAppenderInject, Override (+16 more)
 
 ### Community 48 - "KiltRemapper"
-Cohesion: 0.06
-Nodes (24): ClassProvider, INamedMappingFile, JarFile, CoreModHelper, KiltMixinCanceller, MixinCanceller, DevMappingRenamer, IMappingFile (+16 more)
+Cohesion: 0.07
+Nodes (20): ClassProvider, INamedMappingFile, JarFile, CoreModHelper, DevMappingRenamer, IMappingFile, IRenamer, DevMojClassMappingRenamer (+12 more)
 
-### Community 49 - "ClientPacketListenerInject.java"
-Cohesion: 0.06
-Nodes (25): ClientCommonPacketListenerImplInject, Override, ClientConfigurationPacketListenerImplInject, Override, ClientPacketListenerInject, Frozen, Override, CommandSelection (+17 more)
+### Community 49 - "ClientConfigurationPacketListenerImplInject.java"
+Cohesion: 0.09
+Nodes (21): ClientCommonPacketListenerImplInject, ClientConfigurationPacketListenerImplInject, Override, FluidInject, Override, FluidStateInject, ClientCommonPacketListenerImplMixin, FluidWorkaround (+13 more)
 
-### Community 50 - "net.minecraft.client.gui.Font"
-Cohesion: 0.08
-Nodes (21): Deprecated, GuiGraphicsInjection, FontInject, Override, GuiGraphicsInject, BufferSource, Override, ClientTooltipComponentInject (+13 more)
+### Community 50 - "GuiGraphicsInject.java"
+Cohesion: 0.06
+Nodes (27): com.mojang.blaze3d.platform.NativeImage, Deprecated, SpriteContentsInjection, CrashReportCategoryInjection, StackTraceElement, GuiGraphicsInject, BufferSource, Override (+19 more)
 
 ### Community 51 - "NeoForgeMod"
 Cohesion: 0.05
 Nodes (25): ArtifactVersion, EventListener, ForgeFeature, ForgeModDependency, Event, IConfigurable, IEventBus, IModFileInfo (+17 more)
 
 ### Community 52 - "com.llamalad7.mixinextras.injector.ModifyReturnValue"
-Cohesion: 0.05
-Nodes (24): com.llamalad7.mixinextras.injector.ModifyReturnValue, dan200.computercraft.api.media.IMedia, dan200.computercraft.api.network.wired.WiredElement, dan200.computercraft.api.peripheral.IPeripheral, dan200.computercraft.shared.platform.ComponentAccess, dan200.computercraft.shared.platform.PlatformHelperImpl, PlatformHelperImplMixin, SpriteCoordinateExpanderInject (+16 more)
+Cohesion: 0.04
+Nodes (30): com.llamalad7.mixinextras.injector.ModifyReturnValue, dan200.computercraft.api.media.IMedia, dan200.computercraft.api.network.wired.WiredElement, dan200.computercraft.api.peripheral.IPeripheral, dan200.computercraft.shared.platform.ComponentAccess, dan200.computercraft.shared.platform.PlatformHelperImpl, HeartType, PlatformHelperImplMixin (+22 more)
 
-### Community 53 - "TypeInject"
-Cohesion: 0.13
-Nodes (8): Boat.Type, BoatInject, MutableBlockPos, NamedEnum, NetworkedEnum, Override, ReservedConstructor, TypeInject
+### Community 53 - "net.minecraft.server.packs.resources.ResourceManager"
+Cohesion: 0.16
+Nodes (11): dan200.computercraft.client.model.ExtraModels, ExtraModelsMixin, FileToIdConverterInjection, Context, SplashManagerInject, FileToIdConverterInject, Override, net.minecraft.client.resources.SplashManager (+3 more)
 
 ### Community 54 - "ScreenInject.java"
 Cohesion: 0.17
@@ -728,55 +707,55 @@ Nodes (7): ScreenInjection, Override, ScreenInject, ScreenAccessor, net.minecraf
 
 ### Community 55 - "net.minecraft.network.codec.StreamCodec"
 Cohesion: 0.09
-Nodes (29): StupidWorkarounds, CustomPacketPayloadInjection, ClientboundCustomPayloadPacket, FallbackProvider, ServerboundCustomPayloadPacket, TypeAndCodec, StreamCodec, ServerboundCustomPayloadPacketInjection (+21 more)
+Nodes (27): StupidWorkarounds, CustomPacketPayloadInjection, ClientboundCustomPayloadPacket, FallbackProvider, ServerboundCustomPayloadPacket, TypeAndCodec, StreamCodec, ServerboundCustomPayloadPacketInjection (+19 more)
 
 ### Community 56 - "AbstractContainerScreenInject"
 Cohesion: 0.07
-Nodes (10): io.github.fabricators_of_create.porting_lib.extensions.common.SlotExtension, AbstractContainerScreenInjection, SlotInjection, AbstractContainerScreenInject, Override, Override, SlotWrapperInject, Override (+2 more)
+Nodes (12): io.github.fabricators_of_create.porting_lib.extensions.common.SlotExtension, AbstractContainerScreenInjection, SlotInjection, AbstractContainerScreenInject, Override, Override, SlotWrapperInject, Override (+4 more)
 
-### Community 57 - "ServerLevelInject.java"
-Cohesion: 0.08
-Nodes (17): Context, LevelStorageAccess, Mixin, Override, ServerLevelInject, DerivedLevelDataInject, Override, ServerLevelDataInject (+9 more)
+### Community 57 - "DerivedLevelDataInject"
+Cohesion: 0.39
+Nodes (3): DerivedLevelDataInject, Override, net.minecraft.world.level.storage.DerivedLevelData
 
 ### Community 58 - "LevelRendererInject"
-Cohesion: 0.17
-Nodes (16): it.unimi.dsi.fastutil.objects.ObjectArrayList, BufferSource, GameRenderer, Implements, LevelRenderer, LightTexture, Mixin, MultiBufferSource (+8 more)
+Cohesion: 0.10
+Nodes (19): GameRendererInject, BufferSource, GameRenderer, Implements, Intrinsic, LevelRenderer, LightTexture, Mixin (+11 more)
 
 ### Community 59 - "net.minecraft.client.renderer.texture.TextureAtlasSprite"
-Cohesion: 0.09
-Nodes (30): BlockModel.Deserializer, BlockModel.GuiLight, com.google.gson.GsonBuilder, ExtendedBlockModelDeserializer, BlockModelInjection, GuiLightInjection, ModelBakerImplInjection, ModelBakeryInjection (+22 more)
+Cohesion: 0.08
+Nodes (33): BlockModel.Deserializer, BlockModel.GuiLight, com.google.gson.GsonBuilder, ExtendedBlockModelDeserializer, BlockModelInjection, GuiLightInjection, ModelBakerImplInjection, ModelBakeryInjection (+25 more)
 
 ### Community 60 - "ConnectionInject"
-Cohesion: 0.07
-Nodes (26): BundleDelimiterPacket, BundlerInfo, io.netty.channel.Channel, io.netty.channel.ChannelHandlerContext, ConnectionInjection, PacketEncoderInjection, BundlerInfoInjection, ConnectionInject (+18 more)
+Cohesion: 0.09
+Nodes (21): BundleDelimiterPacket, BundlerInfo, io.netty.channel.Channel, io.netty.channel.ChannelHandlerContext, ConnectionInjection, BundlerInfoInjection, ConnectionInject, Connection (+13 more)
 
-### Community 61 - "net.neoforged.neoforge.network.connection.ConnectionType"
-Cohesion: 0.08
-Nodes (21): io.netty.buffer.ByteBuf, CommonListenerCookieInjection, FriendlyByteBufInjection, ApiStatus.Internal, RegistryFriendlyByteBuf, RegistryFriendlyByteBufInjection, CommonListenerCookieInjection, CommonListenerCookieInject (+13 more)
+### Community 61 - "net.minecraft.network.RegistryFriendlyByteBuf"
+Cohesion: 0.12
+Nodes (16): io.netty.buffer.ByteBuf, FriendlyByteBufInjection, ApiStatus.Internal, RegistryFriendlyByteBuf, RegistryFriendlyByteBufInjection, ByteBufCodecsInject, HolderSetInject, RegistryInject (+8 more)
 
 ### Community 62 - "net.minecraft.network.chat.Component"
-Cohesion: 0.05
-Nodes (34): Bound, com.google.gson.JsonParseException, dan200.computercraft.client.model.ExtraModels, ExtraModelsMixin, LanguageInjection, FileToIdConverterInjection, ServerPlayerInjection, PackMetadataSection (+26 more)
+Cohesion: 0.06
+Nodes (20): Bound, LanguageInjection, ServerPlayerInjection, ChatListenerInject, ClientLanguageInject, Override, AnonymousLanguageInject, Override (+12 more)
 
 ### Community 63 - "LevelSliceMixin.java"
-Cohesion: 0.21
-Nodes (8): BlockGetterInject, AuxiliaryLightManagerMixin, Override, LevelSliceMixin, net.caffeinemc.mods.sodium.client.world.SodiumAuxiliaryLightManager, net.neoforged.neoforge.common.extensions.IBlockAndTintGetterExtension, net.neoforged.neoforge.common.extensions.IBlockGetterExtension, net.neoforged.neoforge.common.world.AuxiliaryLightManager
+Cohesion: 0.23
+Nodes (6): BlockGetterInject, Override, LevelSliceMixin, net.caffeinemc.mods.sodium.client.world.LevelSlice, net.neoforged.neoforge.common.extensions.IBlockAndTintGetterExtension, net.neoforged.neoforge.common.extensions.IBlockGetterExtension
 
-### Community 64 - "MangrovePropaguleBlockInject.java"
-Cohesion: 0.15
-Nodes (9): FungusBlockInject, TreeGrowerInject, MangrovePropaguleBlockInject, SaplingBlockInject, net.minecraft.world.level.block.FungusBlock, net.minecraft.world.level.block.grower.TreeGrower, net.minecraft.world.level.block.MangrovePropaguleBlock, net.minecraft.world.level.block.SaplingBlock (+1 more)
+### Community 64 - "MushroomBlockInject.java"
+Cohesion: 0.12
+Nodes (11): FungusBlockInject, TreeGrowerInject, MangrovePropaguleBlockInject, MushroomBlockInject, SaplingBlockInject, net.minecraft.world.level.block.FungusBlock, net.minecraft.world.level.block.grower.TreeGrower, net.minecraft.world.level.block.MangrovePropaguleBlock (+3 more)
 
-### Community 65 - "RenderChunkRegionInject.java"
-Cohesion: 0.25
-Nodes (5): it.unimi.dsi.fastutil.longs.Long2ObjectFunction, RenderChunkRegionInjection, Override, RenderChunkRegionInject, net.minecraft.client.renderer.chunk.RenderChunk
+### Community 65 - "SectionRenderDispatcherInject.java"
+Cohesion: 0.06
+Nodes (38): com.mojang.blaze3d.vertex.VertexSorting, it.unimi.dsi.fastutil.longs.Long2ObjectFunction, RenderChunkRegionInjection, RenderRegionCacheInjection, AdditionalSectionRenderer, Results, SectionCompilerInjection, AdditionalSectionRenderer (+30 more)
 
 ### Community 66 - "net.minecraft.world.item.crafting.Ingredient"
 Cohesion: 0.08
 Nodes (25): ShapedRecipeBuilderInjection, ShapelessRecipeBuilderInjection, SimpleCookingRecipeBuilderInjection, ItemStack, Override, ShapedRecipeBuilderInject, ItemStack, Override (+17 more)
 
 ### Community 67 - "com.mojang.serialization.Codec"
-Cohesion: 0.13
-Nodes (14): com.mojang.serialization.Codec, com.mojang.serialization.DataResult, com.mojang.serialization.DynamicOps, ExtendedLootDataType, AttributeTemplate, RecordMixinRefMaps, HolderSetCodecInject, EnvironmentScanPlacementInject (+6 more)
+Cohesion: 0.07
+Nodes (24): com.google.common.util.concurrent.ThreadFactoryBuilder, com.llamalad7.mixinextras.injector.ModifyReceiver, com.mojang.serialization.Codec, com.mojang.serialization.DataResult, com.mojang.serialization.DynamicOps, ExtendedLootDataType, AttributeTemplate, RecordMixinRefMaps (+16 more)
 
 ### Community 68 - "net.minecraft.client.renderer.item.ItemPropertyFunction"
 Cohesion: 0.26
@@ -786,49 +765,49 @@ Nodes (5): ItemPropertiesInjection, ItemPropertiesInject, ItemPropertiesAccessor
 Cohesion: 0.08
 Nodes (21): BrewingStandMenu.PotionSlot, BuilderInjection, BrewingStandMenuInjection, PotionSlotInjection, BuilderInjection, PotionBrewingInjection, BrewingStandMenuInject, Override (+13 more)
 
-### Community 70 - "MipmapGeneratorInject.java"
-Cohesion: 0.13
-Nodes (13): com.mojang.blaze3d.platform.NativeImage, SpriteContentsInjection, TextureAtlasSpriteInjection, MipmapGeneratorInject, InterpolationDataInject, Override, SpriteContentsInject, Override (+5 more)
+### Community 70 - "SpriteResourceLoaderInject.java"
+Cohesion: 0.23
+Nodes (7): TextureAtlasSpriteInjection, SpriteResourceLoaderInject, Override, TextureAtlasSpriteInject, net.minecraft.client.renderer.texture.atlas.SpriteResourceLoader, net.minecraft.client.renderer.texture.SpriteContents, net.neoforged.neoforge.client.textures.SpriteContentsConstructor
 
 ### Community 71 - "KiltLoader"
-Cohesion: 0.10
-Nodes (12): CommentedConfig, KiltLoader, Event, IModLanguageLoader, Manifest, ModDefinition, ModVersion, NeoForgeModVersion (+4 more)
+Cohesion: 0.08
+Nodes (14): CommentedConfig, EventBusesHooks, IEventBus, KiltLoader, Event, IModLanguageLoader, Manifest, ModDefinition (+6 more)
 
 ### Community 72 - "ReloadableServerResourcesInject.java"
-Cohesion: 0.13
-Nodes (13): ConfigurableRegistryLookup, IContext, Provider, ReloadableServerResourcesInjection, CommandSelection, Frozen, Holder, IContext (+5 more)
+Cohesion: 0.12
+Nodes (15): ConfigurableRegistryLookup, IContext, Provider, ReloadableServerResourcesInjection, CommandSelection, Frozen, Holder, IContext (+7 more)
 
 ### Community 73 - "org.spongepowered.asm.mixin.injection.Redirect"
-Cohesion: 0.08
-Nodes (20): java.net.URI, java.net.URL, java.util.regex.Pattern, FabricPonderClientMixin, EveryCompatForgeMixin, KubeJSMixin, BreakingItemParticleInject, JsonParserMixin (+12 more)
+Cohesion: 0.11
+Nodes (15): Direct, java.net.URI, FabricPonderClientMixin, EveryCompatForgeMixin, BreakingItemParticleInject, Named, GetJarResourcesMixin, net.createmod.ponder.FabricPonderClient (+7 more)
 
-### Community 74 - "CreateStatic"
-Cohesion: 0.12
-Nodes (11): GeckoLibClientMixin, CreateStatic, ShapedRecipePatternStorage, ShapedRecipePatternInjection, Level, SharedConstantsInject, ExtensionInfo, ShapedRecipePatternInject (+3 more)
+### Community 74 - "net.minecraft.client.resources.sounds.SoundInstance"
+Cohesion: 0.19
+Nodes (12): ChannelHandle, SoundInstanceInjection, Override, SoundInstanceInject, MusicManagerInject, net.fabricmc.fabric.api.client.sound.v1.FabricSoundInstance, net.minecraft.client.resources.sounds.Sound, net.minecraft.client.resources.sounds.SoundInstance (+4 more)
 
 ### Community 75 - "net.minecraft.server.MinecraftServer"
-Cohesion: 0.14
-Nodes (18): com.mojang.datafixers.DataFixer, java.net.Proxy, IntegratedServerInject, LevelStorageAccess, GameTestServerInject, LevelStorageAccess, DedicatedServerInject, LevelStorageAccess (+10 more)
+Cohesion: 0.19
+Nodes (16): com.mojang.datafixers.DataFixer, java.net.Proxy, IntegratedServerInject, LevelStorageAccess, GameTestServerInject, LevelStorageAccess, DedicatedServerInject, LevelStorageAccess (+8 more)
 
-### Community 76 - "EmiAgnosFabricMixin.java"
-Cohesion: 0.07
-Nodes (26): com.terraformersmc.modmenu.util.mod.fabric.FabricIconHandler, dev.emi.emi.api.EmiPlugin, dev.emi.emi.platform.fabric.EmiAgnosFabric, dev.emi.emi.registry.EmiPluginContainer, EmiPluginContainer, EntrypointContainer, EmiAgnosFabricMixin, CommonProxyMixin (+18 more)
+### Community 76 - "debug/SystemReportMixin.java"
+Cohesion: 0.19
+Nodes (8): com.terraformersmc.modmenu.util.mod.fabric.FabricIconHandler, FabricIconHandlerMixin, SystemReportMixin, SystemReportMixin, net.fabricmc.loader.api.ModContainer, net.minecraft.SystemReport, xyz.bluspring.knit.loader.KnitModLoader, xyz.bluspring.knit.loader.mod.KnitMod
 
-### Community 77 - "net.minecraft.core.component.DataComponentMap"
+### Community 77 - "ItemInject.java"
 Cohesion: 0.18
-Nodes (6): com.google.common.collect.Interner, ItemPropertiesInjection, DataComponentPatchInject, ItemPropertiesAccessor, net.minecraft.core.component.DataComponentMap, net.minecraft.core.component.DataComponentPatch
+Nodes (5): com.google.common.collect.Interner, RenderPropertiesInjection, ItemPropertiesInjection, ItemPropertiesAccessor, net.minecraft.core.component.DataComponentMap
 
-### Community 78 - "CreativeModeInventoryScreenInject.java"
-Cohesion: 0.09
-Nodes (12): ItemDisplayParameters, ItemPickerMenu, CreativeModeInventoryScreenInjection, EditBoxInject, Override, CreativeModeInventoryScreenInject, Output, net.minecraft.client.gui.components.EditBox (+4 more)
+### Community 78 - "Type"
+Cohesion: 0.06
+Nodes (28): ItemDisplayParameters, ItemPickerMenu, CreativeModeInventoryScreenInjection, EditBoxInject, Override, CreativeModeInventoryScreenInject, Provider, EffectInstanceInject (+20 more)
 
-### Community 79 - "EntityInject"
-Cohesion: 0.08
-Nodes (9): fr.catcore.cursedmixinextensions.annotations.ChangeSuperClass, it.unimi.dsi.fastutil.objects.Object2DoubleMap, EntityInjection, EntityInject, Override, net.minecraft.world.entity.EntityDimensions, net.minecraft.world.level.block.RenderShape, net.neoforged.neoforge.capabilities.EntityCapability (+1 more)
+### Community 79 - "net.minecraft.world.entity.Entity"
+Cohesion: 0.04
+Nodes (34): fr.catcore.cursedmixinextensions.annotations.ChangeSuperClass, it.unimi.dsi.fastutil.objects.Object2DoubleMap, FluidTagsInjection, EntityInjection, BoatInjection, MobBucketItemInjection, SpreadPlayersCommandInject, Override (+26 more)
 
 ### Community 80 - "ASMAPI"
-Cohesion: 0.10
-Nodes (18): ASMAPI, InsertMode, INSERT_AFTER, INSERT_BEFORE, REMOVE_ORIGINAL, AbstractInsnNode, ClassNode, FieldNode (+10 more)
+Cohesion: 0.07
+Nodes (22): ASMAPI, InsertMode, INSERT_AFTER, INSERT_BEFORE, REMOVE_ORIGINAL, AbstractInsnNode, ClassNode, FieldNode (+14 more)
 
 ### Community 81 - "DamageScalingInject"
 Cohesion: 0.20
@@ -838,73 +817,73 @@ Nodes (9): DamageScalingInjection, DamageScalingInject, ExtensionInfo, NamedEnum
 Cohesion: 0.10
 Nodes (39): io.github.fabricators_of_create.porting_lib.blocks.extensions.BeaconColorMultiplierBlock, io.github.fabricators_of_create.porting_lib.blocks.extensions.ChunkUnloadListeningBlockEntity, io.github.fabricators_of_create.porting_lib.blocks.extensions.CollisionExtendsVerticallyBlock, io.github.fabricators_of_create.porting_lib.blocks.extensions.ConnectableRedstoneBlock, io.github.fabricators_of_create.porting_lib.blocks.extensions.CustomBurnabilityBlock, io.github.fabricators_of_create.porting_lib.blocks.extensions.CustomDestroyEffectsBlock, io.github.fabricators_of_create.porting_lib.blocks.extensions.CustomDisplayFluidOverlayBlock, io.github.fabricators_of_create.porting_lib.blocks.extensions.CustomExpBlock (+31 more)
 
-### Community 83 - "net.minecraft.client.renderer.MultiBufferSource"
-Cohesion: 0.18
-Nodes (12): HumanoidArmorLayerInjection, HumanoidArmorLayerInject, Layer, HumanoidArmorLayerMixin, net.minecraft.client.model.Model, net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer, net.minecraft.client.renderer.MultiBufferSource, net.minecraft.world.entity.EquipmentSlot (+4 more)
+### Community 83 - "HumanoidArmorLayerInject.java"
+Cohesion: 0.11
+Nodes (18): com.google.common.cache.Cache, CacheOptimizationStorage, HumanoidArmorLayerInjection, HumanoidArmorLayerInject, Layer, ArmorSlotInject, HumanoidArmorLayerMixin, IClientItemExtensionsMixin (+10 more)
 
 ### Community 84 - "net.minecraft.server.packs.repository.PackRepository"
-Cohesion: 0.16
-Nodes (10): CreateWorldScreenInject, ExperimentsScreenInject, ReloadCommandInject, ServerPacksSourceInject, net.minecraft.client.gui.screens.worldselection.CreateWorldScreen, net.minecraft.client.gui.screens.worldselection.ExperimentsScreen, net.minecraft.server.commands.ReloadCommand, net.minecraft.server.packs.repository.PackRepository (+2 more)
+Cohesion: 0.15
+Nodes (12): PackRepositoryInjection, CreateWorldScreenInject, ReloadCommandInject, Override, PackRepositoryInject, ServerPacksSourceInject, net.minecraft.client.gui.screens.worldselection.CreateWorldScreen, net.minecraft.server.commands.ReloadCommand (+4 more)
 
 ### Community 85 - "RegistryDataLoaderInject.java"
-Cohesion: 0.12
-Nodes (15): com.mojang.serialization.Decoder, RegistryData, RegistryDataInjection, RegistryDataLoaderInjection, MappedRegistry, Mixin, Override, Registry (+7 more)
+Cohesion: 0.11
+Nodes (18): com.mojang.serialization.Decoder, RegistryData, RegistryDataInjection, RegistryDataLoaderInjection, MappedRegistry, Mixin, Override, Reference (+10 more)
 
 ### Community 86 - "ServerConfigurationPacketListenerImplInject"
-Cohesion: 0.10
-Nodes (17): ConfigurationPacketHandler, Implements, Intrinsic, Mixin, Shadow, ServerConfigurationPacketListenerImplInject, ServerConfigurationNetworkAddonMixin, ServerConfigurationPacketListenerMixin (+9 more)
+Cohesion: 0.09
+Nodes (15): ConfigurationTask.Type, ConfigurationTaskInject, TypeInject, Implements, Intrinsic, Mixin, Shadow, ServerConfigurationPacketListenerImplInject (+7 more)
 
-### Community 87 - "CreateInitializer"
-Cohesion: 0.06
-Nodes (31): Gui.HeartType, HeartType, CreateInitializer, VertexFormatElementInjection, HumanoidModelArmPoseInjection, UsageInject, VertexFormatElementInject, GlyphProviderTypeInject (+23 more)
+### Community 87 - "CreateStatic"
+Cohesion: 0.07
+Nodes (24): Gui.HeartType, CreateStatic, ShapedRecipePatternStorage, VertexFormatElementInjection, ShapedRecipePatternInjection, UsageInject, VertexFormatElementInject, GlyphProviderTypeInject (+16 more)
 
 ### Community 88 - "org.spongepowered.asm.mixin.Intrinsic"
-Cohesion: 0.08
-Nodes (26): com.mojang.realmsclient.gui.screens.RealmsGenericErrorScreen, HolderLookup.Provider, HolderLookup.RegistryLookup.Delegate, HolderLookupInjection, HolderLookup.RegistryLookup, RegistryLookupInjection, Holder.Reference, Override (+18 more)
+Cohesion: 0.13
+Nodes (15): HolderLookup.Provider, HolderLookupInjection, HolderLookup.RegistryLookup, HolderInject, Holder.Reference, Override, ReferenceInject, HolderLookupInject (+7 more)
 
 ### Community 89 - "BlockElementInject.java"
-Cohesion: 0.11
-Nodes (23): BlockElement.Deserializer, BlockElementFace.Deserializer, com.google.gson.JsonDeserializationContext, com.google.gson.JsonElement, com.google.gson.JsonObject, java.lang.reflect.Type, BlockElementFaceInjection, BlockElementFace (+15 more)
+Cohesion: 0.05
+Nodes (39): BlockElement.Deserializer, BlockElementFace.Deserializer, com.google.common.collect.ImmutableMap, com.google.gson.JsonDeserializationContext, com.google.gson.JsonElement, com.google.gson.JsonObject, com.mojang.blaze3d.vertex.VertexFormatElement, io.github.fabricators_of_create.porting_lib.models.extensions.ItemTransformExtensions (+31 more)
 
 ### Community 90 - "IngredientInject"
-Cohesion: 0.08
+Cohesion: 0.09
 Nodes (14): Ingredient.ItemValue, Ingredient.TagValue, Ingredient.Value, IngredientInjection, Ingredient, Value, ValueInjection, IngredientInject (+6 more)
 
 ### Community 91 - "AccessTransformerProcessor"
 Cohesion: 0.09
 Nodes (25): AccessTransformerEngine, ClassTweaker, AccessTransformerProcessor, ByteArray, Logger, Spec, AccessTransformerLoader, AccessType (+17 more)
 
-### Community 92 - "net.minecraft.client.particle.Particle"
-Cohesion: 0.12
-Nodes (11): ItemPickupParticleInject, Override, Override, MobAppearanceParticleInject, AABB, Override, SingleQuadParticleInject, net.minecraft.client.particle.ItemPickupParticle (+3 more)
+### Community 92 - "AABBInjection"
+Cohesion: 0.08
+Nodes (17): AABBInjection, ItemPickupParticleInject, Override, Override, MobAppearanceParticleInject, Override, StructureBlockRendererInject, GameTestInfoInject (+9 more)
 
 ### Community 93 - "org.spongepowered.asm.mixin.Mutable"
-Cohesion: 0.10
-Nodes (13): BlockCapabilityAccessor, DebugLevelSourceInjection, DebugLevelSourceInject, ArmPoseAccessor, ArmPose, HumanoidModel.ArmPose, DebugLevelSourceAccessor, GrassColorModifierAccessor (+5 more)
+Cohesion: 0.11
+Nodes (13): BlockCapabilityAccessor, EntityCapabilityAccessor, ItemCapabilityAccessor, ArmPoseAccessor, ArmPose, HumanoidModel.ArmPose, GrassColorModifierAccessor, BiomeSpecialEffects.GrassColorModifier (+5 more)
 
 ### Community 94 - "WorldCreationContextInject.java"
-Cohesion: 0.21
-Nodes (12): WorldCreationContextInjection, Override, WorldCreationContext, WorldCreationContextInject, WorldDimensionsInject, net.minecraft.client.gui.screens.worldselection.WorldCreationContext, net.minecraft.core.LayeredRegistryAccess, net.minecraft.server.RegistryLayer (+4 more)
+Cohesion: 0.25
+Nodes (10): WorldCreationContextInjection, Override, WorldCreationContext, WorldCreationContextInject, WorldDimensionsInject, net.minecraft.client.gui.screens.worldselection.WorldCreationContext, net.minecraft.world.level.dimension.LevelStem, net.minecraft.world.level.levelgen.WorldDimensions (+2 more)
 
 ### Community 95 - "ITransformerVotingContext"
-Cohesion: 0.09
-Nodes (13): ClassVisitor, ITransformerActivity, FieldPredicate, InsnPredicate, ITransformerVotingContext, ByteArray, MethodPredicate, FieldVisitor (+5 more)
+Cohesion: 0.16
+Nodes (6): ClassPredicate, FieldPredicate, InsnPredicate, ITransformerVotingContext, ByteArray, MethodPredicate
 
-### Community 96 - "AbstractFurnaceBlockEntityInject.java"
-Cohesion: 0.12
-Nodes (14): com.mojang.datafixers.util.Either, it.unimi.dsi.fastutil.objects.Object2IntMap, java.util.function.ObjIntConsumer, AbstractFurnaceBlockEntityInjection, Override, AbstractFurnaceBlockEntityInject, AbstractCookingRecipe, Provider (+6 more)
+### Community 96 - "net.minecraft.core.RegistryAccess"
+Cohesion: 0.09
+Nodes (21): com.mojang.datafixers.util.Either, it.unimi.dsi.fastutil.objects.Object2IntMap, java.util.function.ObjIntConsumer, AbstractFurnaceBlockEntityInjection, TagCollectorInject, BaseSpawnerInject, Override, MinecartSpawnerInject (+13 more)
 
 ### Community 97 - "net.minecraft.client.Minecraft"
 Cohesion: 0.10
-Nodes (15): AdvancementTabInjection, AdvancementTab, AdvancementTabTypeInjection, AdvancementsScreenInject, AdvancementTabInject, Mixin, Override, AdvancementTabTypeInject (+7 more)
+Nodes (16): com.llamalad7.mixinextras.sugar.ref.LocalIntRef, AdvancementTabInjection, AdvancementTab, AdvancementTabTypeInjection, AdvancementsScreenInject, AdvancementTabInject, Mixin, Override (+8 more)
 
-### Community 98 - "BiomeInject"
-Cohesion: 0.18
-Nodes (9): BiomeInjection, ClimateSettings, BiomeInject, ClimateSettings, ModifiableBiomeInfo, Override, BiomeSpecialEffectsInject, net.minecraft.world.level.biome.BiomeSpecialEffects (+1 more)
+### Community 98 - "java.util.function.Supplier"
+Cohesion: 0.14
+Nodes (6): java.util.function.Supplier, CreativeModeTabAccessor, CreativeModeTabBuilderAccessor, CreativeModeTab.Builder, DisplayItemsGenerator, Row
 
-### Community 99 - "PlayerListInject"
-Cohesion: 0.08
-Nodes (11): com.mojang.authlib.GameProfile, CommonListenerCookie, Override, ServerCommonPacketListenerImplInject, PlayerListInject, net.minecraft.network.protocol.common.ServerboundPongPacket, net.minecraft.network.protocol.common.ServerCommonPacketListener, net.minecraft.server.network.CommonListenerCookie (+3 more)
+### Community 99 - "net.minecraft.network.Connection"
+Cohesion: 0.09
+Nodes (12): com.mojang.authlib.GameProfile, Override, CommonListenerCookie, Override, ServerCommonPacketListenerImplInject, PlayerListInject, net.minecraft.network.Connection, net.minecraft.network.protocol.common.ServerCommonPacketListener (+4 more)
 
 ### Community 100 - "FabricModFileWrapper"
 Cohesion: 0.08
@@ -915,24 +894,24 @@ Cohesion: 0.10
 Nodes (13): Handle, InsnConflictRemapProvider, AnnotationNode, ClassNode, FieldNode, KiltEnhancedRemapper, MethodNode, MethodReference (+5 more)
 
 ### Community 102 - "MinecraftInject"
-Cohesion: 0.08
-Nodes (13): InteractionKeyMappingTriggered, ItemColorsInjection, MinecraftInjection, ItemColorsInject, Override, Override, Reason, MinecraftInject (+5 more)
+Cohesion: 0.09
+Nodes (12): ItemColorsInjection, MinecraftInjection, ItemColorsInject, Override, Override, MinecraftInject, net.minecraft.client.color.item.ItemColor, net.minecraft.client.color.item.ItemColors (+4 more)
 
 ### Community 103 - "PortingLibItemExtensionsMixin"
 Cohesion: 0.11
 Nodes (33): io.github.fabricators_of_create.porting_lib.enchant.CustomEnchantingBehaviorItem, io.github.fabricators_of_create.porting_lib.item.DamageableItem, io.github.fabricators_of_create.porting_lib.item.extensions.ArmorTextureItem, io.github.fabricators_of_create.porting_lib.item.extensions.ArmorTickListeningItem, io.github.fabricators_of_create.porting_lib.item.extensions.BlockBreakResetItem, io.github.fabricators_of_create.porting_lib.item.extensions.BlockUseBypassingItem, io.github.fabricators_of_create.porting_lib.item.extensions.ContinueUsingItem, io.github.fabricators_of_create.porting_lib.item.extensions.CreativeModeTabExt (+25 more)
 
 ### Community 104 - "Kilt.kt"
-Cohesion: 0.13
-Nodes (14): BlockGetter, GsonBuilder, IBlockExtension, ClassTweakerUpdater, ClassNode, Project, Kilt, Logger (+6 more)
+Cohesion: 0.09
+Nodes (20): BlockGetter, GsonBuilder, IBlockExtension, ClassTweakerUpdater, ClassNode, Project, KiltClient, ClientModInitializer (+12 more)
 
-### Community 105 - "net.minecraft.world.entity.Mob"
-Cohesion: 0.07
-Nodes (22): CustomSpawnRules, MobInjection, WallClimberNavigationInject, FlyingMobInject, SkeletonInject, BaseSpawnerInject, Override, Override (+14 more)
+### Community 105 - "TrialSpawnerInject.java"
+Cohesion: 0.19
+Nodes (10): CustomSpawnRules, BaseSpawnerInject, Override, TrialSpawnerInject, net.minecraft.world.entity.SpawnGroupData, net.minecraft.world.level.BaseSpawner, net.minecraft.world.level.block.entity.trialspawner.TrialSpawner, net.minecraft.world.level.SpawnData (+2 more)
 
-### Community 106 - "java.util.function.Supplier"
-Cohesion: 0.08
-Nodes (20): FoodProperties.Builder, java.util.function.Supplier, FoodPropertiesBuilderInjection, Builder, FoodPropertiesInjection, FoodPropertiesPossibleEffectInjection, FoodProperties.PossibleEffect, PossibleEffect (+12 more)
+### Community 106 - "net.minecraft.world.effect.MobEffectInstance"
+Cohesion: 0.09
+Nodes (20): com.google.common.collect.Ordering, FoodProperties.Builder, FoodPropertiesBuilderInjection, Builder, FoodPropertiesInjection, FoodPropertiesPossibleEffectInjection, FoodProperties.PossibleEffect, PossibleEffect (+12 more)
 
 ### Community 107 - "ForgeSingleSlotStorage"
 Cohesion: 0.12
@@ -942,61 +921,61 @@ Nodes (12): ItemVariant, ForgeSingleSlotStorage, ForgeStackExtractSnapshot, Forg
 Cohesion: 0.09
 Nodes (15): Block, EnergyStorage, IEnergyStorage, FabricEnergyStorageCapability, SnapshotParticipant, TransactionContext, NeoForgeEnergySnapshot, NeoForgeEnergyStorage (+7 more)
 
-### Community 109 - "ShearsDispenseItemBehaviorInject.java"
-Cohesion: 0.17
-Nodes (7): ShearsDispenseItemBehaviorInject, PiglinAiInject, ArmorItemInject, net.minecraft.core.dispenser.BlockSource, net.minecraft.core.dispenser.ShearsDispenseItemBehavior, net.minecraft.world.entity.monster.piglin.PiglinAi, net.minecraft.world.item.ArmorItem
+### Community 109 - "KeyBindsScreenInject.java"
+Cohesion: 0.15
+Nodes (9): Implements, Intrinsic, Mixin, KeyBindsScreenInject, KeyBindsListAccessor, net.minecraft.client.gui.components.events.ContainerEventHandler, net.minecraft.client.gui.screens.options.controls.KeyBindsScreen, net.minecraft.client.gui.screens.options.OptionsSubScreen (+1 more)
 
 ### Community 110 - "org.spongepowered.asm.mixin.injection.ModifyArg"
-Cohesion: 0.06
-Nodes (21): com.mojang.datafixers.types.templates.TypeTemplate, EnderPearl, DebugScreenOverlayInject, V2832Inject, DamageSource, PoisonMobEffectInject, StartAttackingInject, ThrownEnderpearlInject (+13 more)
+Cohesion: 0.09
+Nodes (14): DebugScreenOverlayInject, DamageSource, PoisonMobEffectInject, StartAttackingInject, SmithingTransformRecipeInject, SmithingTrimRecipeInject, CampfireBlockInject, DebugScreenOverlayMixin (+6 more)
 
 ### Community 111 - "net.minecraft.nbt.CompoundTag"
-Cohesion: 0.09
+Cohesion: 0.08
 Nodes (19): CompoundTagInjection, ChunkAccessInjection, AsField, Provider, FactoryInjection, Factory, Provider, SavedDataInjection (+11 more)
 
 ### Community 112 - "net.minecraft.core.Holder"
-Cohesion: 0.12
-Nodes (18): Operation, AttributeSupplierBuilderInjection, AttributeSupplier.Builder, Builder, AttributeSupplierInject, BuilderInject, AttributeSupplier.Builder, Builder (+10 more)
+Cohesion: 0.13
+Nodes (17): Operation, AttributeSupplierBuilderInjection, AttributeSupplier.Builder, Builder, AttributeSupplierInject, BuilderInject, AttributeSupplier.Builder, Builder (+9 more)
 
 ### Community 113 - "net.minecraft.world.entity.MobCategory"
-Cohesion: 0.11
-Nodes (15): MobCategoryInjection, MobSpawnSettingsInjection, MobCategoryInject, MobSpawnCost, Override, SpawnerData, MobSpawnSettingsInject, SuppressWarnings (+7 more)
+Cohesion: 0.14
+Nodes (13): MobSpawnSettingsInjection, MobSpawnCost, Override, SpawnerData, MobSpawnSettingsInject, SuppressWarnings, MobCategoryAccessor, MobSpawnCost (+5 more)
 
-### Community 114 - "net.minecraft.client.renderer.blockentity.BlockEntityRenderer"
+### Community 114 - "SpawnerRendererInject.java"
+Cohesion: 0.29
+Nodes (7): AABB, Override, SpawnerRendererInject, BaseSpawnerInject, SpawnerBlockEntityInject, net.minecraft.client.renderer.blockentity.SpawnerRenderer, net.minecraft.world.level.block.entity.SpawnerBlockEntity
+
+### Community 115 - "net.neoforged.neoforge.client.settings.KeyModifier"
 Cohesion: 0.07
-Nodes (27): BannerRendererInject, Override, ChestRendererInject, Override, AABB, Override, ShulkerBoxRendererInject, AABB (+19 more)
+Nodes (26): com.bawnorton.mixinsquared.TargetHandler, committee.nova.mkb.api.IKeyBinding, committee.nova.mkb.api.IKeyConflictContext, committee.nova.mkb.keybinding.KeyBindingMap, committee.nova.mkb.keybinding.KeyConflictContext, de.siphalor.amecs.api.KeyModifiers, de.siphalor.amecs.impl.duck.IKeyBinding, de.siphalor.amecs.key_modifiers.api.AmecsKeyModifierCombination (+18 more)
 
-### Community 115 - "KeyMappingInject"
-Cohesion: 0.10
-Nodes (18): committee.nova.mkb.keybinding.KeyConflictContext, de.siphalor.amecs.api.KeyModifiers, de.siphalor.amecs.impl.duck.IKeyBinding, de.siphalor.amecs.key_modifiers.impl.duck.IKeyMapping, KeyMappingWorkaround, Override, KeyMappingMixin, Override (+10 more)
-
-### Community 116 - "AbstractButtonInject.java"
-Cohesion: 0.08
-Nodes (19): AbstractWidgetInjection, ButtonBuilderInjection, Builder, ButtonInjection, Builder, AbstractButtonInject, AbstractWidgetInject, Override (+11 more)
+### Community 116 - "KeyBindsListInject.java"
+Cohesion: 0.12
+Nodes (17): KeyBindsList.KeyEntry, ButtonBuilderInjection, Builder, ButtonInjection, Builder, ButtonBuilderInject, ButtonInject, Builder (+9 more)
 
 ### Community 117 - "net.minecraft.world.level.LevelReader"
 Cohesion: 0.05
-Nodes (37): javax.annotation.Nullable, StructureTemplateMixin, StructureBlockInfo, StructureEntityInfo, StructureProcessorInjection, StructureEntityInfo, StructureTemplateInjection, BigDripleafBlockInject (+29 more)
+Nodes (38): javax.annotation.Nullable, StructureTemplateMixin, StructureBlockInfo, StructureEntityInfo, StructureProcessorInjection, StructureEntityInfo, StructureTemplateInjection, BigDripleafBlockInject (+30 more)
 
 ### Community 118 - "LevelStorageSourceInject.java"
 Cohesion: 0.11
 Nodes (15): ListTagInjection, CompoundTagAnonymous1Inject, CompoundTagInject, ListTagInject, Override, LevelStorageAccessInject, LevelStorageSourceInject, LevelStorageSourceAccessor (+7 more)
 
-### Community 120 - "org.spongepowered.asm.mixin.Unique"
+### Community 119 - "ServerPlayerInject"
+Cohesion: 0.14
+Nodes (5): AnonymousContainerSynchronizer0Inject, Override, ServerPlayerInject, net.minecraft.world.inventory.AbstractContainerMenu, net.minecraft.world.MenuProvider
+
+### Community 120 - "net.neoforged.neoforge.client.GlStateBackup"
+Cohesion: 0.25
+Nodes (7): com.mojang.blaze3d.platform.GlStateManager, com.mojang.blaze3d.systems.RenderSystem, GlStateManagerInjection, RenderSystemInjection, GlStateManagerInject, RenderSystemInject, net.neoforged.neoforge.client.GlStateBackup
+
+### Community 121 - "PistonHeadRendererInject.java"
+Cohesion: 0.18
+Nodes (6): ItemBlockRenderTypesInjection, PistonHeadRendererInject, ItemBlockRenderTypesInject, ItemBlockRenderTypesAccessor, net.minecraft.client.renderer.blockentity.PistonHeadRenderer, net.minecraft.client.renderer.ItemBlockRenderTypes
+
+### Community 123 - "RecipeManagerInject.java"
 Cohesion: 0.16
-Nodes (12): com.mojang.blaze3d.platform.GlStateManager, com.mojang.blaze3d.systems.RenderSystem, EntityType.Builder, GlStateManagerInjection, RenderSystemInjection, Override, GlStateManagerInject, RenderSystemInject (+4 more)
-
-### Community 121 - "net.neoforged.neoforge.fluids.FluidType"
-Cohesion: 0.23
-Nodes (8): FluidInject, Override, FluidStateInject, FluidWorkaround, net.neoforged.neoforge.common.extensions.IFluidExtension, net.neoforged.neoforge.common.extensions.IFluidStateExtension, net.neoforged.neoforge.fluids.FluidType, org.spongepowered.asm.mixin.Implements
-
-### Community 122 - "ItemEntityInject"
-Cohesion: 0.16
-Nodes (3): ItemEntityInject, Override, net.minecraft.world.entity.item.ItemEntity
-
-### Community 123 - "net.minecraft.sounds.SoundEvent"
-Cohesion: 0.10
-Nodes (14): BlockItemInjection, MobBucketItemInjection, BlockItemInject, Override, SolidBucketItemInject, Override, StandingAndWallBlockItemInject, FenceGateBlockInject (+6 more)
+Nodes (10): Entry, JsonParseException, AdvancementInjection, RecipeInjection, AdvancementInject, ConditionalOps, RecipeManagerInject, SkippedConditionException (+2 more)
 
 ### Community 124 - "com.mojang.serialization.Lifecycle"
 Cohesion: 0.19
@@ -1010,9 +989,9 @@ Nodes (12): Details, DetailsInjection, MobEffectInstanceInjection, DetailsInject
 Cohesion: 0.14
 Nodes (10): io.github.fabricators_of_create.porting_lib.loot.extensions.LootPoolExtensions, LootPoolInjection, Mixin, Override, LootPoolInject, InvertedLootItemConditionAccessor, net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer, net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition (+2 more)
 
-### Community 127 - "net.minecraft.world.level.block.state.properties.WoodType"
-Cohesion: 0.18
-Nodes (9): SheetsInjection, WoodTypeInjection, SheetsInject, SheetsAccessor, WoodTypeAccessor, net.minecraft.client.renderer.Sheets, net.minecraft.world.level.block.entity.DecoratedPotPattern, net.minecraft.world.level.block.state.properties.BlockSetType (+1 more)
+### Community 127 - "net.minecraft.sounds.SoundEvent"
+Cohesion: 0.10
+Nodes (19): SheetsInjection, WoodTypeInjection, SheetsInject, DamageEffectsInject, ExtensionInfo, Mixin, NamedEnum, NetworkedEnum (+11 more)
 
 ### Community 128 - "net.minecraft.network.protocol.status.ServerStatus"
 Cohesion: 0.12
@@ -1023,12 +1002,12 @@ Cohesion: 0.12
 Nodes (16): BakedModel, BakedQuad, BlockAndTintGetter, BlockPos, BlockState, Direction, IBakedModelExtension, ItemOverrides (+8 more)
 
 ### Community 130 - "LootTableInject.java"
-Cohesion: 0.14
-Nodes (11): io.github.fabricators_of_create.porting_lib.loot.extensions.LootTableExtensions, LootTableInjection, AdvancementRewardsInject, Builder, Mixin, Override, LootTableInject, net.minecraft.advancements.AdvancementRewards (+3 more)
+Cohesion: 0.17
+Nodes (9): io.github.fabricators_of_create.porting_lib.loot.extensions.LootTableExtensions, it.unimi.dsi.fastutil.objects.ObjectArrayList, LootTableInjection, Mixin, Override, LootTableInject, net.minecraft.world.level.storage.loot.functions.LootItemFunction, net.minecraft.world.level.storage.loot.LootPool (+1 more)
 
 ### Community 131 - "ScreenEffectRendererInject.java"
-Cohesion: 0.18
-Nodes (5): ScreenEffectRendererInjection, ScreenEffectRendererInject, ScreenEffectRendererAccessor, net.minecraft.client.renderer.ScreenEffectRenderer, org.apache.commons.lang3.tuple.Pair
+Cohesion: 0.13
+Nodes (6): ScreenEffectRendererInjection, ScreenEffectRendererInject, ScreenEffectRendererAccessor, net.minecraft.client.renderer.block.BlockModelShaper, net.minecraft.client.renderer.ScreenEffectRenderer, org.apache.commons.lang3.tuple.Pair
 
 ### Community 132 - "AbstractMinecartInject"
 Cohesion: 0.18
@@ -1038,60 +1017,60 @@ Nodes (5): AbstractMinecartInjection, AbstractMinecartInject, Override, net.neof
 Cohesion: 0.14
 Nodes (13): RecipeBookMenuInjection, ClientRecipeBookInject, RecipeBookComponentInject, Override, RecipeBookMenuInject, SuppressWarnings, RecipeBookCategoriesAccessor, net.fabricmc.api.Environment (+5 more)
 
-### Community 134 - "IEnvironment"
-Cohesion: 0.06
-Nodes (21): IEnvironment, Keys, T, ILaunchHandlerService, ModuleLayer, IModuleLayerManager, Layer, ModuleLayer (+13 more)
+### Community 134 - "ILaunchPluginService"
+Cohesion: 0.04
+Nodes (30): IEnvironment, Keys, T, ILaunchHandlerService, IModuleLayerManager, Layer, ModuleLayer, Layer (+22 more)
 
 ### Community 135 - "VanillaModelEncoderMixin.java"
 Cohesion: 0.21
 Nodes (9): FRAPIThreadedStorage, FabricBakedModelMixin, VanillaModelEncoderMixin, net.fabricmc.fabric.api.renderer.v1.material.BlendMode, net.fabricmc.fabric.api.renderer.v1.material.RenderMaterial, net.fabricmc.fabric.api.renderer.v1.model.FabricBakedModel, net.fabricmc.fabric.api.renderer.v1.render.RenderContext, net.fabricmc.fabric.api.renderer.v1.Renderer (+1 more)
 
 ### Community 136 - "MobEffectInject.java"
-Cohesion: 0.17
-Nodes (12): it.unimi.dsi.fastutil.ints.Int2DoubleFunction, ExtendedAttributeTemplate, AttributeTemplateInjection, MobEffectInjection, AttributeTemplateInject, AttributeTemplate, Operation, Override (+4 more)
+Cohesion: 0.14
+Nodes (15): it.unimi.dsi.fastutil.ints.Int2DoubleFunction, ExtendedAttributeTemplate, AttributeTemplateInjection, MobEffectInjection, AttributeTemplateInject, AttributeTemplate, Operation, Override (+7 more)
 
 ### Community 137 - "TagsProviderInject.java"
-Cohesion: 0.17
-Nodes (9): IResourceType, TagsProviderInjection, Override, PathProvider, TagsProviderInject, TagsProviderAccessor, net.minecraft.data.tags.TagsProvider, net.neoforged.neoforge.common.data.ExistingFileHelper (+1 more)
+Cohesion: 0.19
+Nodes (8): IResourceType, TagsProviderInjection, Override, PathProvider, TagsProviderInject, TagsProviderAccessor, net.minecraft.data.tags.TagsProvider, net.neoforged.neoforge.common.data.ExistingFileHelper
 
 ### Community 138 - "net.minecraft.world.level.chunk.LevelChunk"
-Cohesion: 0.10
-Nodes (12): GenerationChunkHolderInjection, ClientChunkCacheInject, GenerationChunkHolderInject, Override, PlayerChunkSenderInject, Override, LevelChunkInject, CommonLevelWorkaround (+4 more)
+Cohesion: 0.14
+Nodes (12): GenerationChunkHolderInjection, ClientChunkCacheInject, GenerationChunkHolderInject, Override, PlayerChunkSenderInject, ChunkStatusTasksInject, net.minecraft.client.multiplayer.ClientChunkCache, net.minecraft.server.level.GenerationChunkHolder (+4 more)
 
 ### Community 139 - "MobInject"
-Cohesion: 0.14
-Nodes (7): EntityType, Mob, MobSpawnType, Override, MobInject, EntityType, LivingEntity
-
-### Community 140 - "VillagerInject.java"
 Cohesion: 0.10
-Nodes (11): PigInject, RavagerInject, WitchInject, VillagerInject, net.minecraft.world.entity.animal.Pig, net.minecraft.world.entity.LightningBolt, net.minecraft.world.entity.monster.Ravager, net.minecraft.world.entity.monster.Witch (+3 more)
+Nodes (10): MobInjection, EntityType, EquipmentSlot, Mob, MobSpawnType, Override, MobInject, EntityType (+2 more)
+
+### Community 140 - "net.minecraft.server.level.ServerLevel"
+Cohesion: 0.05
+Nodes (34): com.llamalad7.mixinextras.sugar.ref.LocalLongRef, java.util.function.BooleanSupplier, HarvestFarmlandInject, PigInject, Override, MagmaCubeInject, WitchInject, VillagerInject (+26 more)
 
 ### Community 141 - "PersistentEntitySectionManagerInject.java"
-Cohesion: 0.15
-Nodes (11): CallbackInject, Override, PersistentEntitySectionManagerInject, CallbackInject, TransientEntitySectionManagerInject, net.minecraft.world.level.entity.EntityAccess, net.minecraft.world.level.entity.EntitySection, net.minecraft.world.level.entity.PersistentEntitySectionManager (+3 more)
+Cohesion: 0.12
+Nodes (12): PersistentEntitySectionManagerInjection, CallbackInject, Override, PersistentEntitySectionManagerInject, CallbackInject, TransientEntitySectionManagerInject, net.minecraft.world.level.entity.EntityAccess, net.minecraft.world.level.entity.EntitySection (+4 more)
 
 ### Community 142 - "net.minecraft.resources.ResourceLocation"
-Cohesion: 0.06
-Nodes (21): io.github.fabricators_of_create.porting_lib.extensions.common.ResourceLocationExtension, TextureAtlasInjection, ResourceLocationInjection, SimpleJsonResourceReloadListenerInjection, SpriteLoaderInject, Override, TextureAtlasInject, Override (+13 more)
+Cohesion: 0.08
+Nodes (14): io.github.fabricators_of_create.porting_lib.extensions.common.ResourceLocationExtension, BuiltInRegistriesInjection, ResourceLocationInjection, BuiltInRegistriesInject, Override, ResourceLocationInject, BuilderInject, CreativeModeTabInject (+6 more)
 
-### Community 143 - "CoreMod"
-Cohesion: 0.10
-Nodes (12): A, ClassNode, FieldNode, MethodNode, TargetType, CoreMod, Bindings, Bindings (+4 more)
+### Community 143 - "CoreModLoader.kt"
+Cohesion: 0.07
+Nodes (18): A, RuntimeException, VoteDeadlockException, RuntimeException, VoteRejectedException, ClassNode, FieldNode, MethodNode (+10 more)
 
 ### Community 144 - "Key"
-Cohesion: 0.10
+Cohesion: 0.11
 Nodes (16): C1, C2, Comparable, Provider, SessionSearchTreesInjection, Override, Provider, SessionSearchTreesInject (+8 more)
 
 ### Community 145 - "ItemFrameRendererInject.java"
-Cohesion: 0.30
-Nodes (6): ItemFrameRendererInject, ItemFrameInject, net.minecraft.client.renderer.entity.ItemFrameRenderer, net.minecraft.world.entity.decoration.ItemFrame, net.minecraft.world.level.saveddata.maps.MapId, net.minecraft.world.level.saveddata.maps.MapItemSavedData
+Cohesion: 0.18
+Nodes (10): MapItemInjection, ItemFrameRendererInject, ItemFrameInject, Override, MapItemInject, net.minecraft.client.renderer.entity.ItemFrameRenderer, net.minecraft.world.entity.decoration.ItemFrame, net.minecraft.world.item.MapItem (+2 more)
 
 ### Community 146 - "org.jetbrains.annotations.Nullable"
-Cohesion: 0.09
-Nodes (16): fr.catcore.cursedmixinextensions.annotations.ShadowSuper, ItemEntityInjection, BlockEntityInjection, TiersInject, BlockEntityInject, Override, ChunkAccessInject, AsField (+8 more)
+Cohesion: 0.10
+Nodes (13): ItemEntityInjection, Override, Override, AbstractVillagerInject, TiersInject, ChunkAccessInject, AsField, Override (+5 more)
 
 ### Community 147 - "net.minecraft.world.level.ChunkPos"
-Cohesion: 0.13
+Cohesion: 0.14
 Nodes (14): io.github.fabricators_of_create.porting_lib.chunk.loading.extensions.ServerChunkCacheExtension, io.github.fabricators_of_create.porting_lib.chunk.loading.extensions.TicketExtension, it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap, DistanceManagerInjection, ServerChunkCacheInjection, TicketInjection, DistanceManagerInject, TicketInject (+6 more)
 
 ### Community 148 - "KiltFabricCompatsKnitExtension.kt"
@@ -1103,32 +1082,32 @@ Cohesion: 0.16
 Nodes (10): FluidStack, FluidVariant, MutableIterator, SnapshotParticipant, TransactionContext, NeoForgeFluidStackSnapshot, NeoForgeFluidStorage, MutableIterator (+2 more)
 
 ### Community 150 - "PoweredRailBlockInject.java"
-Cohesion: 0.07
-Nodes (20): PoweredRailBlockInjection, AnonymousDispenseBehaviorInject, MinecartItemInject, BaseRailBlockInject, Override, ChestBlockInject, NoteBlockInject, Override (+12 more)
+Cohesion: 0.14
+Nodes (10): PoweredRailBlockInjection, BaseRailBlockInject, Override, Override, PoweredRailBlockInject, net.minecraft.world.level.block.BaseRailBlock, net.minecraft.world.level.block.PoweredRailBlock, net.minecraft.world.level.block.state.properties.Property (+2 more)
 
 ### Community 151 - "ScreenshotInject.java"
 Cohesion: 0.23
 Nodes (6): com.mojang.blaze3d.pipeline.RenderTarget, PostChainInject, ScreenshotInject, net.minecraft.client.renderer.PostChain, net.minecraft.client.Screenshot, net.neoforged.neoforge.client.event.ScreenshotEvent
 
 ### Community 152 - "SoundEngineInject.java"
-Cohesion: 0.09
-Nodes (22): ChannelAccess.ChannelHandle, ChannelHandle, com.mojang.blaze3d.audio.Channel, SoundConsumerStorage, SoundInstanceInjection, ChannelAccessHandleInjection, Pool, Override (+14 more)
+Cohesion: 0.16
+Nodes (10): ChannelAccess.ChannelHandle, com.mojang.blaze3d.audio.Channel, SoundConsumerStorage, ChannelAccessHandleInjection, Pool, SoundEngineInject, ChannelAccessHandleMixin, Override (+2 more)
 
 ### Community 153 - "KiltHelper"
 Cohesion: 0.09
 Nodes (17): ClassValue, AnnotationNode, ClassNode, KiltEnhancedRemapper, remapClass(), remapMixinAnnotation(), remapMixinAnnotations(), remapUnmappedRefmaps() (+9 more)
 
 ### Community 154 - "DataGeneratorInject"
-Cohesion: 0.15
-Nodes (12): DataGeneratorInjection, Factory, DataGeneratorInject, Factory, Override, PackOutput, DataProviderInject, DataGeneratorAccessor (+4 more)
+Cohesion: 0.17
+Nodes (11): DataGeneratorInjection, Factory, DataGeneratorInject, Factory, Override, PackOutput, DataProviderInject, DataGeneratorAccessor (+3 more)
 
-### Community 155 - "PlayerInject"
-Cohesion: 0.06
-Nodes (15): com.llamalad7.mixinextras.sugar.ref.LocalFloatRef, DamageSourceInject, AbilitiesInject, Builder, Entity, Inject, ModifyArg, Override (+7 more)
+### Community 155 - "org.spongepowered.asm.mixin.injection.callback.CallbackInfo"
+Cohesion: 0.04
+Nodes (31): com.illusivesoulworks.spectrelib.EntrypointUtils, com.llamalad7.mixinextras.sugar.ref.LocalDoubleRef, dan200.computercraft.shared.ComputerCraft, ComputerCraftMixin, PanoramaRendererInject, TeleportCommandInject, MinecraftServerGuiInject, MainInject (+23 more)
 
-### Community 156 - "Type"
-Cohesion: 0.08
-Nodes (20): Type, PLUGIN, REASON, TRANSFORMER, NamedPath, ComputeFlags, ILaunchPluginService, ITransformerLoader (+12 more)
+### Community 156 - ".bake"
+Cohesion: 0.17
+Nodes (14): IUnbakedGeometry, FabricGeometryLoaderWrapper, IGeometryLoader, JsonDeserializationContext, BakedModel, IGeometryBakingContext, ItemOverrides, Material (+6 more)
 
 ### Community 157 - "ConfigParserTransform.java"
 Cohesion: 0.18
@@ -1138,53 +1117,49 @@ Nodes (16): com.electronwill.nightconfig.core.Config, com.electronwill.nightconf
 Cohesion: 0.22
 Nodes (4): PrimaryLevelDataInjection, Override, PrimaryLevelDataInject, net.minecraft.world.level.storage.PrimaryLevelData
 
-### Community 159 - "net.minecraft.world.item.ItemDisplayContext"
-Cohesion: 0.09
-Nodes (16): com.google.common.collect.ImmutableMap, com.mojang.blaze3d.vertex.VertexFormatElement, ItemTransforms.Deserializer, VertexFormatInjection, ItemTransformsInjection, ItemDisplayContextInjection, Override, VertexFormatInject (+8 more)
-
 ### Community 160 - "PreMixin"
 Cohesion: 0.14
 Nodes (22): GeoRenderEvent.Armor, GeoRenderEvent.Armor.Pre, GeoRenderEvent.Block, GeoRenderEvent.Block.Pre, GeoRenderEvent.Entity, GeoRenderEvent.Entity.Pre, GeoRenderEvent.Item, GeoRenderEvent.Item.Pre (+14 more)
 
-### Community 161 - "net.minecraft.tags.TagEntry"
-Cohesion: 0.16
-Nodes (12): TagFileInjection, TagLoaderInjection, Instance, Mu, Override, TagFileInject, net.fabricmc.fabric.api.tag.v1.FabricTagFile, net.fabricmc.fabric.impl.tag.TagFileHooks (+4 more)
+### Community 161 - "AbstractButtonInject.java"
+Cohesion: 0.17
+Nodes (6): AbstractWidgetInjection, AbstractButtonInject, AbstractWidgetInject, Override, net.minecraft.client.gui.components.AbstractWidget, net.neoforged.neoforge.client.extensions.IAbstractWidgetExtension
 
-### Community 162 - "GrassColorModifierInject"
-Cohesion: 0.12
-Nodes (12): BiomeSpecialEffectsInjection, ColorModifier, GrassColorModifierInjection, FunctionalInterface, GrassColorModifier, GrassColorModifierInject, BiomeSpecialEffects.GrassColorModifier, ExtensionInfo (+4 more)
+### Community 162 - "Extends"
+Cohesion: 0.08
+Nodes (21): dev.ryanhcode.sable.api.block.BlockEntitySubLevelReactionWheel, dev.ryanhcode.sable.api.block.propeller.BlockEntityPropeller, java.lang.annotation.Retention, java.lang.annotation.Target, BlockEntityPropellerMixin, BlockEntitySubLevelReactionWheelMixin, AbstractOverride, Extends (+13 more)
 
 ### Community 163 - "LootContextInject.java"
 Cohesion: 0.15
 Nodes (12): io.github.fabricators_of_create.porting_lib.loot.extensions.LootContextExtensions, BuilderInject, Builder, Provider, LootContextInject, BuilderInject, LootParams.Builder, LootParamsInject (+4 more)
 
-### Community 164 - ".compile"
-Cohesion: 0.21
-Nodes (7): com.mojang.blaze3d.vertex.VertexSorting, AdditionalSectionRenderer, Results, SectionCompilerInjection, AdditionalSectionRenderer, Override, Results
+### Community 164 - "ServerAdvancementManagerInject.java"
+Cohesion: 0.15
+Nodes (8): SimpleJsonResourceReloadListenerInjection, SimpleJsonResourceReloadListenerInject, ServerAdvancementManagerInject, RegistryOpsAccessor, net.minecraft.resources.RegistryOps, net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener, net.minecraft.server.ServerAdvancementManager, RegistryInfoLookup
 
-### Community 165 - "net.minecraft.core.Registry"
-Cohesion: 0.11
-Nodes (22): RegistrySetBuilderInjection, VanillaRegistriesInjection, BuildStateInject, Override, RegistryLookup, RegistrySetBuilderInject, VanillaRegistriesInject, VillagerTypeInject (+14 more)
+### Community 165 - "RegistrySetBuilderInject.java"
+Cohesion: 0.14
+Nodes (13): RegistrySetBuilderInjection, VanillaRegistriesInjection, BuildStateInject, Override, RegistryLookup, RegistrySetBuilderInject, VanillaRegistriesInject, VanillaRegistriesAccessor (+5 more)
 
-### Community 166 - "FoxInject.java"
-Cohesion: 0.08
-Nodes (19): Fox.FoxEatBerriesGoal, EatBlockGoalInject, FloatGoalInject, MeleeAttackGoalInject, FoxBreedGoalInject, FoxEatBerriesGoalInject, FoxFloatGoalInject, FoxInject (+11 more)
+### Community 166 - "BlockStatePredictionHandlerInject.java"
+Cohesion: 0.16
+Nodes (8): BlockStatePredictionHandler.ServerVerifiedState, BlockStatePredictionHandlerInjection, ServerVerifiedStateInjection, BlockStatePredictionHandlerInject, Override, ServerVerifiedStateInject, net.minecraft.client.multiplayer.prediction.BlockStatePredictionHandler, ServerVerifiedState
 
 ### Community 167 - "EntityBuilderAdapter"
 Cohesion: 0.18
 Nodes (8): Entity, EntityDimensions, EntityBuilderAdapter, Block, Builder, EntityType, FeatureFlag, T
 
 ### Community 168 - "ParticleEngineInject.java"
-Cohesion: 0.18
-Nodes (9): ParticleEngineInjection, Override, ParticleEngineInject, net.minecraft.client.particle.ParticleEngine, net.minecraft.client.particle.ParticleProvider, net.minecraft.client.particle.ParticleRenderType, net.minecraft.client.renderer.culling.Frustum, net.minecraft.client.renderer.LightTexture (+1 more)
+Cohesion: 0.11
+Nodes (14): ParticleEngineInjection, Override, ParticleEngineInject, ItemParticleOptionInject, LevelRendererAccessor, net.minecraft.client.particle.Particle, net.minecraft.client.particle.ParticleProvider, net.minecraft.client.particle.ParticleRenderType (+6 more)
 
 ### Community 169 - "CombatTrackerInject.java"
 Cohesion: 0.16
 Nodes (12): DeathMessageTypeInjection, CombatTrackerInject, DeathMessageTypeInject, ExtensionInfo, NamedEnum, NetworkedEnum, Override, ReservedConstructor (+4 more)
 
-### Community 170 - "ITransformer"
-Cohesion: 0.15
-Nodes (8): ITransformer, T, T, TargetType, T, TransformList, TransformTargetLabel, TargetType
+### Community 170 - "TargetType"
+Cohesion: 0.22
+Nodes (5): T, TargetType, T, TransformList, TransformTargetLabel
 
 ### Community 171 - "TransformingList"
 Cohesion: 0.24
@@ -1206,53 +1181,53 @@ Nodes (7): AdvancementVisibilityEvaluatorInject, Output, K, ObjectArrayList, Loc
 Cohesion: 0.22
 Nodes (8): BiConsumer_WithExceptions, Consumer_WithExceptions, Function_WithExceptions, FunctionalInterface, SuppressWarnings, LambdaExceptionUtils, Runnable_WithExceptions, Supplier_WithExceptions
 
-### Community 176 - "net.minecraft.world.level.block.entity.BlockEntity"
-Cohesion: 0.05
-Nodes (22): BlockStatePredictionHandler.ServerVerifiedState, HashMap, BlockStatePredictionHandlerInjection, ServerVerifiedStateInjection, BlockInjection, BlockStatePredictionHandlerInject, Override, ServerVerifiedStateInject (+14 more)
+### Community 176 - "LevelInject"
+Cohesion: 0.14
+Nodes (3): ApiStatus.Internal, Override, LevelInject
 
 ### Community 177 - ".add"
 Cohesion: 0.23
 Nodes (9): FieldInsnNode, RemappingFieldInsnNode, AbstractInsnNode, InsnList, RemappingInsnList, MethodInsnNode, RemappingMethodInsnNode, ClassNode (+1 more)
 
 ### Community 178 - "IrlRedactorConfigPersistence"
+Cohesion: 0.16
+Nodes (7): com.google.gson.Gson, JsonObject, net.fabricmc.api.ClientModInitializer, ExampleModClient, Override, IrlRedactorConfigPersistence, LightEditorScreenPersistenceMixin
+
+### Community 179 - "ComposterBlockInject"
+Cohesion: 0.29
+Nodes (4): ComposterBlockInjection, ComposterBlockInject, InputContainerInject, net.minecraft.world.level.block.ComposterBlock
+
+### Community 180 - "SimpleBakedModelInject.java"
+Cohesion: 0.19
+Nodes (11): SimpleBakedModel.Builder, SimpleBakedModelBuilderInjection, SimpleBakedModel, SimpleBakedModelInjection, BuilderInject, Override, SimpleBakedModel.Builder, SimpleBakedModelInject (+3 more)
+
+### Community 181 - "ComputerCraftAPIImplMixin.java"
 Cohesion: 0.08
-Nodes (20): IUnbakedGeometry, FabricGeometryLoaderWrapper, IGeometryLoader, JsonDeserializationContext, JsonObject, BakedModel, IGeometryBakingContext, ItemOverrides (+12 more)
-
-### Community 179 - "ComposterBlockInject.java"
-Cohesion: 0.26
-Nodes (5): it.unimi.dsi.fastutil.objects.Object2FloatMap, ComposterBlockInjection, ComposterBlockInject, InputContainerInject, net.minecraft.world.level.block.ComposterBlock
-
-### Community 180 - "SimpleBakedModelInject"
-Cohesion: 0.19
-Nodes (10): SimpleBakedModel.Builder, SimpleBakedModelBuilderInjection, SimpleBakedModel, SimpleBakedModelInjection, BuilderInject, Override, SimpleBakedModel.Builder, SimpleBakedModelInject (+2 more)
-
-### Community 181 - "FluidStackMixin"
-Cohesion: 0.19
-Nodes (6): FluidStackMixin, Implements, Mixin, Shadow, FluidTransferUtils, mezz.jei.api.fabric.ingredients.fluids.IJeiFluidIngredient
+Nodes (22): dan200.computercraft.api.detail.DetailRegistry, dan200.computercraft.impl.ComputerCraftAPIForgeService, dan200.computercraft.impl.ComputerCraftAPIImpl, FluidRenderHelperMixin, NeoForgeCatnipServicesMixin, NeoForgeTypes, ComputerCraftAPIImplMixin, Override (+14 more)
 
 ### Community 182 - "net.minecraft.core.registries.Registries"
-Cohesion: 0.17
-Nodes (8): BlockTagsInjection, ItemTagsInjection, RegistriesInject, BlockTagsInject, ItemTagsInject, net.minecraft.core.registries.Registries, net.minecraft.tags.BlockTags, net.minecraft.tags.ItemTags
+Cohesion: 0.16
+Nodes (11): ItemEnchantmentsPredicate.Enchantments, ItemTagsInjection, EnchantmentsInject, ItemEnchantmentsPredicateInject, Override, RegistriesInject, ItemTagsInject, net.minecraft.advancements.critereon.EnchantmentPredicate (+3 more)
 
 ### Community 183 - "PoiTypesInject.java"
 Cohesion: 0.31
 Nodes (5): PoiTypeInject, PoiTypesInject, PoiTypesAccessor, net.minecraft.world.entity.ai.village.poi.PoiType, net.minecraft.world.entity.ai.village.poi.PoiTypes
 
-### Community 184 - "org.spongepowered.asm.mixin.Shadow"
-Cohesion: 0.07
-Nodes (21): com.electronwill.nightconfig.core.file.CommentedFileConfig, com.illusivesoulworks.spectrelib.config.SpectreConfig, com.illusivesoulworks.spectrelib.config.SpectreConfigSpec, com.illusivesoulworks.spectrelib.config.SpectreConfigTracker, ItemRendererInject, Pose, SpriteResourceLoaderInject, HolderInject (+13 more)
+### Community 184 - "net.minecraft.client.renderer.MultiBufferSource"
+Cohesion: 0.14
+Nodes (10): ItemRendererInject, Pose, LivingEntityRendererInject, ItemRendererAccessor, net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer, net.minecraft.client.renderer.entity.ItemRenderer, net.minecraft.client.renderer.entity.LivingEntityRenderer, net.minecraft.client.renderer.MultiBufferSource (+2 more)
 
 ### Community 185 - "net.minecraft.client.KeyMapping"
 Cohesion: 0.06
-Nodes (26): de.siphalor.amecs.api.KeyBindingUtils, FieldAccess, KeyBindsList.KeyEntry, KeyBindingUtilsMixin, OptionsInjection, KeyBindsListInject, KeyEntryInject, Implements (+18 more)
+Nodes (20): com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod, FieldAccess, OptionsInjection, Mixin, Override, Overwrite, KeyMappingInject, Override (+12 more)
 
 ### Community 186 - "WrappedGeometryBakingContext"
 Cohesion: 0.17
 Nodes (7): IGeometryBakingContext, ItemTransforms, Material, ResourceLocation, Transformation, WrappedGeometryBakingContext, PortingLibGeometryBakingContext
 
 ### Community 187 - "net.minecraft.world.flag.FeatureFlagSet"
-Cohesion: 0.06
-Nodes (15): FeatureFlagRegistry.Builder, FeatureFlagInjection, BuilderInjection, FeatureFlagRegistryInjection, FeatureFlagSetInjection, FeatureFlagInject, Override, BuilderInject (+7 more)
+Cohesion: 0.09
+Nodes (8): FeatureFlagInjection, FeatureFlagSetInjection, FeatureFlagInject, Override, FeatureFlagSetInject, Override, net.minecraft.world.flag.FeatureFlagSet, net.minecraft.world.flag.FeatureFlagUniverse
 
 ### Community 188 - "ServerStatusInject.java"
 Cohesion: 0.14
@@ -1266,88 +1241,88 @@ Nodes (7): DetailProvider, DetailRegistry, FluidStack, FluidVariant, Transaction
 Cohesion: 0.24
 Nodes (6): FabricSingleStorageWrapper, FabricStorageWrapper, SingleSlotStorage, SlottedStorage, TransactionContext, V
 
-### Community 191 - "MenuScreensInject.java"
-Cohesion: 0.19
-Nodes (8): ApiStatus.Internal, ScreenConstructor, MenuScreensInjection, ScreenConstructor, MenuScreensInject, ScreenConstructor, MenuScreensAccessor, net.minecraft.client.gui.screens.MenuScreens
+### Community 191 - "net.minecraft.world.inventory.MenuType"
+Cohesion: 0.14
+Nodes (13): ApiStatus.Internal, ScreenConstructor, MenuScreensInjection, ScreenConstructor, MenuScreensInject, Override, MenuTypeInject, ScreenConstructor (+5 more)
 
 ### Community 192 - "net.minecraft.world.inventory.RecipeBookType"
 Cohesion: 0.15
 Nodes (14): com.mojang.datafixers.util.Pair, BoatRendererInjection, RecipeBookSettingsInjection, BoatRendererInject, Override, RecipeBookSettingsInject, RecipeBookSettingsAccessor, SuppressWarnings (+6 more)
 
-### Community 193 - "ModelManagerInject"
-Cohesion: 0.15
-Nodes (13): DimensionSpecialEffectsInject, BakedModel, ModelBakery, ModelManager, ModelResourceLocation, ModelManagerInject, net.minecraft.client.renderer.DimensionSpecialEffects, net.minecraft.util.profiling.ProfilerFiller (+5 more)
+### Community 193 - "ModelBakeryInject.java"
+Cohesion: 0.10
+Nodes (18): ModelManagerInjection, ModelResourceLocation, ModelResourceLocationInjection, BakedModel, ModelBakery, ModelManager, ModelResourceLocation, ModelManagerInject (+10 more)
 
 ### Community 194 - "ModelBakerImplInject"
 Cohesion: 0.21
 Nodes (11): BakedModel, Material, ModelBakery, ModelResourceLocation, ModelState, Override, UnbakedModel, ModelBakerImplInject (+3 more)
 
-### Community 195 - "SectionRenderDispatcherInject.java"
-Cohesion: 0.21
-Nodes (9): AdditionalSectionRenderer, RebuildTaskInjection, RenderSectionInjection, SectionRenderDispatcherInjection, MutableBlockPos, RenderSectionInject, SectionRenderDispatcherInject, net.minecraft.client.renderer.chunk.SectionRenderDispatcher (+1 more)
+### Community 195 - "EntityTypeInject"
+Cohesion: 0.15
+Nodes (7): EntityType.Builder, BuilderInject, EntityTypeInject, Builder, Override, Reference, SuppressWarnings
 
 ### Community 196 - "net.minecraft.core.component.DataComponentType"
-Cohesion: 0.14
-Nodes (10): it.unimi.dsi.fastutil.objects.Reference2ObjectMap, PatchedDataComponentMapInjection, Override, PatchedDataComponentMapInject, DataComponentInputInject, MutableDataComponentHolderMixin, MutableDataComponentHolderWorkaround, net.minecraft.core.component.DataComponentType (+2 more)
+Cohesion: 0.22
+Nodes (5): DataComponentInputInject, MutableDataComponentHolderMixin, MutableDataComponentHolderWorkaround, net.minecraft.core.component.DataComponentType, net.neoforged.neoforge.common.MutableDataComponentHolder
 
-### Community 197 - "com.bawnorton.mixinsquared.TargetHandler"
-Cohesion: 0.12
-Nodes (11): com.bawnorton.mixinsquared.TargetHandler, committee.nova.mkb.api.IKeyBinding, committee.nova.mkb.api.IKeyConflictContext, committee.nova.mkb.keybinding.KeyBindingMap, Override, KeyMappingMixin, SodiumRenderStorage, ItemRendererMixin (+3 more)
+### Community 197 - "ItemRendererMixin.java"
+Cohesion: 0.36
+Nodes (5): SodiumRenderStorage, ItemRendererMixin, Pose, net.caffeinemc.mods.sodium.api.vertex.buffer.VertexBufferWriter, net.caffeinemc.mods.sodium.client.model.quad.ModelQuadView
 
 ### Community 198 - "EnumExtensionLoader.kt"
 Cohesion: 0.18
 Nodes (16): EnumParameters, EnumPrototype, EnumProxy, applyEnumExtensions(), countEnumFields(), fixSize(), forceSetEnumProxyValue(), getCastClass() (+8 more)
 
-### Community 199 - "ItemInject.java"
-Cohesion: 0.11
-Nodes (11): Item.TooltipContext, IForgeItemMixin, RenderPropertiesInjection, AnonymousOfLevelInject, ItemInject, Override, PropertiesInject, TooltipContextInject (+3 more)
+### Community 199 - "ItemInject"
+Cohesion: 0.16
+Nodes (7): Item.TooltipContext, AnonymousOfLevelInject, ItemInject, Override, PropertiesInject, TooltipContextInject, TooltipContext
 
-### Community 200 - "multiplayer/CommonListenerCookieInject.java"
-Cohesion: 0.20
-Nodes (9): ServerDataInjection, Frozen, Override, ServerDataInject, net.minecraft.client.multiplayer.ServerData, net.minecraft.client.telemetry.WorldSessionTelemetryManager, net.minecraft.server.ServerLinks, net.neoforged.neoforge.client.ExtendedServerListData (+1 more)
+### Community 200 - "ServerDataInject"
+Cohesion: 0.35
+Nodes (5): ServerDataInjection, Override, ServerDataInject, net.minecraft.client.multiplayer.ServerData, net.neoforged.neoforge.client.ExtendedServerListData
 
-### Community 201 - "LocalPlayerInject.java"
-Cohesion: 0.09
-Nodes (8): LocalPlayerInjection, LocalPlayerInject, ArmPose, PlayerRendererInject, net.minecraft.client.model.geom.ModelPart, net.minecraft.client.player.AbstractClientPlayer, net.minecraft.client.player.Input, net.minecraft.client.renderer.entity.player.PlayerRenderer
+### Community 201 - "KiltHelper.kt"
+Cohesion: 0.03
+Nodes (46): com.llamalad7.mixinextras.injector.v2.WrapWithCondition, EnderPearl, LocalPlayerInjection, BucketItemInjection, RightClickBlock, MultiPlayerGameModeInject, AbstractClientPlayerInject, LocalPlayerInject (+38 more)
 
 ### Community 202 - "RarityInject"
-Cohesion: 0.13
-Nodes (12): RarityInjection, ExtensionInfo, IndexedEnum, NamedEnum, NetworkedEnum, Override, RarityInject, SuppressWarnings (+4 more)
+Cohesion: 0.14
+Nodes (10): ContentConsumer, RarityInjection, ExtensionInfo, IndexedEnum, NamedEnum, NetworkedEnum, Override, RarityInject (+2 more)
 
-### Community 203 - "net.minecraft.client.renderer.chunk.RenderChunkRegion"
-Cohesion: 0.23
-Nodes (8): AdditionalSectionRenderer, Override, RenderSection, Results, RebuildTaskInject, net.minecraft.client.renderer.chunk.RenderChunkRegion, net.minecraft.client.renderer.chunk.SectionCompiler, SectionRenderDispatcher.RenderSection.RebuildTask
+### Community 203 - "net.minecraft.world.flag.FeatureFlag"
+Cohesion: 0.20
+Nodes (7): FeatureFlagRegistry.Builder, BuilderInjection, FeatureFlagRegistryInjection, BuilderInject, FeatureFlagRegistryInject, Override, net.minecraft.world.flag.FeatureFlag
 
 ### Community 204 - "KiltEarlyRiser.kt"
-Cohesion: 0.09
-Nodes (16): GameTestWorkaround, AnnotationWorkaroundFixer, ClassNode, EnvironmentRemapper, AnnotationNode, ClassNode, Dist, EnvType (+8 more)
+Cohesion: 0.15
+Nodes (8): GameTestWorkaround, AnnotationWorkaroundFixer, ClassNode, EventClassVisibilityFixer, ClassNode, AnnotationNode, ClassNode, ObjectHolderDefinalizer
 
 ### Community 205 - "EnchantmentInject.java"
 Cohesion: 0.20
 Nodes (7): Enchantment.Builder, EnchantmentBuilderInjection, Builder, BuilderInject, EnchantmentInject, Builder, Override
 
-### Community 206 - "com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef"
-Cohesion: 0.05
-Nodes (22): AnvilMenu, com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef, DataSlot, it.unimi.dsi.fastutil.ints.IntOpenHashSet, ItemCombinerMenu, AnvilMenuInjection, ItemInHandRendererInject, AbstractArrowInject (+14 more)
+### Community 206 - "CrafterBlockInject.java"
+Cohesion: 0.16
+Nodes (9): BeehiveBlockInject, CrafterBlockInject, EnchantingTableBlockInject, net.minecraft.world.item.crafting.CraftingRecipe, net.minecraft.world.level.block.BaseEntityBlock, net.minecraft.world.level.block.BeehiveBlock, net.minecraft.world.level.block.CrafterBlock, net.minecraft.world.level.block.EnchantingTableBlock (+1 more)
 
 ### Community 207 - "FabricResourcefulRegistryMixin.java"
-Cohesion: 0.17
+Cohesion: 0.20
 Nodes (9): com.teamresourceful.resourcefullib.common.registry.fabric.FabricResourcefulRegistry, com.teamresourceful.resourcefullib.common.registry.HolderRegistryEntry, com.teamresourceful.resourcefullib.common.registry.RegistryEntry, FabricResourcefulRegistryMixin, KiltResourcefulLibCompat, DeferredRegister, T, net.neoforged.neoforge.registries.DeferredRegister (+1 more)
 
-### Community 208 - "GameRendererInject.java"
-Cohesion: 0.15
-Nodes (10): com.mojang.blaze3d.vertex.VertexFormat, ShaderInstance, ShaderInstanceInjection, GameRendererInject, ShaderInstanceInject, ShaderInstanceMixin, ShaderInstanceMixin, net.minecraft.client.renderer.GameRenderer (+2 more)
+### Community 208 - "ShaderInstanceInject.java"
+Cohesion: 0.23
+Nodes (8): com.mojang.blaze3d.vertex.VertexFormat, ShaderInstance, ShaderInstanceInjection, ShaderInstanceInject, ShaderInstanceMixin, ShaderInstanceMixin, net.minecraft.client.renderer.ShaderInstance, net.minecraft.server.packs.resources.ResourceProvider
 
-### Community 209 - "FabricLevelAccessMixin.java"
-Cohesion: 0.24
-Nodes (6): MinecraftHelpersMixin, FabricLevelAccessMixin, net.caffeinemc.mods.sodium.client.services.SodiumModelDataContainer, net.caffeinemc.mods.sodium.fabric.level.FabricLevelAccess, org.spongepowered.asm.mixin.Overwrite, SodiumModelDataContainer
+### Community 209 - "ClientPacketListenerInject"
+Cohesion: 0.12
+Nodes (7): ClientPacketListenerInject, Frozen, Override, net.minecraft.network.protocol.common.ClientboundUpdateTagsPacket, net.minecraft.network.protocol.game.ClientboundLoginPacket, net.minecraft.network.protocol.game.ClientboundRespawnPacket, net.minecraft.network.protocol.game.ClientboundUpdateRecipesPacket
 
 ### Community 210 - "WrappedModFluidHelper.kt"
 Cohesion: 0.33
 Nodes (8): BlockAndTintGetter, BlockPos, FluidStack, FluidState, FluidVariant, ModFluidHelper, TextureAtlasSprite, WrappedModFluidHelper
 
 ### Community 211 - "ForcedChunksSavedDataInject"
-Cohesion: 0.21
+Cohesion: 0.23
 Nodes (7): io.github.fabricators_of_create.porting_lib.chunk.loading.extensions.ForcedChunksSavedDataExtension, ForcedChunksSavedDataInjection, TicketTracker, ForcedChunksSavedDataInject, Override, TicketTracker, net.minecraft.world.level.ForcedChunksSavedData
 
 ### Community 212 - "NbtAccounterInjection"
@@ -1362,20 +1337,20 @@ Nodes (10): BuiltInPackSourceInjection, ResourcesSupplier, AbstractPackResources
 Cohesion: 0.23
 Nodes (8): StructureSettings, StructureInjection, ModifiableStructureInfo, Override, StructureSettings, StructureInject, net.minecraft.world.level.levelgen.structure.Structure, net.neoforged.neoforge.common.world.ModifiableStructureInfo
 
-### Community 215 - "RecipeManagerInject.java"
-Cohesion: 0.08
-Nodes (26): com.google.gson.Gson, com.mojang.serialization.MapCodec, Entry, io.github.fabricators_of_create.porting_lib.resources.extensions.ContextAwareReloadListenerExtension, RegistryLookup, RegistryOpsInjection, RecipeInjection, ResourceLocationArgumentInject (+18 more)
+### Community 215 - "SimplePreparableReloadListenerInject.java"
+Cohesion: 0.19
+Nodes (11): io.github.fabricators_of_create.porting_lib.resources.extensions.ContextAwareReloadListenerExtension, IContext, Mixin, Override, Provider, SimplePreparableReloadListenerInject, ContextAwareReloadListenerWorkaround, ConditionalOps (+3 more)
 
 ### Community 216 - "KiltArchitecturyApiCompat.kt"
-Cohesion: 0.15
-Nodes (10): EventResult, KiltCreateCompatWrappedNeoContainer, ModContainer, KiltArchitecturyApiCompat, InteractionResult, ModContainer, Registry, T (+2 more)
+Cohesion: 0.17
+Nodes (8): EventResult, KiltArchitecturyApiCompat, InteractionResult, ModContainer, Registry, T, KiltWrappedModContainerEntrypoint, ModContainer
 
 ### Community 217 - "FabricFluidStorageCapability"
 Cohesion: 0.22
 Nodes (6): IFluidHandler, IFluidHandlerItem, FabricFluidItemStorageCapability, ItemStack, FabricFluidStorageCapability, FluidStack
 
 ### Community 218 - "ModBridgeStrategy"
-Cohesion: 0.16
+Cohesion: 0.14
 Nodes (7): BridgeFailedException, RuntimeException, ModBridgeStrategy, PreferEither, PreferFabric, PreferNeoForge, RequireBoth
 
 ### Community 219 - "LootTableProviderInjection"
@@ -1383,44 +1358,44 @@ Cohesion: 0.20
 Nodes (9): SubProviderEntry, LootTableProviderInjection, LootTable, Override, SubProviderEntry, ValidationContext, LootTableProviderInject, net.minecraft.data.loot.LootTableProvider (+1 more)
 
 ### Community 220 - "net.minecraft.server.packs.repository.Pack"
-Cohesion: 0.07
-Nodes (26): OverlayMetadataSectionInjection, Metadata, Pack, PackLocationInfo, PackSelectionConfig, ResourcesSupplier, PackInjection, Metadata (+18 more)
+Cohesion: 0.09
+Nodes (20): Metadata, Pack, PackLocationInfo, PackSelectionConfig, ResourcesSupplier, PackInjection, Metadata, DataPackCommandInject (+12 more)
 
-### Community 221 - "net.minecraft.core.SectionPos"
-Cohesion: 0.29
-Nodes (5): RenderRegionCacheInjection, Override, RenderRegionCacheInject, net.minecraft.client.renderer.chunk.RenderRegionCache, net.minecraft.core.SectionPos
+### Community 221 - "RailStateInject.java"
+Cohesion: 0.18
+Nodes (10): MinecartCommandBlockInject, Override, MinecartFurnaceInject, MinecartInject, RailStateAccessor, net.minecraft.world.entity.vehicle.AbstractMinecart, net.minecraft.world.entity.vehicle.Minecart, net.minecraft.world.entity.vehicle.MinecartCommandBlock (+2 more)
 
 ### Community 222 - "TagLoaderInject"
-Cohesion: 0.17
-Nodes (7): EntryWithSourceInject, Builder, EntryWithSource, Override, TagLoader.EntryWithSource, TagLoaderInject, Lookup
+Cohesion: 0.20
+Nodes (5): EntryWithSourceInject, Builder, Override, TagLoader.EntryWithSource, TagLoaderInject
 
 ### Community 223 - "FlowerPotBlockInject"
-Cohesion: 0.17
-Nodes (6): FlowerPotBlockInjection, FlowerPotBlockInject, Mixin, Override, Shadow, net.minecraft.world.level.block.FlowerPotBlock
+Cohesion: 0.19
+Nodes (5): FlowerPotBlockInjection, FlowerPotBlockInject, Mixin, Override, net.minecraft.world.level.block.FlowerPotBlock
 
 ### Community 224 - "net.minecraft.commands.CommandSourceStack"
-Cohesion: 0.17
-Nodes (14): com.mojang.brigadier.context.CommandContext, com.mojang.brigadier.ParseResults, BlockPosArgumentInject, ObjectiveArgumentInject, TeamArgumentInject, CommandsInject, net.minecraft.commands.arguments.coordinates.BlockPosArgument, net.minecraft.commands.arguments.ObjectiveArgument (+6 more)
+Cohesion: 0.23
+Nodes (11): com.mojang.brigadier.context.CommandContext, BlockPosArgumentInject, ObjectiveArgumentInject, TeamArgumentInject, net.minecraft.commands.arguments.coordinates.BlockPosArgument, net.minecraft.commands.arguments.ObjectiveArgument, net.minecraft.commands.arguments.TeamArgument, net.minecraft.commands.CommandSourceStack (+3 more)
 
 ### Community 225 - "WrappedFabricModContainer"
 Cohesion: 0.20
 Nodes (8): EveryCompatForge, FabricModContainer, EveryCompatBridge, IEventBus, ModContainer, T, WrappedFabricModContainer, ModConfigEvent
 
-### Community 226 - "GeometryLoaderManagerAccessor.java"
-Cohesion: 0.20
-Nodes (5): io.github.fabricators_of_create.porting_lib.models.geometry.GeometryLoaderManager, io.github.fabricators_of_create.porting_lib.models.geometry.IGeometryLoader, GeometryLoaderManagerAccessor, KiltClient, ClientModInitializer
+### Community 226 - "EnvironmentRemapper.kt"
+Cohesion: 0.22
+Nodes (8): EnvironmentRemapper, AnnotationNode, ClassNode, Dist, EnvType, DistUtil, Dist, EnvType
 
 ### Community 227 - "GrindstoneMenuInject.java"
 Cohesion: 0.12
 Nodes (11): AbstractHorseInjection, GrindstoneMenuInjection, AnonymousRepairSlot0Inject, AnonymousRepairSlot1Inject, AnonymousResultSlotInject, GrindstoneMenuInject, Override, GrindstoneMenuAccessor (+3 more)
 
-### Community 228 - "net.minecraft.world.item.enchantment.Enchantment"
-Cohesion: 0.33
-Nodes (5): EnchantCommandInject, EnchantRandomlyFunctionInject, net.minecraft.server.commands.EnchantCommand, net.minecraft.world.item.enchantment.Enchantment, net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction
+### Community 228 - "AnvilMenuInject"
+Cohesion: 0.13
+Nodes (8): AnvilMenu, DataSlot, ItemCombinerMenu, AnvilMenuInjection, AnvilMenuInject, ContainerLevelAccess, MenuType, Override
 
-### Community 229 - "ModelBakeryInject.java"
-Cohesion: 0.27
-Nodes (5): ModelManagerInjection, ModelBakeryAccessor, net.minecraft.client.resources.model.ModelBakery, net.minecraft.client.resources.model.ModelManager, net.minecraft.client.resources.model.UnbakedModel
+### Community 229 - "DebugLevelSourceAccessor"
+Cohesion: 0.24
+Nodes (4): DebugLevelSourceInjection, DebugLevelSourceInject, DebugLevelSourceAccessor, net.minecraft.world.level.levelgen.DebugLevelSource
 
 ### Community 230 - "TagEntryInjection"
 Cohesion: 0.24
@@ -1430,9 +1405,9 @@ Nodes (3): TagEntryInjection, Override, TagEntryInject
 Cohesion: 0.21
 Nodes (8): LevelSummaryInjection, WorldListEntryInject, WorldSelectionListInject, AbstractSelectionListAccessor, net.minecraft.client.gui.components.AbstractSelectionList, net.minecraft.client.gui.screens.worldselection.WorldSelectionList, net.minecraft.world.level.storage.LevelSummary, WorldSelectionList.WorldListEntry
 
-### Community 232 - "ItemDisplayContextInject"
+### Community 232 - "TypeInject"
 Cohesion: 0.07
-Nodes (23): FireworkExplosion.Shape, IExtensibleEnum, DamageEffectsInject, ExtensionInfo, Mixin, NamedEnum, NetworkedEnum, ReservedConstructor (+15 more)
+Nodes (21): Boat.Type, FireworkExplosion.Shape, IExtensibleEnum, ExtensionInfo, NamedEnum, NetworkedEnum, Override, ReservedConstructor (+13 more)
 
 ### Community 233 - "SpawnPlacementsInject.java"
 Cohesion: 0.22
@@ -1451,8 +1426,8 @@ Cohesion: 0.33
 Nodes (8): ComponentLookup, CapabilityLookup, BlockEntity, BlockPos, BlockState, Direction, ServerLevel, T
 
 ### Community 237 - "net.minecraft.advancements.AdvancementHolder"
-Cohesion: 0.14
-Nodes (16): AdvancementInjection, Provider, RecipeProviderInjection, AdvancementInject, Override, PathProvider, Provider, RecipeProviderInject (+8 more)
+Cohesion: 0.18
+Nodes (12): Provider, RecipeProviderInjection, Override, PathProvider, Provider, RecipeProviderInject, PlayerAdvancementsInject, net.minecraft.advancements.AdvancementHolder (+4 more)
 
 ### Community 238 - "LayeredDrawMixin"
 Cohesion: 0.32
@@ -1466,9 +1441,9 @@ Nodes (4): K, V, ResyncingHashMap, MutableMap
 Cohesion: 0.23
 Nodes (8): com.google.common.base.Supplier, ChunkGeneratorInjection, ChunkGeneratorInject, Mixin, Override, net.minecraft.world.level.chunk.ChunkGenerator, net.neoforged.neoforge.common.util.Lazy, StepFeatureData
 
-### Community 241 - "net.minecraft.world.item.Item"
-Cohesion: 0.04
-Nodes (32): ProjectileUtilInjection, FoodDataInjection, PlayerItemInHandLayerInject, CrossbowAttackInject, RangedBowAttackGoalInject, RangedCrossbowAttackGoalInject, ArmadilloInject, CrossbowAttackMobInject (+24 more)
+### Community 241 - "net.minecraft.world.entity.ai.goal.Goal"
+Cohesion: 0.06
+Nodes (28): ProjectileUtilInjection, BowItemInjection, MeleeAttackGoalInject, RangedBowAttackGoalInject, RangedCrossbowAttackGoalInject, RunAroundLikeCrazyGoalInject, CrossbowAttackMobInject, EnderManInject (+20 more)
 
 ### Community 242 - "MappedRegistryMixin"
 Cohesion: 0.24
@@ -1486,33 +1461,29 @@ Nodes (4): KiltFabricCompatsMixinPlugin, ClassNode, IMixinConfigPlugin, IMixinIn
 Cohesion: 0.26
 Nodes (4): KiltForgeCompatMixinPlugin, ClassNode, IMixinConfigPlugin, IMixinInfo
 
-### Community 246 - "ServerPlayerInject.java"
-Cohesion: 0.12
-Nodes (9): PlayerInjection, CamelInject, AbstractHorseInject, AbstractHorseAccessor, net.minecraft.network.chat.MutableComponent, net.minecraft.world.entity.animal.camel.Camel, net.minecraft.world.entity.animal.horse.AbstractHorse, net.minecraft.world.entity.Pose (+1 more)
-
 ### Community 247 - "PackSelectionModelInject.java"
 Cohesion: 0.23
 Nodes (7): PackSelectionModelEntryInjection, EntryBaseInject, EntryInject, Override, PackSelectionModelInject, net.minecraft.client.gui.screens.packs.PackSelectionModel, PackSelectionModel.Entry
 
-### Community 248 - "CrashReportCategoryInject"
-Cohesion: 0.24
-Nodes (6): CrashReportCategoryInjection, StackTraceElement, CrashReportCategoryInject, Override, StackTraceElement, net.minecraft.CrashReportCategory
+### Community 248 - "TextureAtlasInject.java"
+Cohesion: 0.18
+Nodes (7): TextureAtlasInjection, SpriteLoaderInject, Override, TextureAtlasInject, net.minecraft.client.renderer.texture.SpriteLoader, net.minecraft.client.renderer.texture.TextureAtlas, Preparations
 
-### Community 249 - "EntityCapabilityAccessor.java"
-Cohesion: 0.31
-Nodes (4): EntityCapabilityAccessor, ItemCapabilityAccessor, net.neoforged.neoforge.capabilities.ICapabilityProvider, net.neoforged.neoforge.capabilities.ItemCapability
+### Community 249 - "PackInject.java"
+Cohesion: 0.22
+Nodes (6): OverlayMetadataSectionInjection, PackMetadataInjection, OverlayMetadataSectionInject, net.minecraft.server.packs.metadata.MetadataSectionType, net.minecraft.server.packs.OverlayMetadataSection, net.minecraft.server.packs.repository.PackCompatibility
 
 ### Community 250 - "LayerDefinitionsInject.java"
 Cohesion: 0.24
 Nodes (8): Builder, LayerDefinitionsInject, ModelLayerLocation, ModelLayersInject, net.minecraft.client.model.geom.builders.LayerDefinition, net.minecraft.client.model.geom.LayerDefinitions, net.minecraft.client.model.geom.ModelLayerLocation, net.minecraft.client.model.geom.ModelLayers
 
-### Community 251 - "java.util.HashMap"
-Cohesion: 0.16
-Nodes (10): java.util.HashMap, PluginDetectorImplMixin, KiltREIPluginProvider, REIPluginProvider, AnnotationValueVisitor, Override, me.shedaniel.rei.api.common.plugins.REIPluginProvider, me.shedaniel.rei.fabric.PluginDetectorImpl (+2 more)
+### Community 251 - "PluginDetectorImplMixin.java"
+Cohesion: 0.12
+Nodes (16): dev.emi.emi.api.EmiPlugin, dev.emi.emi.platform.fabric.EmiAgnosFabric, dev.emi.emi.registry.EmiPluginContainer, EmiPluginContainer, EmiAgnosFabricMixin, FabricPluginFinderMixin, PluginDetectorImplMixin, KiltREIPluginProvider (+8 more)
 
-### Community 252 - "CoreModLoader.kt"
+### Community 252 - "ChestRendererInject.java"
 Cohesion: 0.24
-Nodes (6): RuntimeException, VoteDeadlockException, RuntimeException, VoteRejectedException, CoreModLoader, SignatureVisitor
+Nodes (7): ChestRendererInject, Override, ChestBlockInject, net.minecraft.client.renderer.blockentity.ChestRenderer, net.minecraft.world.level.block.ChestBlock, net.minecraft.world.level.block.Mirror, net.minecraft.world.level.block.state.properties.ChestType
 
 ### Community 253 - "KiltLoaderConfig.kt"
 Cohesion: 0.29
@@ -1527,12 +1498,12 @@ Cohesion: 0.36
 Nodes (8): FabricLookupAsSlottedBlockCapabilityProvider, BlockEntity, BlockPos, BlockState, C, IBlockCapabilityProvider, Level, T
 
 ### Community 256 - "BlockLightEngineInject.java"
-Cohesion: 0.39
+Cohesion: 0.33
 Nodes (6): BlockDataLayerStorageMap, BlockLightEngineInject, MutableBlockPos, net.minecraft.world.level.chunk.LightChunkGetter, net.minecraft.world.level.lighting.BlockLightEngine, net.minecraft.world.level.lighting.BlockLightSectionStorage
 
-### Community 257 - "TransformationInject"
-Cohesion: 0.36
-Nodes (6): com.mojang.math.Transformation, TransformationInjection, Matrix3f, TransformationInject, net.neoforged.neoforge.common.extensions.ITransformationExtension, org.joml.Matrix3f
+### Community 257 - "FabricInjectedInterface"
+Cohesion: 0.13
+Nodes (15): com.mojang.math.Transformation, BootstrapContextInjection, RegistryLookup, TransformationInjection, DataPackConfigInjection, BootstrapContextInject, Matrix3f, TransformationInject (+7 more)
 
 ### Community 258 - "AbstractTextureInjection"
 Cohesion: 0.25
@@ -1558,9 +1529,9 @@ Nodes (5): ParticleRenderTypeInjection, Override, ParticleRenderTypeInject, Part
 Cohesion: 0.27
 Nodes (4): LanguageManagerInjection, Override, LanguageManagerInject, net.minecraft.client.resources.language.LanguageManager
 
-### Community 264 - "BuiltInRegistriesAccessor.java"
-Cohesion: 0.29
-Nodes (4): BuiltInRegistriesInjection, BuiltInRegistriesInject, BuiltInRegistriesAccessor, net.minecraft.core.registries.BuiltInRegistries
+### Community 264 - "net.minecraft.core.component.DataComponentPatch"
+Cohesion: 0.21
+Nodes (4): ItemInjection, TooltipContextInjection, DataComponentPatchInject, net.minecraft.core.component.DataComponentPatch
 
 ### Community 265 - "ArgumentTypeInfosInject.java"
 Cohesion: 0.31
@@ -1575,12 +1546,12 @@ Cohesion: 0.29
 Nodes (5): UseAnimInjection, UseAnimInject, CUSTOM, UseAnimAccessor, net.minecraft.world.item.UseAnim
 
 ### Community 268 - "net.minecraft.world.level.block.entity.BlockEntityType"
-Cohesion: 0.23
-Nodes (4): ChestBlockEntityInject, net.minecraft.world.level.block.entity.BlockEntityType, net.minecraft.world.level.block.entity.ChestBlockEntity, net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity
+Cohesion: 0.14
+Nodes (9): HopperBlockEntityInjection, ChestBlockEntityInject, HopperBlockEntityInject, Override, net.minecraft.world.level.block.entity.BlockEntityType, net.minecraft.world.level.block.entity.ChestBlockEntity, net.minecraft.world.level.block.entity.Hopper, net.minecraft.world.level.block.entity.HopperBlockEntity (+1 more)
 
-### Community 269 - "ChunkStatusInject"
-Cohesion: 0.33
-Nodes (6): ChunkStatusInjection, ChunkStatusInject, Override, Types, net.minecraft.world.level.chunk.status.ChunkStatus, net.minecraft.world.level.chunk.status.ChunkType
+### Community 269 - "ServerChunkCacheThreadFixMixin.java"
+Cohesion: 0.16
+Nodes (10): ChunkStatusInjection, Types, ServerChunkCacheInject, ChunkStatusInject, Override, Types, net.minecraft.server.level.ServerChunkCache, net.minecraft.world.level.chunk.status.ChunkStatus (+2 more)
 
 ### Community 270 - "ItemContainerContentsInject"
 Cohesion: 0.31
@@ -1590,49 +1561,45 @@ Nodes (4): ItemContainerContentsInjection, ItemContainerContentsInject, Override
 Cohesion: 0.22
 Nodes (3): io.github.fabricators_of_create.porting_lib.extensions.client.RenderTargetExtension, RenderTargetInjection, RenderTargetInject
 
-### Community 272 - "StructureBlockRendererInject.java"
+### Community 272 - "net.minecraft.network.ProtocolInfo"
 Cohesion: 0.31
-Nodes (6): Override, StructureBlockRendererInject, GameTestInfoInject, net.minecraft.client.renderer.blockentity.StructureBlockRenderer, net.minecraft.gametest.framework.GameTestInfo, net.minecraft.world.level.block.entity.StructureBlockEntity
+Nodes (6): PacketEncoderInjection, Override, PacketEncoderInject, net.minecraft.network.PacketEncoder, net.minecraft.network.PacketListener, net.minecraft.network.ProtocolInfo
 
 ### Community 273 - "RemoldedResourceManagerMixin"
 Cohesion: 0.27
 Nodes (7): Override, PackTypeInject, Override, RemoldedResourceManagerMixin, net.fabricmc.fabric.impl.resource.loader.FabricLifecycledResourceManager, net.minecraft.server.packs.PackType, net.minecraft.util.StringRepresentable
 
-### Community 274 - "com.llamalad7.mixinextras.injector.ModifyReceiver"
+### Community 274 - "EndDragonFightInject"
+Cohesion: 0.25
+Nodes (5): EndDragonFightInjection, EndDragonFightInject, Override, net.minecraft.server.level.ServerBossEvent, net.minecraft.world.level.dimension.end.EndDragonFight
+
+### Community 275 - "PredicateVisitor"
 Cohesion: 0.27
-Nodes (6): com.google.common.util.concurrent.ThreadFactoryBuilder, com.llamalad7.mixinextras.injector.ModifyReceiver, ServerConnectionListenerInject, HangingEntityInject, net.minecraft.server.network.ServerConnectionListener, net.minecraft.world.entity.decoration.HangingEntity
+Nodes (4): ClassVisitor, FieldVisitor, PredicateVisitor, MethodVisitor
 
-### Community 275 - "org.joml.Vector3f"
-Cohesion: 0.39
-Nodes (5): io.github.fabricators_of_create.porting_lib.models.extensions.ItemTransformExtensions, ItemTransformInjection, ItemTransform, ItemTransformInject, org.joml.Vector3f
+### Community 276 - "ItemStackInject"
+Cohesion: 0.08
+Nodes (16): ItemAttributeModifiersPredicateInject, Override, ItemStackInject, Override, ItemStack, Override, SwordItem, Tier (+8 more)
 
-### Community 276 - "SwordItemInject.java"
-Cohesion: 0.22
-Nodes (8): ItemStack, Override, SwordItem, Tier, SwordItemInject, net.minecraft.world.entity.ai.attributes.AttributeModifier, net.minecraft.world.item.component.Tool, TieredItem
+### Community 277 - "ServerConfigurationNetworkAddonMixin.java"
+Cohesion: 0.33
+Nodes (7): ConfigurationPacketHandler, ServerConfigurationNetworkAddonMixin, net.fabricmc.fabric.impl.networking.AbstractChanneledNetworkAddon, net.fabricmc.fabric.impl.networking.GlobalReceiverRegistry, net.fabricmc.fabric.impl.networking.server.ServerConfigurationNetworkAddon, net.minecraft.network.PacketSendListener, net.minecraft.server.network.ServerConfigurationPacketListenerImpl
 
-### Community 277 - "BlockModelShaperInject.java"
-Cohesion: 0.31
-Nodes (4): BlockModelShaperInjection, BlockModelShaperInject, Override, net.minecraft.client.renderer.block.BlockModelShaper
-
-### Community 278 - "PackRepositoryInject.java"
-Cohesion: 0.39
-Nodes (4): PackRepositoryInjection, Override, PackRepositoryInject, net.minecraft.server.packs.repository.RepositorySource
-
-### Community 279 - "ShulkerBoxColoringInject.java"
-Cohesion: 0.27
-Nodes (7): DyeColorInjection, ShulkerBoxColoringInject, DyeColorInject, net.minecraft.world.item.crafting.ShulkerBoxColoring, net.minecraft.world.item.DyeColor, net.minecraft.world.item.DyeItem, net.minecraft.world.level.block.ShulkerBoxBlock
+### Community 279 - "PackMetadataSectionInject.java"
+Cohesion: 0.33
+Nodes (6): PackMetadataSection, PackMetadataSectionInjection, Mixin, PackMetadataSectionInject, net.minecraft.server.packs.metadata.pack.PackMetadataSection, net.minecraft.util.InclusiveRange
 
 ### Community 280 - "IgnoreSignatureResourceRemapper"
 Cohesion: 0.14
 Nodes (8): IgnoreSignatureResourceRemapper, ByteArray, ModDefinition, ByteArray, ManifestResourceRemapper, ByteArray, ModDefinition, ResourceRemapper
 
-### Community 281 - "IClientFluidTypeExtensionsMixin.java"
-Cohesion: 0.31
-Nodes (8): IClientFluidTypeExtensionsMixin, FabricFluidTypeExtensions, BlockAndTintGetter, BlockPos, FluidState, IClientFluidTypeExtensions, ResourceLocation, net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions
+### Community 281 - "FabricFluidTypeExtensions.kt"
+Cohesion: 0.47
+Nodes (6): FabricFluidTypeExtensions, BlockAndTintGetter, BlockPos, FluidState, IClientFluidTypeExtensions, ResourceLocation
 
 ### Community 282 - ".getAllTags"
-Cohesion: 0.20
-Nodes (11): IContext, Override, Provider, Holder, IContext, Registry, ResourceKey, ResourceLocation (+3 more)
+Cohesion: 0.35
+Nodes (8): Holder, IContext, Registry, ResourceKey, ResourceLocation, T, TagKey, WrappedFabricConditionContext
 
 ### Community 283 - ".getAllTags"
 Cohesion: 0.35
@@ -1663,11 +1630,11 @@ Cohesion: 0.31
 Nodes (3): FabricItemStorageCapability, IItemHandler, ItemStack
 
 ### Community 290 - "net.minecraft.world.level.block.Block"
-Cohesion: 0.04
-Nodes (33): com.mojang.blaze3d.vertex.BufferBuilder, ExplosionInteraction, BlockColorsInjection, ItemBlockRenderTypesInjection, BlockEntityTypeInjection, BlockColorsInject, Override, TerrainParticleInject (+25 more)
+Cohesion: 0.03
+Nodes (45): HashMap, it.unimi.dsi.fastutil.objects.Reference2BooleanLinkedOpenHashMap, BlockColorsInjection, BlockItemInjection, BlockInjection, BlockEntityTypeInjection, BlockColorsInject, Override (+37 more)
 
-### Community 291 - "LightningBoltInject.java"
-Cohesion: 0.24
+### Community 291 - "LightningBoltInject"
+Cohesion: 0.29
 Nodes (3): LightningBoltInjection, Override, LightningBoltInject
 
 ### Community 292 - "net.minecraft.core.NonNullList"
@@ -1682,9 +1649,9 @@ Nodes (4): PlayerDataStorageInjection, Override, PlayerDataStorageInject, net.mi
 Cohesion: 0.36
 Nodes (5): AlterGroundDecoratorInject, Context, net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider, net.minecraft.world.level.levelgen.feature.treedecorators.AlterGroundDecorator, StateProvider
 
-### Community 295 - "NeoForgeCatnipServicesMixin.java"
-Cohesion: 0.39
-Nodes (5): FluidRenderHelperMixin, NeoForgeCatnipServicesMixin, net.createmod.catnip.platform.NeoForgeCatnipServices, net.createmod.catnip.platform.services.ModFluidHelper, net.createmod.catnip.render.FluidRenderHelper
+### Community 295 - "TranslatableContentsInject.java"
+Cohesion: 0.31
+Nodes (6): I18nInject, TranslatableContentsInject, net.minecraft.client.resources.language.I18n, net.minecraft.locale.Language, net.minecraft.network.chat.contents.TranslatableContents, net.minecraft.network.chat.FormattedText
 
 ### Community 296 - "NoopLanguageLoader"
 Cohesion: 0.29
@@ -1706,117 +1673,113 @@ Nodes (5): EntityTarget, EntityTargetInjection, ContextNbtProviderInject, Getter
 Cohesion: 0.31
 Nodes (5): it.unimi.dsi.fastutil.longs.Long2ObjectMap, SectionStorageInjection, Override, SectionStorageInject, net.minecraft.world.level.chunk.storage.SectionStorage
 
-### Community 301 - "net.minecraft.world.inventory.MenuType"
-Cohesion: 0.32
-Nodes (5): Override, MenuTypeInject, MenuSupplier, net.minecraft.world.inventory.MenuType, net.neoforged.neoforge.common.extensions.IMenuTypeExtension
+### Community 301 - "BundleItemInject.java"
+Cohesion: 0.36
+Nodes (5): AbstractContainerMenuInject, BundleItemInject, net.minecraft.world.entity.SlotAccess, net.minecraft.world.inventory.ClickAction, net.minecraft.world.item.BundleItem
 
-### Community 302 - "ItemEnchantmentsPredicateInject.java"
-Cohesion: 0.43
-Nodes (5): ItemEnchantmentsPredicate.Enchantments, EnchantmentsInject, ItemEnchantmentsPredicateInject, net.minecraft.advancements.critereon.EnchantmentPredicate, net.minecraft.advancements.critereon.ItemEnchantmentsPredicate
+### Community 302 - "TransformerVotingContext"
+Cohesion: 0.22
+Nodes (4): ITransformerActivity, AbstractInsnNode, ByteArray, TransformerVotingContext
 
 ### Community 303 - "net.minecraft.client.gui.screens.Screen"
-Cohesion: 0.10
-Nodes (7): MouseHandlerInjection, KeyboardHandlerInject, Override, MouseHandlerInject, net.minecraft.client.gui.screens.Screen, net.minecraft.client.KeyboardHandler, net.minecraft.client.MouseHandler
+Cohesion: 0.09
+Nodes (10): com.mojang.realmsclient.gui.screens.RealmsGenericErrorScreen, TitleScreenInject, Override, MouseHandlerInject, Override, RealmsGenericErrorScreenInject, net.minecraft.client.gui.screens.Screen, net.minecraft.client.gui.screens.TitleScreen (+2 more)
 
 ### Community 304 - "ConnectionProtocolInject"
 Cohesion: 0.28
 Nodes (3): ConnectionProtocolInjection, ConnectionProtocolInject, Override
 
-### Community 305 - "BossHealthOverlayInject.java"
-Cohesion: 0.48
-Nodes (4): BossEventProgress, BossHealthOverlayInject, net.minecraft.client.gui.components.BossHealthOverlay, net.minecraft.world.BossEvent
+### Community 306 - "WalkNodeEvaluatorInject.java"
+Cohesion: 0.24
+Nodes (7): PathfindingContextInjection, MutableBlockPos, Override, PathfindingContextInject, WalkNodeEvaluatorInject, net.minecraft.world.level.pathfinder.PathfindingContext, net.minecraft.world.level.pathfinder.WalkNodeEvaluator
 
-### Community 306 - "FabricInjectedInterface"
-Cohesion: 0.09
-Nodes (18): dev.ryanhcode.sable.api.block.BlockEntitySubLevelReactionWheel, dev.ryanhcode.sable.api.block.propeller.BlockEntityPropeller, java.lang.annotation.Retention, java.lang.annotation.Target, BlockEntityPropellerMixin, BlockEntitySubLevelReactionWheelMixin, AbstractOverride, Extends (+10 more)
+### Community 307 - "PatchedDataComponentMapInject"
+Cohesion: 0.36
+Nodes (5): it.unimi.dsi.fastutil.objects.Reference2ObjectMap, PatchedDataComponentMapInjection, Override, PatchedDataComponentMapInject, net.minecraft.core.component.PatchedDataComponentMap
 
-### Community 307 - "BrushableBlockRendererInject.java"
-Cohesion: 0.43
-Nodes (5): BrushableBlockRendererInject, AABB, Override, net.minecraft.client.renderer.blockentity.BrushableBlockRenderer, net.minecraft.world.level.block.entity.BrushableBlockEntity
+### Community 308 - "MouseHandlerInjection"
+Cohesion: 0.31
+Nodes (3): MouseHandlerInjection, MouseHandlerMixin, net.minecraft.client.MouseHandler
 
-### Community 308 - "ConduitRendererInject.java"
-Cohesion: 0.43
-Nodes (5): ConduitRendererInject, AABB, Override, net.minecraft.client.renderer.blockentity.ConduitRenderer, net.minecraft.world.level.block.entity.ConduitBlockEntity
-
-### Community 309 - "DecoratedPotRendererInject.java"
-Cohesion: 0.43
-Nodes (5): DecoratedPotRendererInject, AABB, Override, net.minecraft.client.renderer.blockentity.DecoratedPotRenderer, net.minecraft.world.level.block.entity.DecoratedPotBlockEntity
+### Community 309 - "ElytraLayerInject"
+Cohesion: 0.28
+Nodes (3): ElytraLayerInjection, ElytraLayerInject, Override
 
 ### Community 310 - "IteratorWrapper"
-Cohesion: 0.22
-Nodes (5): JsonParseException, IteratorWrapper, MutableIterator, T, SkippedConditionException
+Cohesion: 0.33
+Nodes (3): IteratorWrapper, MutableIterator, T
 
 ### Community 311 - "BlockLootSubProviderInject.java"
 Cohesion: 0.33
 Nodes (5): BlockLootSubProviderInjection, BlockLootSubProviderInject, Override, net.minecraft.core.DefaultedRegistry, net.minecraft.data.loot.BlockLootSubProvider
 
-### Community 312 - "com.llamalad7.mixinextras.sugar.ref.LocalRef"
-Cohesion: 0.04
-Nodes (29): com.llamalad7.mixinextras.sugar.ref.LocalRef, ItemFishedEvent, RightClickBlock, MultiPlayerGameModeInject, EntityRendererInject, RightClickBlock, ServerPlayerGameModeInject, FireChargeItemInject (+21 more)
+### Community 312 - "IntrinsicTagAppenderInject"
+Cohesion: 0.32
+Nodes (6): IntrinsicHolderTagsProvider.IntrinsicTagAppender, IntrinsicHolderTagsProviderInject, IntrinsicTagAppenderInject, Override, net.minecraft.data.tags.IntrinsicHolderTagsProvider, net.neoforged.neoforge.common.extensions.IIntrinsicHolderTagAppenderExtension
 
 ### Community 313 - "BreakDoorGoalInject.java"
 Cohesion: 0.47
 Nodes (3): BreakDoorGoalInject, net.minecraft.world.entity.ai.goal.BreakDoorGoal, net.minecraft.world.entity.ai.goal.DoorInteractGoal
 
-### Community 314 - ".getFluidSprites"
-Cohesion: 0.26
-Nodes (9): FluidHandlerWorkaround, FluidRenderHandler, FluidType, BlockAndTintGetter, BlockPos, FluidRenderHandler, FluidState, TextureAtlasSprite (+1 more)
+### Community 314 - "FluidRenderHandlerRegistryImplMixin.java"
+Cohesion: 0.17
+Nodes (12): FluidRenderHandlerRegistryImplMixin, FluidHandlerWorkaround, FluidRenderHandler, FluidType, BlockAndTintGetter, BlockPos, FluidRenderHandler, FluidState (+4 more)
 
 ### Community 315 - "WrappedModelAsHumanoid.kt"
 Cohesion: 0.39
 Nodes (6): HumanoidModel, LivingEntity, PoseStack, VertexConsumer, WrappedModelAsHumanoid, ModelPart
 
-### Community 316 - "EnchantTableRendererInject.java"
+### Community 316 - "net.minecraft.world.item.Rarity"
 Cohesion: 0.43
-Nodes (5): EnchantTableRendererInject, AABB, Override, net.minecraft.client.renderer.blockentity.EnchantTableRenderer, net.minecraft.world.level.block.entity.EnchantingTableBlockEntity
+Nodes (3): SuppressWarnings, RarityAccessor, net.minecraft.world.item.Rarity
 
 ### Community 317 - ".onInitialize"
 Cohesion: 0.46
 Nodes (4): ForwardingMap, AlternativeCapabilityMap, K, V
 
-### Community 318 - "net.minecraft.core.HolderSet"
-Cohesion: 0.12
-Nodes (16): HolderSet.Named, BiomeGenerationSettingsInjection, Carving, HolderSetInject, Override, NamedInject, BiomeGenerationSettingsInject, Carving (+8 more)
+### Community 318 - "BiomeInject"
+Cohesion: 0.08
+Nodes (24): HolderSet.Named, BiomeGenerationSettingsInjection, Carving, BiomeInjection, ClimateSettings, HolderSetInject, Override, NamedInject (+16 more)
 
 ### Community 319 - "SkullBlockRendererInject.java"
 Cohesion: 0.27
 Nodes (8): AABB, Builder, Override, SkullBlockRendererInject, net.minecraft.client.model.geom.EntityModelSet, net.minecraft.client.model.SkullModelBase, net.minecraft.client.renderer.blockentity.SkullBlockRenderer, net.minecraft.world.level.block.entity.SkullBlockEntity
 
-### Community 320 - "LecternRendererInject.java"
-Cohesion: 0.43
-Nodes (5): AABB, Override, LecternRendererInject, net.minecraft.client.renderer.blockentity.LecternRenderer, net.minecraft.world.level.block.entity.LecternBlockEntity
+### Community 320 - "SpectreConfigTrackerFixMixin.java"
+Cohesion: 0.52
+Nodes (4): com.electronwill.nightconfig.core.file.CommentedFileConfig, com.illusivesoulworks.spectrelib.config.SpectreConfig, com.illusivesoulworks.spectrelib.config.SpectreConfigTracker, SpectreConfigTrackerFixMixin
 
-### Community 321 - "SignRendererInject.java"
-Cohesion: 0.43
-Nodes (5): AABB, Override, SignRendererInject, net.minecraft.client.renderer.blockentity.SignRenderer, net.minecraft.world.level.block.entity.SignBlockEntity
+### Community 323 - "ClickEventInject.java"
+Cohesion: 0.47
+Nodes (4): ClickEvent.Action, ActionInject, ClickEventInject, net.minecraft.network.chat.ClickEvent
 
-### Community 323 - "ModelResourceLocationInject.java"
-Cohesion: 0.46
-Nodes (4): ModelResourceLocation, ModelResourceLocationInjection, ModelResourceLocationInject, net.minecraft.client.resources.model.ModelResourceLocation
-
-### Community 324 - "MagmaCubeInject.java"
-Cohesion: 0.18
-Nodes (8): java.util.function.BooleanSupplier, SlimeInjection, Override, MagmaCubeInject, Override, SlimeInject, net.minecraft.world.entity.monster.MagmaCube, net.minecraft.world.entity.monster.Slime
+### Community 324 - "SpectreConfigValueFixMixin.java"
+Cohesion: 0.47
+Nodes (3): com.illusivesoulworks.spectrelib.config.SpectreConfigSpec, SuppressWarnings, SpectreConfigValueFixMixin
 
 ### Community 325 - "java.lang.reflect.Method"
-Cohesion: 0.17
-Nodes (7): java.lang.reflect.Method, GameTestRegistryInjection, GameTestRegistryInject, net.minecraft.gametest.framework.GameTestRegistry, FlashlightBeamHelper, FlashlightBeamFlashbackMixin, KiltAutomaticEventSubscriberFixMixin
+Cohesion: 0.25
+Nodes (7): java.lang.reflect.Method, GameTestRegistryInjection, GameTestRegistryInject, net.minecraft.core.dispenser.ShearsDispenseItemBehavior, net.minecraft.gametest.framework.GameTestRegistry, ColdSweatCompatibilityMixin, KiltAutomaticEventSubscriberFixMixin
 
 ### Community 326 - "CameraInject"
-Cohesion: 0.19
-Nodes (4): CameraInjection, CameraInject, MutableBlockPos, Override
-
-### Community 327 - "InventoryScreenInject.java"
 Cohesion: 0.36
-Nodes (5): InventoryScreenInject, Vector3f, net.minecraft.client.gui.screens.inventory.InventoryScreen, org.joml.Quaternionf, Quaternionf
+Nodes (3): CameraInject, MutableBlockPos, Override
+
+### Community 327 - "JsonParserMixin.java"
+Cohesion: 0.47
+Nodes (3): java.net.URL, java.util.regex.Pattern, JsonParserMixin
 
 ### Community 328 - "TadpoleInject.java"
 Cohesion: 0.39
 Nodes (4): TadpoleInject, net.minecraft.world.entity.animal.AbstractFish, net.minecraft.world.entity.animal.frog.Frog, net.minecraft.world.entity.animal.frog.Tadpole
 
-### Community 330 - "RaiderTypeAccessor.java"
-Cohesion: 0.31
-Nodes (5): Raid.RaiderType, RaiderType, SuppressWarnings, RaiderTypeAccessor, net.minecraft.world.entity.raid.Raid
+### Community 329 - "AnnotationValueVisitor"
+Cohesion: 0.40
+Nodes (3): AnnotationValueVisitor, Override, org.objectweb.asm.AnnotationVisitor
+
+### Community 330 - "RaiderTypeAccessor"
+Cohesion: 0.43
+Nodes (4): Raid.RaiderType, RaiderType, SuppressWarnings, RaiderTypeAccessor
 
 ### Community 331 - "Lazy"
 Cohesion: 0.50
@@ -1834,17 +1797,17 @@ Nodes (3): Enumeration, ITransformingClassLoaderBuilder, URL
 Cohesion: 0.38
 Nodes (4): FMLModContainer, IConfigSpec, KiltModContainer, IEventBus
 
-### Community 335 - "ChunkStatusTasksInject.java"
-Cohesion: 0.48
-Nodes (3): ChunkStatusTasksInject, net.minecraft.server.level.GenerationChunkHolder, net.minecraft.world.level.chunk.status.ChunkStatusTasks
+### Community 335 - "BlockTagsInject.java"
+Cohesion: 0.53
+Nodes (3): BlockTagsInjection, BlockTagsInject, net.minecraft.tags.BlockTags
 
 ### Community 336 - "MKBKeyConflictContextWrapper"
 Cohesion: 0.43
 Nodes (3): IKeyConflictContext, MKBKeyConflictContextWrapper, MKBKeyConflictContext
 
-### Community 337 - "BootstrapContextInjection"
-Cohesion: 0.48
-Nodes (4): BootstrapContextInjection, RegistryLookup, BootstrapContextInject, net.minecraft.data.worldgen.BootstrapContext
+### Community 337 - "LootContextParamSetsInject.java"
+Cohesion: 0.47
+Nodes (3): Builder, LootContextParamSetsInject, net.minecraft.world.level.storage.loot.parameters.LootContextParamSets
 
 ### Community 338 - "com.mojang.brigadier.CommandDispatcher"
 Cohesion: 0.60
@@ -1858,49 +1821,45 @@ Nodes (3): com.mojang.serialization.Dynamic, MobEffectIdFixInject, net.minecraft
 Cohesion: 0.33
 Nodes (5): IExtension, ITargetClassContext, KiltMixinModifier, ClassNode, MixinEnvironment
 
-### Community 341 - "ConfigurationTaskInject.java"
-Cohesion: 0.40
-Nodes (4): ConfigurationTask.Type, ConfigurationTaskInject, TypeInject, net.minecraft.server.network.ConfigurationTask
-
-### Community 342 - "AmecsKeyModifiersApiMixin.java"
-Cohesion: 0.47
-Nodes (3): de.siphalor.amecs.key_modifiers.api.AmecsKeyModifierCombination, de.siphalor.amecs.key_modifiers.api.AmecsKeyModifiersApi, AmecsKeyModifiersApiMixin
-
-### Community 343 - "PortingLibBlockEntityExtensionsMixin.java"
+### Community 341 - "V2832Inject.java"
 Cohesion: 0.60
-Nodes (5): io.github.fabricators_of_create.porting_lib.blocks.extensions.CustomDataPacketHandlingBlockEntity, io.github.fabricators_of_create.porting_lib.blocks.extensions.CustomRenderBoundingBoxBlockEntity, io.github.fabricators_of_create.porting_lib.blocks.extensions.CustomUpdateTagHandlingBlockEntity, PortingLibBlockEntityExtensionsMixin, net.neoforged.neoforge.common.extensions.IBlockEntityExtension
+Nodes (3): com.mojang.datafixers.types.templates.TypeTemplate, V2832Inject, net.minecraft.util.datafix.schemas.V2832
+
+### Community 342 - "FontInject"
+Cohesion: 0.50
+Nodes (3): FontInject, Override, net.neoforged.neoforge.client.extensions.IFontExtension
+
+### Community 343 - "BlockEntityInject"
+Cohesion: 0.15
+Nodes (12): fr.catcore.cursedmixinextensions.annotations.ShadowSuper, io.github.fabricators_of_create.porting_lib.blocks.extensions.CustomDataPacketHandlingBlockEntity, io.github.fabricators_of_create.porting_lib.blocks.extensions.CustomRenderBoundingBoxBlockEntity, io.github.fabricators_of_create.porting_lib.blocks.extensions.CustomUpdateTagHandlingBlockEntity, BlockEntityInjection, BlockEntityInject, Override, PortingLibBlockEntityExtensionsMixin (+4 more)
 
 ### Community 345 - "RecipeOutputInject.java"
 Cohesion: 0.36
 Nodes (6): Override, RecipeOutputInject, RecipeInject, net.minecraft.data.recipes.RecipeOutput, net.minecraft.world.item.crafting.Recipe, net.neoforged.neoforge.common.extensions.IRecipeOutputExtension
 
-### Community 346 - "Target"
-Cohesion: 0.31
-Nodes (4): ClassNode, FieldNode, MethodNode, Target
+### Community 346 - "ITransformer"
+Cohesion: 0.18
+Nodes (7): ITransformer, ClassNode, FieldNode, MethodNode, T, Target, TargetType
 
 ### Community 347 - "AttributeInject.java"
 Cohesion: 0.43
 Nodes (5): AttributeInject, Override, net.minecraft.network.chat.TextColor, net.neoforged.neoforge.common.extensions.IAttributeExtension, Sentiment
 
 ### Community 348 - "ShulkerInject.java"
-Cohesion: 0.19
+Cohesion: 0.23
 Nodes (8): SnowGolemInject, ShulkerInject, VineBlockInject, net.minecraft.world.entity.animal.AbstractGolem, net.minecraft.world.entity.animal.SnowGolem, net.minecraft.world.entity.monster.Shulker, net.minecraft.world.level.block.VineBlock, net.neoforged.neoforge.common.IShearable
 
 ### Community 349 - "net.minecraft.world.entity.player.Player"
 Cohesion: 0.03
-Nodes (47): EntityRenderDispatcherInjection, Model, BowItemInjection, BucketItemInjection, AbstractClientPlayerInject, EntityRenderDispatcherInject, Model, Override (+39 more)
+Nodes (39): it.unimi.dsi.fastutil.ints.IntOpenHashSet, EntityRenderDispatcherInjection, Model, ProjectileWeaponItemInjection, EntityRenderDispatcherInject, Model, Override, StatsCounterInject (+31 more)
 
 ### Community 350 - "net.minecraft.server.packs.resources.PreparableReloadListener"
 Cohesion: 0.67
 Nodes (3): ReloadableResourceManagerInject, net.minecraft.server.packs.resources.PreparableReloadListener, net.minecraft.server.packs.resources.ReloadableResourceManager
 
-### Community 351 - "ItemParticleOptionInject.java"
+### Community 351 - "BlockEntityRenderersInject.java"
 Cohesion: 0.60
-Nodes (3): ItemParticleOptionInject, net.minecraft.core.particles.ItemParticleOption, net.minecraft.core.particles.ParticleType
-
-### Community 352 - "EntryWithSourceInjection"
-Cohesion: 0.33
-Nodes (3): EntryWithSourceInjection, EntryWithSource, TagLoader.EntryWithSource
+Nodes (3): BlockEntityRenderersInject, net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider, net.minecraft.client.renderer.blockentity.BlockEntityRenderers
 
 ### Community 353 - "CaseInsensitiveStringHashSet"
 Cohesion: 0.38
@@ -1909,10 +1868,6 @@ Nodes (4): CaseInsensitiveStringHashSet, CaseInsensitiveStringStrategy, ObjectOp
 ### Community 354 - "ClassNameHashSet"
 Cohesion: 0.38
 Nodes (4): ClassNameHashSet, ClassNameStrategy, ObjectOpenCustomHashSet, Strategy
-
-### Community 355 - "ItemAttributeModifiersPredicateInject.java"
-Cohesion: 0.53
-Nodes (4): ItemAttributeModifiersPredicateInject, Override, net.minecraft.advancements.critereon.ItemAttributeModifiersPredicate, net.minecraft.advancements.critereon.SingleComponentItemPredicate
 
 ### Community 356 - "net.minecraft.world.level.GameType"
 Cohesion: 0.53
@@ -1926,45 +1881,41 @@ Nodes (4): com.mojang.blaze3d.vertex.ByteBufferBuilder, java.util.SequencedMap, 
 Cohesion: 0.47
 Nodes (4): Evoker.EvokerWololoSpellGoal, EvokerInject, EvokerWololoSpellGoalInject, net.minecraft.world.entity.monster.Evoker
 
-### Community 359 - "MilkBucketItemMixin.java"
-Cohesion: 0.47
-Nodes (4): Override, MilkBucketItemMixin, net.fabricmc.fabric.mixin.transfer.BucketItemAccessor, net.minecraft.world.item.MilkBucketItem
+### Community 359 - "MilkBucketItemInject.java"
+Cohesion: 0.36
+Nodes (5): Override, MilkBucketItemMixin, MilkBucketItemInject, net.fabricmc.fabric.mixin.transfer.BucketItemAccessor, net.minecraft.world.item.MilkBucketItem
 
 ### Community 360 - "Contribution Guidelines"
 Cohesion: 0.33
 Nodes (5): Contribution Guidelines, Generative AI, Mixins, `@Overwrite`, `@Redirect`
 
-### Community 361 - "ZombieInject.java"
-Cohesion: 0.18
-Nodes (9): HarvestFarmlandInject, HuskInject, ZombieInject, ZombieVillagerInject, net.minecraft.world.entity.ai.behavior.HarvestFarmland, net.minecraft.world.entity.monster.Husk, net.minecraft.world.entity.monster.Zombie, net.minecraft.world.entity.monster.ZombieVillager (+1 more)
+### Community 361 - "ResultSlotInject.java"
+Cohesion: 0.60
+Nodes (3): ResultSlotInject, net.minecraft.world.inventory.CraftingContainer, net.minecraft.world.inventory.ResultSlot
 
 ### Community 362 - "WeatheringCopperInject.java"
-Cohesion: 0.39
-Nodes (5): com.google.common.collect.BiMap, WeatheringCopperInject, net.minecraft.world.level.block.ChangeOverTimeBlock, net.minecraft.world.level.block.WeatheringCopper, WeatherState
+Cohesion: 0.60
+Nodes (4): WeatheringCopperInject, net.minecraft.world.level.block.ChangeOverTimeBlock, net.minecraft.world.level.block.WeatheringCopper, WeatherState
 
-### Community 363 - "net.minecraft.world.inventory.AbstractContainerMenu"
-Cohesion: 0.47
-Nodes (3): AnonymousContainerSynchronizer0Inject, net.minecraft.world.inventory.AbstractContainerMenu, net.minecraft.world.MenuProvider
+### Community 363 - "BrewingStandBlockEntityInject.java"
+Cohesion: 0.60
+Nodes (3): BrewingStandBlockEntityInject, net.minecraft.world.level.block.entity.BaseContainerBlockEntity, net.minecraft.world.level.block.entity.BrewingStandBlockEntity
 
-### Community 364 - "ItemStackInject"
+### Community 364 - "net.minecraft.tags.TagKey"
 Cohesion: 0.04
-Nodes (29): AxeItemInjection, ShovelItemInjection, AxeItemInject, Override, Override, Override, FishingRodItemInject, Override (+21 more)
-
-### Community 365 - "AttributesInject.java"
-Cohesion: 0.53
-Nodes (3): AttributesInject, net.minecraft.world.entity.ai.attributes.Attributes, net.minecraft.world.entity.ai.attributes.RangedAttribute
+Nodes (46): AxeItemInjection, DyeColorInjection, ShovelItemInjection, AxeItemInject, Override, BrushItemInject, Override, ShulkerBoxColoringInject (+38 more)
 
 ### Community 366 - "GiveGiftToHeroInject.java"
-Cohesion: 0.53
+Cohesion: 0.60
 Nodes (3): GiveGiftToHeroInject, net.minecraft.world.entity.ai.behavior.GiveGiftToHero, net.minecraft.world.entity.npc.VillagerProfession
 
-### Community 367 - "KiltFluidTags.kt"
-Cohesion: 0.60
-Nodes (4): KiltFluidTags, Fluid, TagKey, Registries
+### Community 367 - "net.neoforged.neoforge.common.extensions.IItemExtension"
+Cohesion: 0.83
+Nodes (3): IForgeItemMixin, net.neoforged.neoforge.common.extensions.IItemExtension, net.p3pp3rf1y.sophisticatedcore.extensions.item.SophisticatedItem
 
 ### Community 369 - "EntitySelectorParserInject.java"
-Cohesion: 0.60
-Nodes (3): com.mojang.brigadier.suggestion.SuggestionsBuilder, EntitySelectorParserInject, net.minecraft.commands.arguments.selector.EntitySelectorParser
+Cohesion: 0.36
+Nodes (5): com.mojang.brigadier.suggestion.SuggestionsBuilder, EntitySelectorInject, EntitySelectorParserInject, net.minecraft.commands.arguments.selector.EntitySelector, net.minecraft.commands.arguments.selector.EntitySelectorParser
 
 ### Community 370 - "Domain"
 Cohesion: 0.33
@@ -1978,13 +1929,9 @@ Nodes (3): AttachmentHolderWorkaround, CompoundTag, HolderLookup
 Cohesion: 0.60
 Nodes (3): com.google.common.collect.HashBiMap, SpriteSourcesInject, net.minecraft.client.renderer.texture.atlas.SpriteSources
 
-### Community 374 - "ModListEntryMixin.java"
-Cohesion: 0.60
-Nodes (3): com.terraformersmc.modmenu.gui.widget.entries.ModListEntry, com.terraformersmc.modmenu.util.mod.Mod, ModListEntryMixin
-
 ### Community 375 - "net.minecraft.client.multiplayer.ClientPacketListener"
-Cohesion: 0.31
-Nodes (6): com.moulberry.mixinconstraints.annotations.IfDevEnvironment, ClientPacketListenerMixin, PoseStackMixin, MappedRegistryMixin, ClientPacketListenerMixin, net.minecraft.client.multiplayer.ClientPacketListener
+Cohesion: 0.23
+Nodes (9): com.moulberry.mixinconstraints.annotations.IfDevEnvironment, BlockCounterInject, LevelChunkSectionInject, ChunkSkyLightSourcesMixin, ClientPacketListenerMixin, PoseStackMixin, net.minecraft.client.multiplayer.ClientPacketListener, net.minecraft.world.level.chunk.LevelChunkSection (+1 more)
 
 ### Community 376 - "FireworkParticlesInject"
 Cohesion: 0.50
@@ -1998,6 +1945,10 @@ Nodes (3): java.lang.annotation.Annotation, GameTestInject, net.minecraft.gamete
 Cohesion: 0.83
 Nodes (3): BucketPickupInject, net.minecraft.world.level.block.BucketPickup, net.neoforged.neoforge.common.extensions.IBucketPickupExtension
 
+### Community 379 - "KiltModCompatBridgeManager"
+Cohesion: 0.32
+Nodes (4): KiltCreateCompatWrappedNeoContainer, ModContainer, KiltModCompatBridgeManager, ModEntry
+
 ### Community 380 - "ToastComponentInject.java"
 Cohesion: 0.60
 Nodes (3): ToastComponentInject, net.minecraft.client.gui.components.toasts.Toast, net.minecraft.client.gui.components.toasts.ToastComponent
@@ -2006,13 +1957,9 @@ Nodes (3): ToastComponentInject, net.minecraft.client.gui.components.toasts.Toas
 Cohesion: 0.50
 Nodes (4): MapInstanceInject, MapRendererInject, MapRenderer.MapInstance, net.minecraft.client.gui.MapRenderer
 
-### Community 382 - "net.neoforged.neoforge.client.extensions.common.IClientItemExtensions"
-Cohesion: 0.48
-Nodes (5): com.google.common.cache.Cache, CacheOptimizationStorage, IClientItemExtensionsMixin, net.neoforged.neoforge.client.extensions.common.IClientItemExtensions, xyz.bluspring.kilt.util.Quadruple
-
 ### Community 383 - "net.minecraft.client.multiplayer.ClientLevel"
-Cohesion: 0.11
-Nodes (14): FogData, FogMode, PortalParticleInject, ReversePortalParticleInject, VibrationSignalParticleInject, FogRendererInject, LightTextureInject, net.minecraft.client.multiplayer.ClientLevel (+6 more)
+Cohesion: 0.06
+Nodes (21): FogData, FogMode, Reason, EntityCallbacksInject, PortalParticleInject, ReversePortalParticleInject, AABB, Override (+13 more)
 
 ### Community 384 - "MessageArgumentInject.java"
 Cohesion: 0.50
@@ -2026,24 +1973,20 @@ Nodes (3): RegistryData, RegistryPatchGeneratorInject, net.minecraft.data.regist
 Cohesion: 0.33
 Nodes (4): GeoRenderEvent, ICancellableEvent, GeckoLibEvents, T
 
-### Community 388 - "org.spongepowered.asm.mixin.Pseudo"
-Cohesion: 0.07
-Nodes (21): com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod, ContentConsumer, dev.djefrey.colorwheel.Colorwheel, dev.djefrey.colorwheel.neoforge.ClrwlNeoForgeXplat, java.lang.reflect.Constructor, ColorwheelMixin, JadeFluidObjectMixin, TypedIngredientMixin (+13 more)
+### Community 388 - "com.moulberry.mixinconstraints.annotations.IfModLoaded"
+Cohesion: 0.05
+Nodes (51): com.moulberry.mixinconstraints.annotations.IfModLoaded, com.terraformersmc.modmenu.api.ConfigScreenFactory, com.terraformersmc.modmenu.ModMenu, de.siphalor.amecs.api.KeyBindingUtils, dev.djefrey.colorwheel.Colorwheel, dev.djefrey.colorwheel.neoforge.ClrwlNeoForgeXplat, EntrypointContainer, java.lang.reflect.Constructor (+43 more)
 
 ### Community 389 - "RabbitInject.java"
 Cohesion: 0.60
 Nodes (3): RabbitInject, RaidGardenGoalInject, net.minecraft.world.entity.animal.Rabbit
 
-### Community 390 - "StopHoldingItemIfNoLongerAdmiringInject.java"
-Cohesion: 0.60
-Nodes (3): StopHoldingItemIfNoLongerAdmiringInject, net.minecraft.world.entity.monster.piglin.Piglin, net.minecraft.world.entity.monster.piglin.StopHoldingItemIfNoLongerAdmiring
-
 ### Community 394 - "ClientStartingCallback"
 Cohesion: 0.70
 Nodes (3): ClientStartingCallback, Event, Minecraft
 
-### Community 397 - "BundleContentsInject.java"
-Cohesion: 0.40
+### Community 397 - "BundleContentsInject"
+Cohesion: 0.50
 Nodes (4): BundleContents.Mutable, BundleContentsInject, MutableInject, net.minecraft.world.item.component.BundleContents
 
 ### Community 404 - "EntityDataSerializersInject.java"
@@ -2055,16 +1998,8 @@ Cohesion: 0.83
 Nodes (3): gradlew script, die(), warn()
 
 ### Community 410 - "ChunkMapInject.java"
-Cohesion: 0.15
-Nodes (10): ChunkMapInjection, Message, ChunkMapInject, Message, Override, TrackedEntityAccessor, net.minecraft.server.level.ChunkMap, net.minecraft.server.network.ServerPlayerConnection (+2 more)
-
-### Community 411 - "IForgeBlockStateMixin.java"
-Cohesion: 0.83
-Nodes (3): IForgeBlockStateMixin, net.neoforged.neoforge.common.extensions.IBlockStateExtension, net.p3pp3rf1y.sophisticatedcore.extensions.block.SophisticatedBlockState
-
-### Community 413 - ".kilt$transformQuadFromForge"
-Cohesion: 0.18
-Nodes (4): BakedQuadInjection, BakedQuad, BakedQuadInject, Override
+Cohesion: 0.12
+Nodes (15): ChunkMapInjection, Message, ChunkMapInject, Message, ChunkSerializerInject, TrackedEntityAccessor, net.minecraft.server.level.ChunkHolder, net.minecraft.server.level.ChunkMap (+7 more)
 
 ### Community 414 - "BoatDispenseItemBehaviorInject.java"
 Cohesion: 0.83
@@ -2074,37 +2009,17 @@ Nodes (3): BoatDispenseItemBehaviorInject, net.minecraft.core.dispenser.BoatDisp
 Cohesion: 0.83
 Nodes (3): DispensibleContainerItemInject, net.minecraft.world.item.DispensibleContainerItem, net.neoforged.neoforge.common.extensions.IDispensibleContainerItemExtension
 
-### Community 419 - "net.minecraft.world.entity.Entity"
-Cohesion: 0.05
-Nodes (19): ItemStack, SpreadPlayersCommandInject, EntityCallbacksInject, AnonymousServerboundInteractPacketHandlerInject, ServerGamePacketListenerImplInject, BooleanValue, DetectorRailBlockInject, PowderSnowBlockInject (+11 more)
+### Community 419 - "NoteBlockInject.java"
+Cohesion: 0.29
+Nodes (7): DetectorRailBlockInject, NoteBlockInject, net.minecraft.world.level.block.DetectorRailBlock, net.minecraft.world.level.block.NoteBlock, net.minecraft.world.level.block.state.properties.EnumProperty, net.minecraft.world.level.block.state.properties.IntegerProperty, net.minecraft.world.level.block.state.properties.NoteBlockInstrument
 
-### Community 425 - "IForgeItemStackMixin.java"
-Cohesion: 0.83
-Nodes (3): IForgeItemStackMixin, net.neoforged.neoforge.common.extensions.IItemStackExtension, net.p3pp3rf1y.sophisticatedcore.extensions.item.SophisticatedItemStack
-
-### Community 426 - ".kilt$onlyRegisterIfNotNull"
-Cohesion: 0.50
-Nodes (3): Reference, RegistrationInfo, WritableRegistry
+### Community 420 - "net.minecraft.world.level.block.piston.PistonMovingBlockEntity"
+Cohesion: 0.47
+Nodes (3): Override, PistonMovingBlockEntityInject, net.minecraft.world.level.block.piston.PistonMovingBlockEntity
 
 ### Community 428 - "TransformerVoteResult"
 Cohesion: 0.29
 Nodes (5): TransformerVoteResult, DEFER, NO, REJECT, YES
-
-### Community 430 - "MinecartSpawnerInject.java"
-Cohesion: 0.83
-Nodes (3): BaseSpawnerInject, MinecartSpawnerInject, net.minecraft.world.entity.vehicle.MinecartSpawner
-
-### Community 437 - "GLVersionSpecifierFixer.kt"
-Cohesion: 0.40
-Nodes (3): DetectedGLVersion, GLVersionSpecifierFixer, ClassNode
-
-### Community 442 - "TrunkPlacerInject.java"
-Cohesion: 0.60
-Nodes (3): TrunkPlacerInject, net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer, net.minecraft.world.level.LevelSimulatedReader
-
-### Community 443 - "ByteBufCodecsInject.java"
-Cohesion: 0.24
-Nodes (8): Direct, ByteBufCodecsInject, HolderSetInject, RegistryInject, Named, net.minecraft.network.codec.ByteBufCodecs, net.neoforged.neoforge.registries.holdersets.HolderSetType, net.neoforged.neoforge.registries.holdersets.ICustomHolderSet
 
 ### Community 445 - "VillagerTradesInject.java"
 Cohesion: 0.40
@@ -2115,40 +2030,40 @@ Cohesion: 0.32
 Nodes (4): AttachedCheck, BlockMovementChecks, CheckResult, FunctionalInterface
 
 ### Community 452 - "HashCacheInject.java"
-Cohesion: 0.47
-Nodes (3): HashCacheInject, net.minecraft.data.HashCache, ProviderCache
+Cohesion: 0.36
+Nodes (4): HashCacheInject, net.minecraft.data.HashCache, net.minecraft.WorldVersion, ProviderCache
 
-### Community 455 - "AbstractFurnaceMenuInject.java"
-Cohesion: 0.27
-Nodes (7): RecipeType, RecipeTypeInjection, AbstractFurnaceMenuInject, RecipeTypeInject, net.minecraft.world.inventory.AbstractFurnaceMenu, net.minecraft.world.item.crafting.AbstractCookingRecipe, net.minecraft.world.item.crafting.RecipeType
+### Community 455 - "net.minecraft.world.item.crafting.RecipeType"
+Cohesion: 0.46
+Nodes (4): RecipeType, RecipeTypeInjection, RecipeTypeInject, net.minecraft.world.item.crafting.RecipeType
 
 ### Community 458 - "DefaultedHashMap"
 Cohesion: 0.70
 Nodes (3): DefaultedHashMap, K, V
 
-### Community 512 - "FeatureFlagsInject.java"
-Cohesion: 0.47
-Nodes (4): FeatureFlagsInject, Builder, net.minecraft.world.flag.FeatureFlagRegistry, net.minecraft.world.flag.FeatureFlags
+### Community 512 - "ExperimentsScreenInject.java"
+Cohesion: 0.24
+Nodes (6): ExperimentsScreenInject, FeatureFlagsInject, Builder, net.minecraft.client.gui.screens.worldselection.ExperimentsScreen, net.minecraft.world.flag.FeatureFlagRegistry, net.minecraft.world.flag.FeatureFlags
 
 ## Knowledge Gaps
 - **104 isolated node(s):** `$schema`, `plugin`, `DetectedGLVersion`, `FabricImplemented`, `TooltipFlagInjection` (+99 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1196 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **104 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **99 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Kilt` connect `Kilt.kt` to `KiltLoader`, `.run`, `KiltEarlyRiser.kt`, `FabricResourcefulRegistryMixin.java`, `KiltRemapper`, `KiltFluidTags.kt`, `NeoForgeMod`, `KiltMixinModifier.kt`, `KiltArchitecturyApiCompat.kt`, `ModBridgeStrategy`, `net.minecraft.world.item.ItemStack`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
-- **Why does `KiltHelper` connect `KiltHelper` to `ModifiedCloneWorkaroundLoader`, `IEnvironment`, `KiltLoader`, `Kilt.kt`, `.createMixinException`, `.run`, `KiltEarlyRiser.kt`, `KiltRemapper`, `.add`, `net.minecraft.world.item.ItemStack`?**
+- **Why does `KiltHelper` connect `KiltHelper` to `ModifiedCloneWorkaroundLoader`, `ILaunchPluginService`, `KiltLoader`, `Kilt.kt`, `KiltHelper.kt`, `.run`, `.createMixinException`, `KiltEarlyRiser.kt`, `KiltRemapper`, `.add`?**
   _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `Type` connect `Type` to `net.minecraft.world.inventory.RecipeBookType`, `ModConfigMixin.java`, `com.bawnorton.mixinsquared.TargetHandler`, `EnumExtensionLoader.kt`, `ModifiedCloneWorkaroundLoader`, `ComponentSerializationInject.java`, `org.spongepowered.asm.mixin.gen.Accessor`, `ITransformer`, `.run`, `CreativeModeInventoryScreenInject.java`, `net.minecraft.resources.ResourceLocation`, `TypeInject`, `ServerConfigurationPacketListenerImplInject`, `ITransformerVotingContext`, `com.llamalad7.mixinextras.injector.wrapoperation.Operation`, `net.minecraft.network.chat.Component`, `SkullBlockRendererInject.java`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `Kilt` connect `Kilt.kt` to `KiltLoader`, `KiltHelper.kt`, `.run`, `KiltEarlyRiser.kt`, `FabricResourcefulRegistryMixin.java`, `KiltRemapper`, `NeoForgeMod`, `KiltMixinModifier.kt`, `ModBridgeStrategy`, `KiltModCompatBridgeManager`?**
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **Why does `Type` connect `Type` to `net.minecraft.world.inventory.RecipeBookType`, `java.util.function.Supplier`, `ModConfigMixin.java`, `SkullBlockRendererInject.java`, `ILaunchPluginService`, `EnumExtensionLoader.kt`, `TypeInject`, `ModifiedCloneWorkaroundLoader`, `TargetType`, `.run`, `net.minecraft.resources.ResourceLocation`, `net.minecraft.world.entity.Entity`, `TransformerVotingContext`, `net.neoforged.neoforge.client.settings.KeyModifier`, `ServerConfigurationPacketListenerImplInject`, `ComponentSerializationInject.java`?**
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **What connects `$schema`, `plugin`, `DetectedGLVersion` to the rest of the system?**
   _104 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `What You Must Do When Invoked` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
-- **Should `net.minecraft.client.gui.GuiGraphics` be split into smaller, more focused modules?**
-  _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
+- **Should `org.spongepowered.asm.mixin.gen.Invoker` be split into smaller, more focused modules?**
+  _Cohesion score 0.0873015873015873 - nodes in this community are weakly interconnected._
 - **Should `org.objectweb.asm.tree.ClassNode` be split into smaller, more focused modules?**
   _Cohesion score 0.09878048780487805 - nodes in this community are weakly interconnected._

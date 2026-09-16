@@ -324,9 +324,9 @@
     "semantic_hash": ""
   },
   "src/client/java/com/example/client/mixin/DietScreenFixMixin.java": {
-    "mtime": 1789555492.4133067,
-    "seen": 1789555530.0070765,
-    "ast_hash": "84a438a89fb24353b5885d27cb2e89bb",
+    "mtime": 1789561519.831215,
+    "seen": 1789561741.602732,
+    "ast_hash": "9aedba4c319809dd3f0d7163f045e6ea",
     "semantic_hash": ""
   },
   "src/main/java/com/example/mixin/ServerChunkCacheThreadFixMixin.java": {

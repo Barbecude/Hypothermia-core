@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   "src/client/resources/modid.client.mixins.json": {
-    "mtime": 1789560375.5776362,
-    "seen": 1789560465.573921,
-    "ast_hash": "908bcfa4c2dce3790cf82da8c99bda31",
+    "mtime": 1789562722.28559,
+    "seen": 1789562872.9187443,
+    "ast_hash": "1207758e923c5eaa2ec81638df3693be",
     "semantic_hash": ""
   },
   "src/main/java/com/example/ExampleMod.java": {
@@ -9063,6 +9063,18 @@
     "mtime": 1789560371.3072064,
     "seen": 1789560465.5739174,
     "ast_hash": "1de2b45130709b753589384c84b7f391",
+    "semantic_hash": ""
+  },
+  "src/client/java/com/example/client/mixin/GameRendererBlurFixMixin.java": {
+    "mtime": 1789562703.8786528,
+    "seen": 1789562872.9187315,
+    "ast_hash": "2c5f53ba9606d4531da4993ca7566ca7",
+    "semantic_hash": ""
+  },
+  "src/client/java/com/example/client/mixin/OptionsBlurFixMixin.java": {
+    "mtime": 1789562711.5037115,
+    "seen": 1789562872.9187403,
+    "ast_hash": "f96f56d118eba6fdc6ba0da34dea616b",
     "semantic_hash": ""
   }
 }

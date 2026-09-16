@@ -5,11 +5,11 @@
 	"plugin": "com.example.mixin.HypothermiaMixinPlugin",
 	"client": [
 		"ExampleClientMixin",
-		"SereneSeasonsFoodMixin",
-		"ItemRendererFrozenFoodMixin",
 		"DietScreenFixMixin",
 		"FlashlightBeamFlashbackMixin",
-		"LightEditorScreenPersistenceMixin"
+		"LightEditorScreenPersistenceMixin",
+		"GameRendererBlurFixMixin",
+		"OptionsBlurFixMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
