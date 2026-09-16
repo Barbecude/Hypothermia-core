@@ -1,0 +1,326 @@
+{
+  ".opencode/opencode.json": {
+    "mtime": 1789467185.5649185,
+    "seen": 1789467606.2938118,
+    "ast_hash": "1efe24ecf938911d4f23e4b1c6ec91f7",
+    "semantic_hash": ""
+  },
+  ".opencode/plugins/graphify.js": {
+    "mtime": 1789466011.7207322,
+    "seen": 1789467606.2938178,
+    "ast_hash": "b33d000860642c6f4907a877e0387a21",
+    "semantic_hash": ""
+  },
+  "build.gradle": {
+    "mtime": 1789542047.622734,
+    "seen": 1789542051.8284028,
+    "ast_hash": "0c07317ba8870d484e63d6dcbc58051c",
+    "semantic_hash": ""
+  },
+  "gradlew": {
+    "mtime": 1789465771.5908713,
+    "seen": 1789467606.2938218,
+    "ast_hash": "45bf2667b1fbec0e07e42808dc662b6b",
+    "semantic_hash": ""
+  },
+  "settings.gradle": {
+    "mtime": 1789465771.6067755,
+    "seen": 1789467606.2938232,
+    "ast_hash": "ba797036eb982145eb70a1850e8c695e",
+    "semantic_hash": ""
+  },
+  "src/client/java/com/example/client/ExampleModClient.java": {
+    "mtime": 1789535833.7380238,
+    "seen": 1789536148.1418965,
+    "ast_hash": "a609448d1a6cd754ff7543e09cbba30e",
+    "semantic_hash": ""
+  },
+  "src/client/java/com/example/client/mixin/ExampleClientMixin.java": {
+    "mtime": 1789535833.7745624,
+    "seen": 1789536148.1418993,
+    "ast_hash": "e86f54ae0ab5ba5ade92834e9f9f9968",
+    "semantic_hash": ""
+  },
+  "src/client/resources/modid.client.mixins.json": {
+    "mtime": 1789535833.797648,
+    "seen": 1789536148.141904,
+    "ast_hash": "9a76d6a83fe8cb467de4cd9757265b6f",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/ExampleMod.java": {
+    "mtime": 1789536242.9264178,
+    "seen": 1789536247.6777334,
+    "ast_hash": "50a3ae9fb8bc2fd30f6240b9b25e923c",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/ExampleMixin.java": {
+    "mtime": 1789535833.8781126,
+    "seen": 1789536148.141913,
+    "ast_hash": "e0afe8454a01f7860eaac38d8d76b706",
+    "semantic_hash": ""
+  },
+  "src/main/resources/fabric.mod.json": {
+    "mtime": 1789535833.9256053,
+    "seen": 1789536148.1419191,
+    "ast_hash": "f10ec7458dfb9ba571250a8335605888",
+    "semantic_hash": ""
+  },
+  "src/main/resources/modid.mixins.json": {
+    "mtime": 1789541380.9953792,
+    "seen": 1789541387.1373901,
+    "ast_hash": "07f77854f265880a1ba82b05b3d12294",
+    "semantic_hash": ""
+  },
+  ".github/workflows/build.yml": {
+    "mtime": 1789465771.6067755,
+    "seen": 1789467606.2938328,
+    "ast_hash": "c6ae081b79ae74539feace5c819ac233",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/SKILL.md": {
+    "mtime": 1789466011.7167597,
+    "seen": 1789467606.293834,
+    "ast_hash": "2e9858a59406dd2af786cf4cb74bc610",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/add-watch.md": {
+    "mtime": 1789441460.714438,
+    "seen": 1789467606.293835,
+    "ast_hash": "d59d027fe449f06aa03905a01184e779",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/exports.md": {
+    "mtime": 1789441460.714438,
+    "seen": 1789467606.2938359,
+    "ast_hash": "9da2a2152e60a22f07f05fed5158f287",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/extraction-spec.md": {
+    "mtime": 1789441460.714438,
+    "seen": 1789467606.2938368,
+    "ast_hash": "42fef56a01698118f7fd722acdadea34",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/github-and-merge.md": {
+    "mtime": 1789441460.7162294,
+    "seen": 1789467606.2938378,
+    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/hooks.md": {
+    "mtime": 1789441460.716736,
+    "seen": 1789467606.2938387,
+    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/query.md": {
+    "mtime": 1789441460.716736,
+    "seen": 1789467606.29384,
+    "ast_hash": "3c46f8ad006874260614ed8657d02307",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/transcribe.md": {
+    "mtime": 1789441460.716736,
+    "seen": 1789467606.293841,
+    "ast_hash": "67b6a5fa6c0974e18f60db9f8932fbd8",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/update.md": {
+    "mtime": 1789441460.7543716,
+    "seen": 1789467606.2938418,
+    "ast_hash": "9378bd03d56baaf78bd738ab3848f142",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1789469437.904086,
+    "seen": 1789470499.150033,
+    "ast_hash": "6cedffd70b98f9f39a5bfab6b3e164b6",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1789465771.5749462,
+    "seen": 1789467606.2938442,
+    "ast_hash": "b34e634fe86244c804f400f052b51a38",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/modid/icon.png": {
+    "mtime": 1789535833.9754958,
+    "seen": 1789536148.1419437,
+    "ast_hash": "a75dbb23d32ddae27d446300c2152ff4",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/AlexMobsFixMixin.java": {
+    "mtime": 1789540807.4747512,
+    "seen": 1789540811.7553947,
+    "ast_hash": "beba66d8ec9fa5e2e14f88c9a839cad6",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/SpartanWeaponryFixMixin.java": {
+    "mtime": 1789535833.8781126,
+    "seen": 1789536148.1419182,
+    "ast_hash": "59ef196e0cfa3e88db354afa011af720",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/ColdSweatCompatibilityMixin.java": {
+    "mtime": 1789536410.0098956,
+    "seen": 1789536414.109079,
+    "ast_hash": "92e6a604d85b6bf93d58ddeeabf13282",
+    "semantic_hash": ""
+  },
+  "src/client/java/com/example/client/mixin/SereneSeasonsFoodMixin.java": {
+    "mtime": 1789535833.7684813,
+    "seen": 1789536148.1419027,
+    "ast_hash": "a2b06473ea96bdb01cc4ec25c68c6c2b",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/FallingSnowOptimizationMixin.java": {
+    "mtime": 1789535833.8940518,
+    "seen": 1789536148.141914,
+    "ast_hash": "f1e218a93b52f7ed24e9ba70aa9eeff1",
+    "semantic_hash": ""
+  },
+  "src/App.tsx": {
+    "mtime": 1789535833.6992764,
+    "seen": 1789536148.1418943,
+    "ast_hash": "d6e0059367e11550b554a6c0a9e5ad5a",
+    "semantic_hash": ""
+  },
+  "src/client/java/com/example/client/FoodFreezingHelper.java": {
+    "mtime": 1789535833.7525318,
+    "seen": 1789536148.141898,
+    "ast_hash": "13a27ab8a7a000221896a263ae5533f6",
+    "semantic_hash": ""
+  },
+  "src/client/java/com/example/client/mixin/ItemRendererFrozenFoodMixin.java": {
+    "mtime": 1789535833.7745624,
+    "seen": 1789536148.1419008,
+    "ast_hash": "9dbdc836a2a366c3d24dae7d0920c081",
+    "semantic_hash": ""
+  },
+  "src/jarData.ts": {
+    "mtime": 1789535833.70858,
+    "seen": 1789536148.1419053,
+    "ast_hash": "5f80529bdf3fef264cfa304c700414c8",
+    "semantic_hash": ""
+  },
+  "src/main.tsx": {
+    "mtime": 1789535833.689654,
+    "seen": 1789536148.1419067,
+    "ast_hash": "2b36426d5ad7e08ef79746aa524f4fb7",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/HypothermiaMixinCanceller.java": {
+    "mtime": 1789539040.6703072,
+    "seen": 1789539044.497666,
+    "ast_hash": "cc805e27549e0cbfefbc886bd5ee0cbd",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/HypothermiaMixinPlugin.java": {
+    "mtime": 1789535833.8940518,
+    "seen": 1789536148.1419158,
+    "ast_hash": "b5c0d4964faf0edb84cd0b6eab864546",
+    "semantic_hash": ""
+  },
+  "src/main/resources/hypothermia.classtransform.json": {
+    "mtime": 1789535833.9256053,
+    "seen": 1789536148.1419203,
+    "ast_hash": "2f2d0be3748e7f034eac4b9aede4a91f",
+    "semantic_hash": ""
+  },
+  "watch-graphify.ps1": {
+    "mtime": 1789536259.8155344,
+    "seen": 1789536264.9617357,
+    "ast_hash": "887e6d3875c11da9fe72f6dc67d0faa5",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/ColdSweatCompatManagerFixMixin.java": {
+    "mtime": 1789538291.8661056,
+    "seen": 1789538295.7990732,
+    "ast_hash": "89f730ff14013d18295b3ba8cd62f3c3",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/simibubi/create/api/contraption/BlockMovementChecks.java": {
+    "mtime": 1789540441.0959785,
+    "seen": 1789540445.4887118,
+    "ast_hash": "b8a652dc32293073c29af68b31b033e8",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/KiltAutomaticEventSubscriberFixMixin.java": {
+    "mtime": 1789540448.3199782,
+    "seen": 1789540452.4681168,
+    "ast_hash": "f748ca9092f1fe336891b6951f3b8717",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/ColdSweatItemRequirementFixMixin.java": {
+    "mtime": 1789541366.377272,
+    "seen": 1789541370.680085,
+    "ast_hash": "280678392c920f87fbabdfdf48e4da60",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/ColdSweatEntityRequirementFixMixin.java": {
+    "mtime": 1789541373.96076,
+    "seen": 1789541378.161455,
+    "ast_hash": "de744a034a9bf1afdefc794ce2b56b77",
+    "semantic_hash": ""
+  },
+  "scratch/spectrelib/fabric.mod.json": {
+    "mtime": 1789541723.1461565,
+    "seen": 1789541727.4657705,
+    "ast_hash": "883593307648925e0e2ce5ed30531877",
+    "semantic_hash": ""
+  },
+  "scratch/spectrelib_all/assets/spectrelib/lang/en_us.json": {
+    "mtime": 1789541933.7548702,
+    "seen": 1789541938.2966347,
+    "ast_hash": "997f89045137db6ab39b11a7fd3e02de",
+    "semantic_hash": ""
+  },
+  "scratch/spectrelib_all/fabric.mod.json": {
+    "mtime": 1789541933.7966712,
+    "seen": 1789541938.296636,
+    "ast_hash": "883593307648925e0e2ce5ed30531877",
+    "semantic_hash": ""
+  },
+  "scratch/spectrelib_all/spectrelib.mixins.json": {
+    "mtime": 1789541933.800676,
+    "seen": 1789541938.2966375,
+    "ast_hash": "ca2eff549f947ebad1b9be4efbff3b73",
+    "semantic_hash": ""
+  },
+  "scratch/spectrelib_all/spectrelib.refmap.json": {
+    "mtime": 1789541933.800676,
+    "seen": 1789541938.2966387,
+    "ast_hash": "5e61d35e4052c7c59a4d9c76107ad66d",
+    "semantic_hash": ""
+  },
+  "scratch/spectrelib_all/README.md": {
+    "mtime": 1789541933.7538688,
+    "seen": 1789541938.2967074,
+    "ast_hash": "b39150d6c2ffbf252caca436d7580ca3",
+    "semantic_hash": ""
+  },
+  "scratch/spectrelib_all/spectrelib_icon.png": {
+    "mtime": 1789541933.8021774,
+    "seen": 1789541938.2967086,
+    "ast_hash": "a95bb6d8babe386b3150a2cb9ef3b19b",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/SpectreConfigValueFixMixin.java": {
+    "mtime": 1789542082.1399558,
+    "seen": 1789542086.4524527,
+    "ast_hash": "109e972bdf471635a3bedbc4fc77d458",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/SpectreConfigTrackerFixMixin.java": {
+    "mtime": 1789542088.0851576,
+    "seen": 1789542092.560565,
+    "ast_hash": "14896bfbb5bff79b75848ded089d96ec",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/SpectreEntrypointUtilsMixin.java": {
+    "mtime": 1789542094.1021304,
+    "seen": 1789542098.2448833,
+    "ast_hash": "e4184f30a698de1c32e6d132b55bd3db",
+    "semantic_hash": ""
+  }
+}

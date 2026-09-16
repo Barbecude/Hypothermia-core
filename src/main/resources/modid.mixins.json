@@ -2,11 +2,20 @@
 	"required": true,
 	"package": "com.example.mixin",
 	"compatibilityLevel": "JAVA_21",
+	"plugin": "com.example.mixin.HypothermiaMixinPlugin",
 	"mixins": [
 		"ExampleMixin",
 		"SpartanWeaponryFixMixin",
 		"AlexMobsFixMixin",
-		"ColdSweatCompatibilityMixin"
+		"ColdSweatCompatibilityMixin",
+		"ColdSweatCompatManagerFixMixin",
+		"ColdSweatItemRequirementFixMixin",
+		"ColdSweatEntityRequirementFixMixin",
+		"KiltAutomaticEventSubscriberFixMixin",
+		"FallingSnowOptimizationMixin",
+		"SpectreConfigTrackerFixMixin",
+		"SpectreConfigValueFixMixin",
+		"SpectreEntrypointUtilsMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

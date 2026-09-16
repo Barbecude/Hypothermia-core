@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Specification-Title: SpectreLib
+Specification-Vendor: Illusive Soulworks
+Specification-Version: 0.17.2+1.21
+Implementation-Title: fabric
+Implementation-Version: 0.17.2+1.21
+Implementation-Vendor: Illusive Soulworks
+Built-On-Minecraft: 1.21
+Fabric-Jar-Type: classes
+Fabric-Loom-Mixin-Remap-Type: mixin
+Fabric-Gradle-Version: 8.7
+Fabric-Loom-Version: 1.6.12
+Fabric-Mixin-Compile-Extensions-Version: 0.6.0
+Fabric-Minecraft-Version: 1.21
+Fabric-Tiny-Remapper-Version: 0.10.3
+Fabric-Loader-Version: 0.15.11
+Fabric-Mixin-Version: 0.13.3+mixin.0.8.5
+Fabric-Mixin-Group: net.fabricmc
+Fabric-Mapping-Namespace: intermediary
+

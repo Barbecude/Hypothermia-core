@@ -4,7 +4,8 @@
 	"compatibilityLevel": "JAVA_21",
 	"client": [
 		"ExampleClientMixin",
-		"SereneSeasonsFoodMixin"
+		"SereneSeasonsFoodMixin",
+		"ItemRendererFrozenFoodMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

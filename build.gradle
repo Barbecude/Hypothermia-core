@@ -17,11 +17,17 @@ loom {
 	}
 }
 
+base {
+	archivesName = "hypothermia_core"
+}
+
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings loom.officialMojangMappings()
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	compileOnly fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 processResources {
@@ -54,14 +60,30 @@ jar {
 
 tasks.register('copyToModrinth') {
     doLast {
-        def modsFolder = "D:\\Users\\Zevaldo\\AppData\\Roaming\\ModrinthApp\\profiles\\Hypothermia 2\\mods"
+        def targetProfiles = [
+            "D:\\Users\\Zevaldo\\curseforge\\minecraft\\Instances\\Fabric 1.21\\mods",
+            "D:\\Users\\Zevaldo\\AppData\\Roaming\\ModrinthApp\\profiles\\Hypothermia 4\\mods",
+            "D:\\Users\\Zevaldo\\AppData\\Roaming\\ModrinthApp\\profiles\\Another clean fabric\\mods"
+        ]
         def jarFile = tasks.remapJar.archiveFile.get().asFile
         if (jarFile.exists()) {
-            copy {
-                from jarFile
-                into modsFolder
+            targetProfiles.each { modsFolder ->
+                def dir = file(modsFolder)
+                if (dir.exists()) {
+                    // Clean up stale hypothermia_core builds in target folder
+                    dir.listFiles().each { f ->
+                        if (f.name.startsWith("hypothermia_core") && f.name != jarFile.name) {
+                            f.delete()
+                            println "Removed old build ${f.name} from ${modsFolder}"
+                        }
+                    }
+                    copy {
+                        from jarFile
+                        into modsFolder
+                    }
+                    println "Successfully copied ${jarFile.name} to ${modsFolder}"
+                }
             }
-            println "Successfully copied ${jarFile.name} to ${modsFolder}"
         } else {
             println "Remapped jar file not found, run 'remapJar' task first."
         }

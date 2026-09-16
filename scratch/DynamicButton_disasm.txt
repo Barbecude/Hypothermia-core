@@ -1,0 +1,94 @@
+Compiled from "DynamicButton.java"
+public class com.illusivesoulworks.diet.client.screen.DynamicButton extends net.minecraft.class_4185 {
+  private static final net.minecraft.class_2960 ICONS;
+
+  private final net.minecraft.class_465<?> containerScreen;
+
+  public com.illusivesoulworks.diet.client.screen.DynamicButton(net.minecraft.class_465<?>, int, int, int, int, net.minecraft.class_4185$class_4241);
+    Code:
+       0: aload_0
+       1: iload_2
+       2: iload_3
+       3: iload         4
+       5: iload         5
+       7: getstatic     #41                 // Field net/minecraft/class_5244.field_39003:Lnet/minecraft/class_2561;
+      10: aload         6
+      12: getstatic     #45                 // Field field_40754:Lnet/minecraft/class_4185$class_7841;
+      15: invokespecial #48                 // Method net/minecraft/class_4185."<init>":(IIIILnet/minecraft/class_2561;Lnet/minecraft/class_4185$class_4241;Lnet/minecraft/class_4185$class_7841;)V
+      18: aload_0
+      19: aload_1
+      20: putfield      #50                 // Field containerScreen:Lnet/minecraft/class_465;
+      23: return
+
+  public void method_48579(net.minecraft.class_332, int, int, float);
+    Code:
+       0: aload_0
+       1: getstatic     #67                 // Field com/illusivesoulworks/diet/platform/ClientServices.INSTANCE:Lcom/illusivesoulworks/diet/platform/services/IClientService;
+       4: aload_0
+       5: getfield      #50                 // Field containerScreen:Lnet/minecraft/class_465;
+       8: invokeinterface #73,  2           // InterfaceMethod com/illusivesoulworks/diet/platform/services/IClientService.getGuiLeft:(Lnet/minecraft/class_465;)I
+      13: getstatic     #77                 // Field com/illusivesoulworks/diet/common/config/DietConfig.CLIENT:Lcom/illusivesoulworks/diet/common/config/DietConfig$Client;
+      16: getfield      #81                 // Field com/illusivesoulworks/diet/common/config/DietConfig$Client.buttonX:Lcom/illusivesoulworks/spectrelib/config/SpectreConfigSpec$IntValue;
+      19: invokevirtual #85                 // Method com/illusivesoulworks/spectrelib/config/SpectreConfigSpec$IntValue.get:()Ljava/lang/Object;
+      22: checkcast     #87                 // class java/lang/Integer
+      25: invokevirtual #91                 // Method java/lang/Integer.intValue:()I
+      28: iadd
+      29: invokevirtual #95                 // Method method_46421:(I)V
+      32: aload_0
+      33: getstatic     #67                 // Field com/illusivesoulworks/diet/platform/ClientServices.INSTANCE:Lcom/illusivesoulworks/diet/platform/services/IClientService;
+      36: aload_0
+      37: getfield      #50                 // Field containerScreen:Lnet/minecraft/class_465;
+      40: invokeinterface #98,  2           // InterfaceMethod com/illusivesoulworks/diet/platform/services/IClientService.getGuiTop:(Lnet/minecraft/class_465;)I
+      45: getstatic     #77                 // Field com/illusivesoulworks/diet/common/config/DietConfig.CLIENT:Lcom/illusivesoulworks/diet/common/config/DietConfig$Client;
+      48: getfield      #101                // Field com/illusivesoulworks/diet/common/config/DietConfig$Client.buttonY:Lcom/illusivesoulworks/spectrelib/config/SpectreConfigSpec$IntValue;
+      51: invokevirtual #85                 // Method com/illusivesoulworks/spectrelib/config/SpectreConfigSpec$IntValue.get:()Ljava/lang/Object;
+      54: checkcast     #87                 // class java/lang/Integer
+      57: invokevirtual #91                 // Method java/lang/Integer.intValue:()I
+      60: iadd
+      61: bipush        83
+      63: iadd
+      64: invokevirtual #104                // Method method_46419:(I)V
+      67: aload_0
+      68: invokevirtual #108                // Method method_25367:()Z
+      71: ifeq          102
+      74: invokestatic  #114                // Method com/illusivesoulworks/diet/client/screen/DietTooltip.getEffects:()Ljava/util/List;
+      77: astore        5
+      79: aload         5
+      81: invokeinterface #119,  1          // InterfaceMethod java/util/List.isEmpty:()Z
+      86: ifne          102
+      89: aload         5
+      91: putstatic     #125                // Field com/illusivesoulworks/diet/client/DietClientEvents.tooltip:Ljava/util/List;
+      94: iload_2
+      95: putstatic     #128                // Field com/illusivesoulworks/diet/client/DietClientEvents.tooltipX:I
+      98: iload_3
+      99: putstatic     #131                // Field com/illusivesoulworks/diet/client/DietClientEvents.tooltipY:I
+     102: aload_0
+     103: invokevirtual #108                // Method method_25367:()Z
+     106: ifeq          114
+     109: bipush        19
+     111: goto          115
+     114: iconst_0
+     115: istore        5
+     117: aload_1
+     118: getstatic     #133                // Field ICONS:Lnet/minecraft/class_2960;
+     121: aload_0
+     122: invokevirtual #136                // Method method_46426:()I
+     125: aload_0
+     126: invokevirtual #139                // Method method_46427:()I
+     129: iconst_0
+     130: iload         5
+     132: aload_0
+     133: getfield      #142                // Field field_22758:I
+     136: aload_0
+     137: getfield      #145                // Field field_22759:I
+     140: invokevirtual #151                // Method net/minecraft/class_332.method_25302:(Lnet/minecraft/class_2960;IIIIII)V
+     143: return
+
+  static {};
+    Code:
+       0: ldc           #160                // String diet
+       2: ldc           #162                // String textures/gui/icons.png
+       4: invokestatic  #168                // Method net/minecraft/class_2960.method_60655:(Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/class_2960;
+       7: putstatic     #133                // Field ICONS:Lnet/minecraft/class_2960;
+      10: return
+}

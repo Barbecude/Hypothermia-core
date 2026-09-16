@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "spectrelib",
+  "version": "0.17.2+1.21",
+  "name": "SpectreLib",
+  "description": "Cross-platform library for Illusive Soulworks mods.",
+  "authors": [
+    "Illusive Soulworks"
+  ],
+  "contact": {
+    "sources": "https://github.com/illusivesoulworks/spectrelib",
+    "issues": "https://github.com/illusivesoulworks/spectrelib/issues"
+  },
+  "license": "LGPL-2.1-only",
+  "icon": "spectrelib_icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.illusivesoulworks.spectrelib.SpectreFabricMod"
+    ],
+    "client": [
+      "com.illusivesoulworks.spectrelib.SpectreClientFabricMod"
+    ],
+    "preLaunch": [
+      "com.illusivesoulworks.spectrelib.SpectrePreLaunchFabricMod"
+    ],
+    "modmenu": [
+      "com.illusivesoulworks.spectrelib.integration.ModMenuPlugin"
+    ]
+  },
+  "mixins": [
+    "spectrelib.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "\u003e\u003d0.14",
+    "fabric-api": "*",
+    "minecraft": "~1.21",
+    "java": "\u003e\u003d17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  },
+  "jars": [
+    {
+      "file": "META-INF/jars/core-3.8.0.jar"
+    },
+    {
+      "file": "META-INF/jars/toml-3.8.0.jar"
+    }
+  ]
+}

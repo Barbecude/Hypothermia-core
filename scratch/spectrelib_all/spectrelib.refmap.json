@@ -1,0 +1,22 @@
+{
+  "mappings": {
+    "com/illusivesoulworks/spectrelib/mixin/SpectreLibMixinLevelResource": {
+      "<init>": "<init>"
+    },
+    "com/illusivesoulworks/spectrelib/mixin/SpectreLibMixinMinecraft": {
+      "<init>": "Lnet/minecraft/class_310;<init>(Lnet/minecraft/class_542;)V",
+      "net/minecraft/network/chat/contents/KeybindResolver.setKeyResolver(Ljava/util/function/Function;)V": "Lnet/minecraft/class_7420;method_43482(Ljava/util/function/Function;)V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "com/illusivesoulworks/spectrelib/mixin/SpectreLibMixinLevelResource": {
+        "<init>": "<init>"
+      },
+      "com/illusivesoulworks/spectrelib/mixin/SpectreLibMixinMinecraft": {
+        "<init>": "Lnet/minecraft/class_310;<init>(Lnet/minecraft/class_542;)V",
+        "net/minecraft/network/chat/contents/KeybindResolver.setKeyResolver(Ljava/util/function/Function;)V": "Lnet/minecraft/class_7420;method_43482(Ljava/util/function/Function;)V"
+      }
+    }
+  }
+}

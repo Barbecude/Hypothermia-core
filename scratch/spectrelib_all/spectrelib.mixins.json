@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.illusivesoulworks.spectrelib.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "SpectreLibMixinLevelResource"
+  ],
+  "client": [
+    "SpectreLibMixinMinecraft"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "spectrelib.refmap.json"
+}

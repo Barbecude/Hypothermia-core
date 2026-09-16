@@ -1,0 +1,15 @@
+# Dependencies and build outputs
+.gradle/
+build/
+run/
+out/
+classes/
+bin/
+*.class
+
+# Large dump/temp files
+*.txt
+*.jar
+
+# Internal graph output
+graphify-out/

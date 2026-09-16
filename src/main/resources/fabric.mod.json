@@ -1,38 +1,50 @@
 {
-	"schemaVersion": 1,
-	"id": "hypothermia_core",
-	"version": "${version}",
-	"name": "Hypothermia Core",
-	"description": "Compatibility layer for Hypothermia modpack",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.example.ExampleMod"
-		],
-		"client": [
-			"com.example.client.ExampleModClient"
-		]
-	},
-	"mixins": [
-		"modid.mixins.json",
-		{
-			"config": "modid.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.19.5",
-		"minecraft": "~1.21.1",
-		"java": ">=21",
-		"fabric-api": "*"
-	}
+  "schemaVersion": 1,
+  "id": "hypothermia_core",
+  "version": "${version}",
+  "name": "Hypothermia Core",
+  "description": "Kilt Compatibility Layer for Hypothermia 2 Modpack (Cold Sweat, Spartan Weaponry, Alex's Mobs, Falling Snow, Serene Seasons)",
+  "authors": [
+    "Zevaldo",
+    "Barbecude"
+  ],
+  "contact": {
+    "sources": "https://github.com/Barbecude/Hypothermia-core"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/modid/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.ExampleMod"
+    ],
+    "client": [
+      "com.example.client.ExampleModClient"
+    ],
+    "mixinsquared": [
+      "com.example.mixin.HypothermiaMixinCanceller"
+    ]
+  },
+  "mixins": [
+    "modid.mixins.json",
+    {
+      "config": "modid.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "custom": {
+    "mixinsquared": {
+      "canceller": "com.example.mixin.HypothermiaMixinCanceller"
+    },
+    "mixinConstraints": [
+      "cold_sweat.mixin.json:MixinShearsDispenseBehavior",
+      "spartanweaponry.mixins.json:AbstractSkeletonMixin"
+    ]
+  }
 }
