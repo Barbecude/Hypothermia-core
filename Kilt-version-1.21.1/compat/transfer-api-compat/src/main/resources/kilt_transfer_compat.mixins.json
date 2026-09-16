@@ -1,0 +1,19 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "xyz.bluspring.kilt.compat.transfer.mixin",
+    "compatibilityLevel": "JAVA_17",
+    "mixins": [
+        "BlockCapabilityAccessor",
+        "BlockEntityMixin",
+        "MilkBucketItemMixin",
+        "EntityCapabilityAccessor",
+        "ItemCapabilityAccessor"
+    ],
+    "client": [
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin"
+}

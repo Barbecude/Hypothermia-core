@@ -45,6 +45,19 @@ public class HypothermiaMixinCanceller implements MixinCanceller {
             return true;
         }
 
+        // Task 5: Kilt's ClientLevelInject$EntityCallbacksInject (NPE when entities like Alex's Mobs have getParts() == null)
+        if (mixinClassName.contains("ClientLevelInject$EntityCallbacksInject")
+                || mixinClassName.contains("EntityCallbacksInject")) {
+            System.out.println("[HypothermiaCore] MixinSquared cancelled incompatible mixin: " + mixinClassName);
+            return true;
+        }
+
+        // Task 6: Kilt's EntityRenderDispatcherInject (NPE when entities like Alex's Mobs have getParts() == null during hitbox render)
+        if (mixinClassName.contains("EntityRenderDispatcherInject")) {
+            System.out.println("[HypothermiaCore] MixinSquared cancelled incompatible mixin: " + mixinClassName);
+            return true;
+        }
+
         return false;
     }
 }

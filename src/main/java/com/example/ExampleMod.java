@@ -23,16 +23,7 @@ public class ExampleMod implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 
-		if (net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("diet")) {
-			try {
-				Class<?> clazz = Class.forName("com.illusivesoulworks.diet.common.config.DietConfigLoader");
-				java.lang.reflect.Method setupMethod = clazz.getMethod("setup");
-				setupMethod.invoke(null);
-				LOGGER.info("[HypothermiaCore] Successfully ensured DietConfigLoader setup");
-			} catch (Throwable t) {
-				LOGGER.warn("[HypothermiaCore] Failed to invoke DietConfigLoader setup", t);
-			}
-		}
+		// Diet config is properly loaded by SpectreEntrypointUtilsMixin
 	}
 
 	public static ResourceLocation id(String path) {

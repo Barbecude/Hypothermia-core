@@ -1,0 +1,149 @@
+// TRACKED HASH: 53d4aac2577bd786b144c351ddc7feaa321cb795
+package xyz.bluspring.kilt.injects.world.entity.vehicle;
+
+import com.llamalad7.mixinextras.expression.Definition;
+import com.llamalad7.mixinextras.expression.Expression;
+import com.llamalad7.mixinextras.sugar.Local;
+import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.vehicle.AbstractMinecart;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.common.IMinecartCollisionHandler;
+import net.neoforged.neoforge.common.extensions.IAbstractMinecartExtension;
+import net.neoforged.neoforge.common.extensions.IBaseRailBlockExtension;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Slice;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import xyz.bluspring.kilt.helpers.mixin.CreateStatic;
+import xyz.bluspring.kilt.injections.world.entity.vehicle.AbstractMinecartInjection;
+
+@Mixin(AbstractMinecart.class)
+public abstract class AbstractMinecartInject extends Entity implements AbstractMinecartInjection, IAbstractMinecartExtension {
+    public AbstractMinecartInject(EntityType<?> entityType, Level level) {
+        super(entityType, level);
+    }
+
+    @Shadow protected abstract double getMaxSpeed();
+
+    private static IMinecartCollisionHandler COLLISIONS = null;
+
+    public IMinecartCollisionHandler getCollisionHandler() {
+        return COLLISIONS;
+    }
+
+    @CreateStatic
+    private static void registerCollisionHandler(IMinecartCollisionHandler handler) {
+        COLLISIONS = handler;
+    }
+
+    @Inject(method = "push", at = @At("HEAD"), cancellable = true)
+    public void kilt$handleForgeCollision(Entity entity, CallbackInfo ci) {
+        if (getCollisionHandler() != null) {
+            getCollisionHandler().onEntityCollision((AbstractMinecart) (Object) this, entity);
+            ci.cancel();
+        }
+    }
+
+    @Definition(id = "bl", local = @Local(type = boolean.class, ordinal = 0))
+    @Expression("bl != 0")
+    @Inject(method = "moveAlongTrack",
+        at = @At("MIXINEXTRAS:EXPRESSION"),
+        slice = @Slice(
+            from = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/vehicle/AbstractMinecart;setDeltaMovement(DDD)V", ordinal = 0),
+            to = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/vehicle/AbstractMinecart;getDeltaMovement()Lnet/minecraft/world/phys/Vec3;", ordinal = 9)
+        )
+    )
+    public void kilt$onMinecartPass(BlockPos blockPos, BlockState blockState, CallbackInfo ci) {
+        if (shouldDoRailFunctions() && blockState.getBlock() instanceof IBaseRailBlockExtension handler) {
+            handler.onMinecartPass(blockState, level(), blockPos, (AbstractMinecart) (Object) this);
+        }
+    }
+
+    @Inject(method = "moveAlongTrack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/vehicle/AbstractMinecart;getDeltaMovement()Lnet/minecraft/world/phys/Vec3;", ordinal = 9), cancellable = true)
+    public void kilt$checkIfShouldDoRailFunctions(BlockPos pos, BlockState state, CallbackInfo ci) {
+        if (!shouldDoRailFunctions())
+            ci.cancel();
+    }
+
+    private boolean canUseRail = true;
+
+    @Override
+    public boolean canUseRail() {
+        return canUseRail;
+    }
+
+    @Override
+    public void setCanUseRail(boolean use) {
+        canUseRail = use;
+    }
+
+    private float currentSpeedCapOnRail = getMaxCartSpeedOnRail();
+
+    @Override
+    public float getCurrentCartSpeedCapOnRail() {
+        return currentSpeedCapOnRail;
+    }
+
+    @Override
+    public void setCurrentCartSpeedCapOnRail(float value) {
+        currentSpeedCapOnRail = value;
+    }
+
+    private Float maxSpeedAirLateral = null;
+
+    @Override
+    public float getMaxSpeedAirLateral() {
+        return maxSpeedAirLateral == null ? (float) this.getMaxSpeed() : maxSpeedAirLateral;
+    }
+
+    @Override
+    public void setMaxSpeedAirLateral(float value) {
+        maxSpeedAirLateral = value;
+    }
+
+    private float maxSpeedAirVertical = DEFAULT_MAX_SPEED_AIR_VERTICAL;
+
+    @Override
+    public float getMaxSpeedAirVertical() {
+        return maxSpeedAirVertical;
+    }
+
+    @Override
+    public void setMaxSpeedAirVertical(float value) {
+        maxSpeedAirVertical = value;
+    }
+
+    @Override
+    public double getMaxSpeedWithRail() {
+        if (!canUseRail())
+            return getMaxSpeed();
+
+        var pos = getCurrentRailPosition();
+        var state = this.level().getBlockState(pos);
+
+        if (!state.is(BlockTags.RAILS))
+            return getMaxSpeed();
+
+        var railMaxSpeed = ((IBaseRailBlockExtension) state.getBlock()).getRailMaxSpeed(state, this.level(), pos, (AbstractMinecart) (Object) this);
+
+        return Math.min(railMaxSpeed, getCurrentCartSpeedCapOnRail());
+    }
+
+    private double dragAir = DEFAULT_AIR_DRAG;
+
+    @Override
+    public double getDragAir() {
+        return dragAir;
+    }
+
+    @Override
+    public void setDragAir(double value) {
+        dragAir = value;
+    }
+}

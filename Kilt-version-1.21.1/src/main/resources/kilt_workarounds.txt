@@ -1,0 +1,6 @@
+net/minecraftforge/fluids/FluidStack
+    getAmount
+    writeToPacket
+net/minecraft/world/item/alchemy/PotionBrewing$Mix
+    from
+    to

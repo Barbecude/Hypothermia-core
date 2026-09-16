@@ -1,0 +1,312 @@
+Compiled from "FlashlightBeam.java"
+public final class com.irlights.flashlight.client.FlashlightBeam {
+  private static final long LIGHT_ID;
+
+  private static final float ANISOTROPY;
+
+  private static final float VL_DENSITY;
+
+  private static final float BULB_SIZE;
+
+  private static final double MUZZLE_OFFSET;
+
+  private static final double WALL_MARGIN;
+
+  private static final double MAX_TAU;
+
+  private static double smDirX;
+
+  private static double smDirY;
+
+  private static double smDirZ;
+
+  private static boolean smoothValid;
+
+  private static long lastNanos;
+
+  private com.irlights.flashlight.client.FlashlightBeam();
+    Code:
+       0: aload_0
+       1: invokespecial #54                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void emit(float);
+    Code:
+       0: invokestatic  #65                 // Method net/minecraft/class_310.method_1551:()Lnet/minecraft/class_310;
+       3: astore_1
+       4: aload_1
+       5: getfield      #69                 // Field net/minecraft/class_310.field_1724:Lnet/minecraft/class_746;
+       8: astore_2
+       9: aload_2
+      10: ifnull        20
+      13: aload_1
+      14: getfield      #73                 // Field net/minecraft/class_310.field_1687:Lnet/minecraft/class_638;
+      17: ifnonnull     25
+      20: iconst_0
+      21: putstatic     #77                 // Field smoothValid:Z
+      24: return
+      25: aload_2
+      26: invokestatic  #81                 // Method heldFlashlight:(Lnet/minecraft/class_746;)Lnet/minecraft/class_1799;
+      29: astore_3
+      30: aload_3
+      31: ifnull        41
+      34: aload_3
+      35: invokestatic  #87                 // Method com/irlights/flashlight/FlashlightItemState.isOn:(Lnet/minecraft/class_1799;)Z
+      38: ifne          46
+      41: iconst_0
+      42: putstatic     #77                 // Field smoothValid:Z
+      45: return
+      46: getstatic     #95                 // Field com/irlights/flashlight/client/FlashlightConfig.INSTANCE:Lcom/irlights/flashlight/client/FlashlightConfig;
+      49: astore        4
+      51: aload_2
+      52: fload_0
+      53: invokevirtual #99                 // Method net/minecraft/class_746.method_5836:(F)Lnet/minecraft/class_243;
+      56: astore        5
+      58: aload_2
+      59: fload_0
+      60: invokevirtual #102                // Method net/minecraft/class_746.method_5828:(F)Lnet/minecraft/class_243;
+      63: astore        6
+      65: aload         6
+      67: aload         4
+      69: getfield      #105                // Field com/irlights/flashlight/client/FlashlightConfig.smoothing:F
+      72: invokestatic  #109                // Method smoothDirection:(Lnet/minecraft/class_243;F)Lnet/minecraft/class_243;
+      75: astore        7
+      77: ldc2_w        #37                 // double 0.55d
+      80: dstore        8
+      82: aload_1
+      83: getfield      #73                 // Field net/minecraft/class_310.field_1687:Lnet/minecraft/class_638;
+      86: new           #9                  // class net/minecraft/class_3959
+      89: dup
+      90: aload         5
+      92: aload         5
+      94: aload         7
+      96: ldc2_w        #37                 // double 0.55d
+      99: invokevirtual #115                // Method net/minecraft/class_243.method_1021:(D)Lnet/minecraft/class_243;
+     102: invokevirtual #119                // Method net/minecraft/class_243.method_1019:(Lnet/minecraft/class_243;)Lnet/minecraft/class_243;
+     105: getstatic     #123                // Field net/minecraft/class_3959$class_3960.field_17558:Lnet/minecraft/class_3959$class_3960;
+     108: getstatic     #127                // Field net/minecraft/class_3959$class_242.field_1348:Lnet/minecraft/class_3959$class_242;
+     111: aload_2
+     112: invokespecial #130                // Method net/minecraft/class_3959."<init>":(Lnet/minecraft/class_243;Lnet/minecraft/class_243;Lnet/minecraft/class_3959$class_3960;Lnet/minecraft/class_3959$class_242;Lnet/minecraft/class_1297;)V
+     115: invokevirtual #136                // Method net/minecraft/class_638.method_17742:(Lnet/minecraft/class_3959;)Lnet/minecraft/class_3965;
+     118: astore        10
+     120: aload         10
+     122: ifnull        158
+     125: aload         10
+     127: invokevirtual #142                // Method net/minecraft/class_3965.method_17783:()Lnet/minecraft/class_239$class_240;
+     130: getstatic     #146                // Field net/minecraft/class_239$class_240.field_1333:Lnet/minecraft/class_239$class_240;
+     133: if_acmpeq     158
+     136: ldc2_w        #40                 // double 0.05d
+     139: aload         5
+     141: aload         10
+     143: invokevirtual #150                // Method net/minecraft/class_3965.method_17784:()Lnet/minecraft/class_243;
+     146: invokevirtual #154                // Method net/minecraft/class_243.method_1022:(Lnet/minecraft/class_243;)D
+     149: ldc2_w        #40                 // double 0.05d
+     152: dsub
+     153: invokestatic  #160                // Method java/lang/Math.max:(DD)D
+     156: dstore        8
+     158: aload         5
+     160: aload         7
+     162: dload         8
+     164: invokevirtual #115                // Method net/minecraft/class_243.method_1021:(D)Lnet/minecraft/class_243;
+     167: invokevirtual #119                // Method net/minecraft/class_243.method_1019:(Lnet/minecraft/class_243;)Lnet/minecraft/class_243;
+     170: astore        11
+     172: aload         4
+     174: getfield      #163                // Field com/irlights/flashlight/client/FlashlightConfig.outerAngleDeg:F
+     177: aload         4
+     179: getfield      #166                // Field com/irlights/flashlight/client/FlashlightConfig.innerAngleDeg:F
+     182: invokestatic  #170                // Method org/qualet/irl/light/LightMath.cone:(FF)Lorg/qualet/irl/light/LightMath$Cone;
+     185: astore        12
+     187: aload         4
+     189: getfield      #173                // Field com/irlights/flashlight/client/FlashlightConfig.cookie:Z
+     192: ifeq          202
+     195: invokestatic  #179                // Method com/irlights/flashlight/client/FlashlightCookie.layer:()I
+     198: i2f
+     199: goto          204
+     202: ldc           #180                // float -1.0f
+     204: fstore        13
+     206: aload         11
+     208: getfield      #183                // Field net/minecraft/class_243.field_1352:D
+     211: aload         11
+     213: getfield      #186                // Field net/minecraft/class_243.field_1351:D
+     216: aload         11
+     218: getfield      #189                // Field net/minecraft/class_243.field_1350:D
+     221: aload         7
+     223: getfield      #183                // Field net/minecraft/class_243.field_1352:D
+     226: d2f
+     227: aload         7
+     229: getfield      #186                // Field net/minecraft/class_243.field_1351:D
+     232: d2f
+     233: aload         7
+     235: getfield      #189                // Field net/minecraft/class_243.field_1350:D
+     238: d2f
+     239: aload         4
+     241: getfield      #192                // Field com/irlights/flashlight/client/FlashlightConfig.colorR:F
+     244: aload         4
+     246: getfield      #195                // Field com/irlights/flashlight/client/FlashlightConfig.colorG:F
+     249: aload         4
+     251: getfield      #198                // Field com/irlights/flashlight/client/FlashlightConfig.colorB:F
+     254: aload         4
+     256: getfield      #201                // Field com/irlights/flashlight/client/FlashlightConfig.intensity:F
+     259: aload         4
+     261: getfield      #204                // Field com/irlights/flashlight/client/FlashlightConfig.distance:F
+     264: aload         12
+     266: invokevirtual #208                // Method org/qualet/irl/light/LightMath$Cone.cosOuter:()F
+     269: aload         12
+     271: invokevirtual #211                // Method org/qualet/irl/light/LightMath$Cone.cosInner:()F
+     274: iconst_0
+     275: iconst_0
+     276: ldc           #30                 // float 0.5f
+     278: ldc           #32                 // float 0.04f
+     280: aload         4
+     282: getfield      #214                // Field com/irlights/flashlight/client/FlashlightConfig.beamStrength:F
+     285: fconst_0
+     286: aload         4
+     288: getfield      #217                // Field com/irlights/flashlight/client/FlashlightConfig.castShadows:Z
+     291: fload         13
+     293: fconst_0
+     294: aload         4
+     296: getfield      #220                // Field com/irlights/flashlight/client/FlashlightConfig.cookieScale:F
+     299: fconst_0
+     300: ldc2_w        #26                 // long -1034401435397128191l
+     303: invokestatic  #226                // Method org/qualet/irl/light/LightRegistry.registerSpot:(DDDFFFFFFFFFFZZFFFFZFFFFJ)V
+     306: return
+
+  private static net.minecraft.class_243 smoothDirection(net.minecraft.class_243, float);
+    Code:
+       0: invokestatic  #249                // Method java/lang/System.nanoTime:()J
+       3: lstore_2
+       4: getstatic     #77                 // Field smoothValid:Z
+       7: ifeq          23
+      10: lload_2
+      11: getstatic     #251                // Field lastNanos:J
+      14: lsub
+      15: l2d
+      16: ldc2_w        #252                // double 1.0E9d
+      19: ddiv
+      20: goto          24
+      23: dconst_0
+      24: dstore        4
+      26: lload_2
+      27: putstatic     #251                // Field lastNanos:J
+      30: dconst_0
+      31: dconst_1
+      32: fload_1
+      33: f2d
+      34: invokestatic  #256                // Method java/lang/Math.min:(DD)D
+      37: invokestatic  #160                // Method java/lang/Math.max:(DD)D
+      40: dstore        6
+      42: dload         6
+      44: ldc2_w        #43                 // double 0.35d
+      47: dmul
+      48: dstore        8
+      50: getstatic     #77                 // Field smoothValid:Z
+      53: ifeq          65
+      56: dload         8
+      58: ldc2_w        #257                // double 1.0E-4d
+      61: dcmpg
+      62: ifgt          93
+      65: aload_0
+      66: getfield      #183                // Field net/minecraft/class_243.field_1352:D
+      69: putstatic     #260                // Field smDirX:D
+      72: aload_0
+      73: getfield      #186                // Field net/minecraft/class_243.field_1351:D
+      76: putstatic     #262                // Field smDirY:D
+      79: aload_0
+      80: getfield      #189                // Field net/minecraft/class_243.field_1350:D
+      83: putstatic     #264                // Field smDirZ:D
+      86: iconst_1
+      87: putstatic     #77                 // Field smoothValid:Z
+      90: goto          166
+      93: dconst_1
+      94: dload         4
+      96: ldc2_w        #265                // double 0.1d
+      99: invokestatic  #256                // Method java/lang/Math.min:(DD)D
+     102: dneg
+     103: dload         8
+     105: ddiv
+     106: invokestatic  #270                // Method java/lang/Math.exp:(D)D
+     109: dsub
+     110: dstore        10
+     112: getstatic     #260                // Field smDirX:D
+     115: aload_0
+     116: getfield      #183                // Field net/minecraft/class_243.field_1352:D
+     119: getstatic     #260                // Field smDirX:D
+     122: dsub
+     123: dload         10
+     125: dmul
+     126: dadd
+     127: putstatic     #260                // Field smDirX:D
+     130: getstatic     #262                // Field smDirY:D
+     133: aload_0
+     134: getfield      #186                // Field net/minecraft/class_243.field_1351:D
+     137: getstatic     #262                // Field smDirY:D
+     140: dsub
+     141: dload         10
+     143: dmul
+     144: dadd
+     145: putstatic     #262                // Field smDirY:D
+     148: getstatic     #264                // Field smDirZ:D
+     151: aload_0
+     152: getfield      #189                // Field net/minecraft/class_243.field_1350:D
+     155: getstatic     #264                // Field smDirZ:D
+     158: dsub
+     159: dload         10
+     161: dmul
+     162: dadd
+     163: putstatic     #264                // Field smDirZ:D
+     166: getstatic     #260                // Field smDirX:D
+     169: getstatic     #260                // Field smDirX:D
+     172: dmul
+     173: getstatic     #262                // Field smDirY:D
+     176: getstatic     #262                // Field smDirY:D
+     179: dmul
+     180: dadd
+     181: getstatic     #264                // Field smDirZ:D
+     184: getstatic     #264                // Field smDirZ:D
+     187: dmul
+     188: dadd
+     189: invokestatic  #273                // Method java/lang/Math.sqrt:(D)D
+     192: dstore        10
+     194: dload         10
+     196: ldc2_w        #274                // double 1.0E-6d
+     199: dcmpl
+     200: ifle          229
+     203: new           #111                // class net/minecraft/class_243
+     206: dup
+     207: getstatic     #260                // Field smDirX:D
+     210: dload         10
+     212: ddiv
+     213: getstatic     #262                // Field smDirY:D
+     216: dload         10
+     218: ddiv
+     219: getstatic     #264                // Field smDirZ:D
+     222: dload         10
+     224: ddiv
+     225: invokespecial #278                // Method net/minecraft/class_243."<init>":(DDD)V
+     228: areturn
+     229: aload_0
+     230: areturn
+
+  private static net.minecraft.class_1799 heldFlashlight(net.minecraft.class_746);
+    Code:
+       0: aload_0
+       1: invokevirtual #288                // Method net/minecraft/class_746.method_6047:()Lnet/minecraft/class_1799;
+       4: astore_1
+       5: aload_1
+       6: getstatic     #294                // Field com/irlights/flashlight/IRLightsFlashlight.FLASHLIGHT:Lnet/minecraft/class_1792;
+       9: invokevirtual #298                // Method net/minecraft/class_1799.method_31574:(Lnet/minecraft/class_1792;)Z
+      12: ifeq          17
+      15: aload_1
+      16: areturn
+      17: aload_0
+      18: invokevirtual #301                // Method net/minecraft/class_746.method_6079:()Lnet/minecraft/class_1799;
+      21: astore_2
+      22: aload_2
+      23: getstatic     #294                // Field com/irlights/flashlight/IRLightsFlashlight.FLASHLIGHT:Lnet/minecraft/class_1792;
+      26: invokevirtual #298                // Method net/minecraft/class_1799.method_31574:(Lnet/minecraft/class_1792;)Z
+      29: ifeq          34
+      32: aload_2
+      33: areturn
+      34: aconst_null
+      35: areturn
+}

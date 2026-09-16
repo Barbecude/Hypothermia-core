@@ -15,7 +15,8 @@
 		"FallingSnowOptimizationMixin",
 		"SpectreConfigTrackerFixMixin",
 		"SpectreConfigValueFixMixin",
-		"SpectreEntrypointUtilsMixin"
+		"SpectreEntrypointUtilsMixin",
+		"ServerChunkCacheThreadFixMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

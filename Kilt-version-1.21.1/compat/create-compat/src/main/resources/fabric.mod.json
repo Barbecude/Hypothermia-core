@@ -1,0 +1,43 @@
+{
+    "schemaVersion": 1,
+    "id": "kilt_create_compat",
+    "version": "${version}",
+    "name": "Kilt: Create Fabric Compat",
+    "description": "A compatibility layer to help bridge Create Fabric and any Create Forge addons.",
+    "authors": [
+        "BluSpring"
+    ],
+    "contact": {
+        "sources": "https://github.com/KiltMC/Kilt",
+        "issues": "https://github.com/KiltMC/Kilt/issues"
+    },
+    "license": "MIT",
+    "icon": "icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "client": [
+            "xyz.bluspring.kilt.compat.create.KiltCreateCompat"
+        ],
+        "mixinsquared": [
+            "xyz.bluspring.kilt.compat.create.KiltCreateCompatMixinCanceller"
+        ],
+        "kilt:mod_container": [
+            "xyz.bluspring.kilt.compat.create.KiltCreateCompatWrappedNeoContainer"
+        ]
+    },
+    "mixins": [
+        "kilt-create-compat.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=${loader_version}",
+        "minecraft": "${minecraft_version}",
+        "fabric-language-kotlin": ">=${fabric_kotlin_version}",
+        "kilt": "*"
+    },
+    "accessWidener": "kilt-create-compat.accesswidener",
+    "custom": {
+        "modmenu": {
+            "parent": "kilt"
+        }
+    }
+}

@@ -1,0 +1,37 @@
+// TRACKED HASH: f818e25808bed5f0e6c33a46353235bc2d7f4533
+package xyz.bluspring.kilt.injects.world.level.levelgen.structure;
+
+import net.neoforged.neoforge.common.world.ModifiableStructureInfo;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import xyz.bluspring.kilt.injections.world.level.levelgen.structure.StructureInjection;
+
+import net.minecraft.world.level.levelgen.structure.Structure;
+
+@Mixin(Structure.class)
+public abstract class StructureInject implements StructureInjection {
+    private ModifiableStructureInfo modifiableStructureInfo;
+
+    @Inject(at = @At("TAIL"), method = "<init>")
+    public void kilt$loadModifiedStructureSettings(Structure.StructureSettings structureSettings, CallbackInfo ci) {
+        modifiableStructureInfo = new ModifiableStructureInfo(new ModifiableStructureInfo.StructureInfo(structureSettings));
+    }
+
+    @Inject(at = @At("HEAD"), method = "method_42698", cancellable = true)
+    private static void kilt$useOriginalStructureSettings(Structure structure, CallbackInfoReturnable<Structure.StructureSettings> cir) {
+        cir.setReturnValue(structure.modifiableStructureInfo().getOriginalStructureInfo().structureSettings());
+    }
+
+    @Override
+    public Structure.StructureSettings getModifiedStructureSettings() {
+        return modifiableStructureInfo().get().structureSettings();
+    }
+
+    @Override
+    public ModifiableStructureInfo modifiableStructureInfo() {
+        return modifiableStructureInfo;
+    }
+}

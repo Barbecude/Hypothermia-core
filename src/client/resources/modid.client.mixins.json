@@ -2,10 +2,14 @@
 	"required": true,
 	"package": "com.example.client.mixin",
 	"compatibilityLevel": "JAVA_21",
+	"plugin": "com.example.mixin.HypothermiaMixinPlugin",
 	"client": [
 		"ExampleClientMixin",
 		"SereneSeasonsFoodMixin",
-		"ItemRendererFrozenFoodMixin"
+		"ItemRendererFrozenFoodMixin",
+		"DietScreenFixMixin",
+		"FlashlightBeamFlashbackMixin",
+		"LightEditorScreenPersistenceMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
