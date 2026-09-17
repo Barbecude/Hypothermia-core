@@ -188,16 +188,25 @@ public class FoodTemperatureHelper {
 
             double ambientTemp = getAmbientTemperature(level, be.getBlockPos());
 
-            // Check if container contains ice or cooling items (acts as a freezer)
+            // Check if container contains ice items (acts as a freezer)
+            double containerCooler = Double.NaN;
             for (int i = 0; i < container.getContainerSize(); i++) {
                 ItemStack s = container.getItem(i);
                 if (!s.isEmpty()) {
-                    if (s.is(Items.BLUE_ICE) || s.is(Items.PACKED_ICE) || s.is(Items.ICE) ||
-                        s.is(Items.SNOW_BLOCK) || s.is(Items.SNOWBALL)) {
-                        ambientTemp = -100.0;
+                    if (s.is(Items.BLUE_ICE)) {
+                        containerCooler = -100.0;
                         break;
+                    } else if (s.is(Items.PACKED_ICE)) {
+                        if (Double.isNaN(containerCooler) || -75.0 < containerCooler) containerCooler = -75.0;
+                    } else if (s.is(Items.ICE)) {
+                        if (Double.isNaN(containerCooler) || -50.0 < containerCooler) containerCooler = -50.0;
+                    } else if (s.is(Items.SNOW_BLOCK)) {
+                        if (Double.isNaN(containerCooler) || -35.0 < containerCooler) containerCooler = -35.0;
                     }
                 }
+            }
+            if (!Double.isNaN(containerCooler)) {
+                ambientTemp = containerCooler;
             }
 
             boolean changed = false;
@@ -253,7 +262,7 @@ public class FoodTemperatureHelper {
         if (Math.abs(diff) < 0.5) return;
 
         double speedMultiplier = diff < 0 ? getFrozenSpeedMultiplier() : getRottenSpeedMultiplier();
-        double baseStep = 5.0 * speedMultiplier;
+        double baseStep = 1.5 * speedMultiplier;
         double step = Math.signum(diff) * Math.min(Math.abs(diff), baseStep);
         double newTemp = currentTemp + step;
 
@@ -262,37 +271,50 @@ public class FoodTemperatureHelper {
 
     /**
      * Calculates ambient temperature for a player.
-     * Freezing conditions drive directly to -100.0 (Completely Frozen).
+     * Integrates body heat insulation, handheld warmth, and graduated Cold Sweat thresholds.
      */
     public static double getAmbientTemperatureForPlayer(Player player) {
         if (player == null) return 0.0;
 
-        // 1. Powder snow / vanilla freeze ticks
+        // 1. Powder snow / vanilla freeze ticks (player is actively freezing in powder snow)
         if (player.getTicksFrozen() > 0) {
             return -100.0;
         }
 
-        // 2. Inventory contains ice or cooling items (acts as a portable freezer, identical to container)
+        // 2. Inventory contains ice items (acts as an intentional cooler)
         Inventory inv = player.getInventory();
+        double invCoolerTemp = Double.NaN;
         for (int i = 0; i < inv.getContainerSize(); i++) {
             ItemStack s = inv.getItem(i);
             if (!s.isEmpty()) {
-                if (s.is(Items.BLUE_ICE) || s.is(Items.PACKED_ICE) || s.is(Items.ICE) ||
-                    s.is(Items.SNOW_BLOCK) || s.is(Items.SNOWBALL)) {
-                    return -100.0;
+                if (s.is(Items.BLUE_ICE)) {
+                    invCoolerTemp = -100.0;
+                    break;
+                } else if (s.is(Items.PACKED_ICE)) {
+                    if (Double.isNaN(invCoolerTemp) || -75.0 < invCoolerTemp) invCoolerTemp = -75.0;
+                } else if (s.is(Items.ICE)) {
+                    if (Double.isNaN(invCoolerTemp) || -50.0 < invCoolerTemp) invCoolerTemp = -50.0;
                 }
             }
         }
-
-        // 3. Ambient temperature at player's location (identical calculation to container at same position)
-        double posAmbient = getAmbientTemperature(player.level(), player.blockPosition());
-        if (posAmbient <= -75.0) {
-            return -100.0;
-        } else if (posAmbient >= 75.0) {
-            return 100.0;
+        if (!Double.isNaN(invCoolerTemp)) {
+            return invCoolerTemp;
         }
 
-        // 4. Direct Cold Sweat player traits
+        // 3. Ambient temperature at player's location
+        double posAmbient = getAmbientTemperature(player.level(), player.blockPosition());
+
+        // Heat source held in hand (Torch, Lantern, Lava Bucket) provides warmth to pocket food
+        ItemStack mainHand = player.getMainHandItem();
+        ItemStack offHand = player.getOffhandItem();
+        boolean holdingHeat = mainHand.is(Items.TORCH) || mainHand.is(Items.SOUL_TORCH) ||
+                              mainHand.is(Items.LANTERN) || mainHand.is(Items.SOUL_LANTERN) ||
+                              mainHand.is(Items.LAVA_BUCKET) ||
+                              offHand.is(Items.TORCH) || offHand.is(Items.SOUL_TORCH) ||
+                              offHand.is(Items.LANTERN) || offHand.is(Items.SOUL_LANTERN) ||
+                              offHand.is(Items.LAVA_BUCKET);
+
+        // 4. Cold Sweat integration (player body temperature & world temperature)
         try {
             Class<?> tempClass = Class.forName("com.momosoftworks.coldsweat.api.util.Temperature");
             Class<?> traitClass = Class.forName("com.momosoftworks.coldsweat.api.util.Temperature$Trait");
@@ -322,34 +344,60 @@ public class FoodTemperatureHelper {
                     if (val instanceof Number n) bodyTemp = n.doubleValue();
                 }
 
-                // In Cold Sweat: Habitable is 0.40 to 1.51 MC units
-                // Anything <= 0.42 MC units causes player hypothermia (Freezing!)
-                double effectiveCold = Double.NaN;
-                if (!Double.isNaN(worldTemp) && worldTemp <= 0.42) {
-                    effectiveCold = worldTemp;
-                }
-                if (!Double.isNaN(bodyTemp) && bodyTemp <= 0.45) {
-                    if (Double.isNaN(effectiveCold) || bodyTemp < effectiveCold) {
-                        effectiveCold = bodyTemp;
+                double target = posAmbient;
+
+                if (!Double.isNaN(worldTemp)) {
+                    if (worldTemp <= 0.12) {
+                        target = -100.0; // Extreme freezing blizzard
+                    } else if (worldTemp <= 0.25) {
+                        target = -75.0;  // Deep subzero
+                    } else if (worldTemp <= 0.35) {
+                        target = -45.0;  // Freezing
+                    } else if (worldTemp <= 0.40) {
+                        target = -20.0;  // Light chill
+                    } else if (worldTemp >= 1.5) {
+                        target = 80.0;   // Hot
+                    } else {
+                        target = 0.0;    // Comfortable / habitable range (0.40 to 1.50)
                     }
                 }
 
-                if (!Double.isNaN(effectiveCold)) {
-                    // Freezing conditions drive to Completely Frozen (-100.0)
-                    return -100.0;
-                } else if (!Double.isNaN(worldTemp) && worldTemp >= 1.2) {
-                    return 100.0;
+                // Player body temperature moderates inventory food:
+                // If player is comfortably warm (bodyTemp >= 0.42), body warmth protects pocket food
+                if (!Double.isNaN(bodyTemp)) {
+                    if (bodyTemp >= 0.42) {
+                        if (target < -20.0) {
+                            target = -20.0; // Insulated: will not freeze past lightly chilled
+                        }
+                    } else if (bodyTemp <= 0.20) {
+                        target = Math.min(target, -100.0); // Severe hypothermia
+                    } else if (bodyTemp <= 0.30) {
+                        target = Math.min(target, -75.0);  // Serious hypothermia
+                    } else if (bodyTemp <= 0.38) {
+                        target = Math.min(target, -45.0);  // Mild hypothermia
+                    }
                 }
+
+                // Holding heat provides warmth buffer against ambient cold
+                if (holdingHeat && target < 0) {
+                    target = Math.min(0.0, target + 50.0);
+                }
+
+                return target;
             }
         } catch (Throwable ignored) {}
+
+        if (holdingHeat && posAmbient < 0) {
+            posAmbient = Math.min(0.0, posAmbient + 50.0);
+        }
 
         return posAmbient;
     }
 
     /**
      * Gets ambient temperature at a given location.
-     * Below-freezing environments drive to -100.0 (Completely Frozen).
-     * Hot environments drive to 100.0 (Completely Rotten).
+     * Below-freezing environments drive to graduated subzero temperatures.
+     * Hot environments drive to 80.0 (Rotten).
      * Comfortable environments settle at 0.0 (Fresh).
      */
     public static double getAmbientTemperature(Level level, BlockPos pos) {
@@ -376,10 +424,16 @@ public class FoodTemperatureHelper {
         // 4. Vanilla Biome Fallback
         try {
             double biomeBase = level.getBiome(pos).value().getBaseTemperature();
-            if (biomeBase <= 0.35) {
-                return -100.0; // Cold biomes drive to completely frozen
+            if (biomeBase <= -0.2) {
+                return -100.0; // Ice Spikes, Frozen Peaks, Frozen Ocean
+            } else if (biomeBase <= 0.05) {
+                return -70.0;  // Snowy Plains, Snowy Slopes
+            } else if (biomeBase <= 0.20) {
+                return -35.0;  // Snowy Taiga
+            } else if (biomeBase <= 0.35) {
+                return -15.0;  // Taiga, Windswept Hills (mild chill)
             } else if (biomeBase >= 1.5) {
-                return 100.0;  // Hot biomes drive to rotten
+                return 80.0;   // Desert, Badlands
             }
         } catch (Throwable ignored) {}
 
@@ -395,18 +449,37 @@ public class FoodTemperatureHelper {
                 pos, pos.below(), pos.above(),
                 pos.north(), pos.south(), pos.east(), pos.west()
             };
+            double coldest = Double.NaN;
             for (BlockPos p : checkPositions) {
                 BlockState state = level.getBlockState(p);
-                if (state.is(Blocks.POWDER_SNOW) || state.is(Blocks.BLUE_ICE) ||
-                    state.is(Blocks.PACKED_ICE) || state.is(Blocks.ICE) ||
-                    state.is(Blocks.SNOW) || state.is(Blocks.SNOW_BLOCK)) {
-                    return -100.0;
+                // Heat sources take priority
+                if (state.is(Blocks.LAVA) || state.is(Blocks.FIRE) || state.is(Blocks.SOUL_FIRE)) {
+                    return 80.0;
                 }
-                if (state.is(Blocks.LAVA) || state.is(Blocks.FIRE) ||
-                    state.is(Blocks.SOUL_FIRE) || state.is(Blocks.CAMPFIRE) ||
-                    state.is(Blocks.SOUL_CAMPFIRE)) {
-                    return 100.0;
+                if (state.is(Blocks.CAMPFIRE) || state.is(Blocks.SOUL_CAMPFIRE)) {
+                    if (state.hasProperty(net.minecraft.world.level.block.CampfireBlock.LIT) &&
+                        state.getValue(net.minecraft.world.level.block.CampfireBlock.LIT)) {
+                        return 0.0; // Lit campfire keeps food fresh and prevents freezing
+                    }
                 }
+
+                if (state.is(Blocks.POWDER_SNOW) || state.is(Blocks.BLUE_ICE)) {
+                    coldest = -100.0;
+                } else if (state.is(Blocks.PACKED_ICE)) {
+                    if (Double.isNaN(coldest) || -75.0 < coldest) coldest = -75.0;
+                } else if (state.is(Blocks.ICE)) {
+                    if (Double.isNaN(coldest) || -50.0 < coldest) coldest = -50.0;
+                } else if (state.is(Blocks.SNOW_BLOCK)) {
+                    if (Double.isNaN(coldest) || -30.0 < coldest) coldest = -30.0;
+                } else if (state.is(Blocks.SNOW)) {
+                    // Snow layer only chills if directly inside or on top of it
+                    if (p.equals(pos) || p.equals(pos.below())) {
+                        if (Double.isNaN(coldest) || -15.0 < coldest) coldest = -15.0;
+                    }
+                }
+            }
+            if (!Double.isNaN(coldest)) {
+                return coldest;
             }
         } catch (Throwable ignored) {}
         return Double.NaN;
@@ -429,7 +502,7 @@ public class FoodTemperatureHelper {
                         result = m.invoke(null, level, level.getBiome(pos), pos);
                     }
                     if (Boolean.TRUE.equals(result)) {
-                        return -100.0; // Winter freezing!
+                        return -50.0; // Snowy winter condition
                     }
                 }
             }
@@ -443,10 +516,14 @@ public class FoodTemperatureHelper {
                     }
                     if (result instanceof Number num) {
                         float sTemp = num.floatValue();
-                        if (sTemp <= 0.42f) {
-                            return -100.0; // Cold enough to freeze
-                        } else if (sTemp >= 1.2f) {
-                            return 100.0;
+                        if (sTemp <= 0.10f) {
+                            return -100.0;
+                        } else if (sTemp <= 0.25f) {
+                            return -75.0;
+                        } else if (sTemp <= 0.40f) {
+                            return -30.0;
+                        } else if (sTemp >= 1.3f) {
+                            return 80.0;
                         }
                     }
                 }
@@ -466,10 +543,16 @@ public class FoodTemperatureHelper {
                     Object val = m.invoke(null, level, pos);
                     if (val instanceof Number num) {
                         double raw = num.doubleValue();
-                        if (raw <= 0.42) {
-                            return -100.0; // Freezing world temp drives to Completely Frozen
-                        } else if (raw >= 1.2) {
-                            return 100.0;  // Hot world temp drives to Rotten
+                        if (raw <= 0.15) {
+                            return -100.0;
+                        } else if (raw <= 0.28) {
+                            return -75.0;
+                        } else if (raw <= 0.36) {
+                            return -45.0;
+                        } else if (raw <= 0.40) {
+                            return -20.0;
+                        } else if (raw >= 1.5) {
+                            return 80.0;
                         }
                     }
                 }

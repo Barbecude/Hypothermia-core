@@ -63,6 +63,7 @@ tasks.register('copyToModrinth') {
         def targetProfiles = [
             "D:\\Users\\Zevaldo\\curseforge\\minecraft\\Instances\\Fabric 1.21\\mods",
             "D:\\Users\\Zevaldo\\AppData\\Roaming\\ModrinthApp\\profiles\\Fabric 1.21\\mods",
+            "D:\\Users\\Zevaldo\\AppData\\Roaming\\ModrinthApp\\profiles\\Alaskan Wilderness 1.0.0\\mods",
             "D:\\Users\\Zevaldo\\AppData\\Roaming\\ModrinthApp\\profiles\\Hypothermia 4\\mods",
             "D:\\Users\\Zevaldo\\AppData\\Roaming\\ModrinthApp\\profiles\\Another clean fabric\\mods"
         ]
