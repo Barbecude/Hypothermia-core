@@ -43,6 +43,12 @@ public class HypothermiaMixinPlugin implements IMixinConfigPlugin {
         if (mixinClassName != null && mixinClassName.contains("LightEditorScreenPersistenceMixin")) {
             return net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("irl-redactor");
         }
+        if (mixinClassName != null && mixinClassName.contains("FoodTemperatureTickMixin")) {
+            return true;
+        }
+        if (mixinClassName != null && mixinClassName.contains("SereneSeasonsWinterSnowMixin")) {
+            return net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("sereneseasons");
+        }
         return true;
     }
     @Override

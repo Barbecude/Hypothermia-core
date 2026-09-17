@@ -16,7 +16,10 @@
 		"SpectreConfigTrackerFixMixin",
 		"SpectreConfigValueFixMixin",
 		"SpectreEntrypointUtilsMixin",
-		"ServerChunkCacheThreadFixMixin"
+		"ServerChunkCacheThreadFixMixin",
+		"FoodTemperatureTickMixin",
+		"FoodTemperatureItemEntityMixin",
+		"SereneSeasonsWinterSnowMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -12,9 +12,9 @@
     "semantic_hash": ""
   },
   "build.gradle": {
-    "mtime": 1789542047.622734,
-    "seen": 1789542051.8284028,
-    "ast_hash": "0c07317ba8870d484e63d6dcbc58051c",
+    "mtime": 1789604579.4671044,
+    "seen": 1789608453.1888676,
+    "ast_hash": "393a0ca57b35135407fffc9ef98b8a51",
     "semantic_hash": ""
   },
   "gradlew": {
@@ -42,15 +42,15 @@
     "semantic_hash": ""
   },
   "src/client/resources/modid.client.mixins.json": {
-    "mtime": 1789562722.28559,
-    "seen": 1789562872.9187443,
-    "ast_hash": "1207758e923c5eaa2ec81638df3693be",
+    "mtime": 1789608128.318859,
+    "seen": 1789608453.1889267,
+    "ast_hash": "974dc1aa1a2ca1a634db797f5398309c",
     "semantic_hash": ""
   },
   "src/main/java/com/example/ExampleMod.java": {
-    "mtime": 1789555295.7701461,
-    "seen": 1789555530.007089,
-    "ast_hash": "05923e17a5c4ef90da1ce48271172657",
+    "mtime": 1789606745.667941,
+    "seen": 1789608453.1889322,
+    "ast_hash": "842a45df83b2b5e61b5c93db03ac6078",
     "semantic_hash": ""
   },
   "src/main/java/com/example/mixin/ExampleMixin.java": {
@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "src/main/resources/modid.mixins.json": {
-    "mtime": 1789556095.84928,
-    "seen": 1789556137.4717555,
-    "ast_hash": "65d7816e578ea44da2c0fd386e234eb2",
+    "mtime": 1789609111.078508,
+    "seen": 1789609215.5230653,
+    "ast_hash": "93ab2d69194792883e7c0e2eb11e4b11",
     "semantic_hash": ""
   },
   ".github/workflows/build.yml": {
@@ -167,12 +167,6 @@
     "ast_hash": "92e6a604d85b6bf93d58ddeeabf13282",
     "semantic_hash": ""
   },
-  "src/client/java/com/example/client/mixin/SereneSeasonsFoodMixin.java": {
-    "mtime": 1789535833.7684813,
-    "seen": 1789536148.1419027,
-    "ast_hash": "a2b06473ea96bdb01cc4ec25c68c6c2b",
-    "semantic_hash": ""
-  },
   "src/main/java/com/example/mixin/FallingSnowOptimizationMixin.java": {
     "mtime": 1789535833.8940518,
     "seen": 1789536148.141914,
@@ -183,18 +177,6 @@
     "mtime": 1789535833.6992764,
     "seen": 1789536148.1418943,
     "ast_hash": "d6e0059367e11550b554a6c0a9e5ad5a",
-    "semantic_hash": ""
-  },
-  "src/client/java/com/example/client/FoodFreezingHelper.java": {
-    "mtime": 1789535833.7525318,
-    "seen": 1789536148.141898,
-    "ast_hash": "13a27ab8a7a000221896a263ae5533f6",
-    "semantic_hash": ""
-  },
-  "src/client/java/com/example/client/mixin/ItemRendererFrozenFoodMixin.java": {
-    "mtime": 1789535833.7745624,
-    "seen": 1789536148.1419008,
-    "ast_hash": "9dbdc836a2a366c3d24dae7d0920c081",
     "semantic_hash": ""
   },
   "src/jarData.ts": {
@@ -210,15 +192,15 @@
     "semantic_hash": ""
   },
   "src/main/java/com/example/mixin/HypothermiaMixinCanceller.java": {
-    "mtime": 1789557803.7482042,
-    "seen": 1789557867.3705132,
-    "ast_hash": "8a8225c98c6efd63b95750582ea85165",
+    "mtime": 1789608794.5208735,
+    "seen": 1789608951.9709964,
+    "ast_hash": "09e11fd625534d57f9cd49bf52c80835",
     "semantic_hash": ""
   },
   "src/main/java/com/example/mixin/HypothermiaMixinPlugin.java": {
-    "mtime": 1789560380.251516,
-    "seen": 1789560465.5739405,
-    "ast_hash": "a71ec54a4921ebc7cb12a1e51eb1364b",
+    "mtime": 1789608778.166165,
+    "seen": 1789608951.970998,
+    "ast_hash": "dd503ead56c7377d133cc6f7a0e40b80",
     "semantic_hash": ""
   },
   "src/main/resources/hypothermia.classtransform.json": {
@@ -9075,6 +9057,816 @@
     "mtime": 1789562711.5037115,
     "seen": 1789562872.9187403,
     "ast_hash": "f96f56d118eba6fdc6ba0da34dea616b",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/build.gradle": {
+    "mtime": 1789563625.967435,
+    "seen": 1789608453.1864507,
+    "ast_hash": "32efda5454ceab75371d9b6aa2d37963",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/gradlew": {
+    "mtime": 1789563625.979956,
+    "seen": 1789608453.1864536,
+    "ast_hash": "13279cc4065ccb37568834139426d7bb",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/settings.gradle": {
+    "mtime": 1789563625.9917445,
+    "seen": 1789608453.1864552,
+    "ast_hash": "8a83e0ce544d12db9d7f6e3298fa5ce0",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/FreezeItAndHeatIt.java": {
+    "mtime": 1789563626.1758828,
+    "seen": 1789608453.1864572,
+    "ast_hash": "f9e4a689f80f08b225aa6c0ec3ac5f08",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/client/ClientEventHandler.java": {
+    "mtime": 1789563626.2009456,
+    "seen": 1789608453.1864586,
+    "ast_hash": "46e8595ca3f133d34ec7951680b1be93",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/client/FIAHIClientContent.java": {
+    "mtime": 1789563626.2124746,
+    "seen": 1789608453.1864605,
+    "ast_hash": "4450378218a47561baf37a517210170c",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/client/ScreenManager.java": {
+    "mtime": 1789563626.2189958,
+    "seen": 1789608453.1864617,
+    "ast_hash": "da602688b4646802fff484263f23021f",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/client/model/FIAHIBakedModel.java": {
+    "mtime": 1789563626.245064,
+    "seen": 1789608453.1864636,
+    "ast_hash": "cf5b54526b51d30a7dc86502196d486c",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/client/model/FIAHIModelBaker.java": {
+    "mtime": 1789563626.252085,
+    "seen": 1789608453.186465,
+    "ast_hash": "7255acbe889ac48e75bc66cb1480f0ca",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/client/model/package-info.java": {
+    "mtime": 1789563626.2606087,
+    "seen": 1789608453.186467,
+    "ast_hash": "21a1707bfb2005f96dbc4f1146f4af36",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/client/package-info.java": {
+    "mtime": 1789563626.227023,
+    "seen": 1789608453.1864681,
+    "ast_hash": "3895f8cc45037fd755532afeec6eeb91",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/client/particle/BreatheOutParticle.java": {
+    "mtime": 1789563626.2826552,
+    "seen": 1789608453.1864696,
+    "ast_hash": "cfac4380dff30349202ec1d4d0f89371",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/client/particle/package-info.java": {
+    "mtime": 1789563626.2911797,
+    "seen": 1789608453.1864707,
+    "ast_hash": "34316614f1fb2bc2423463508fc2ab6c",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/client/screen/FoodPouchScreen.java": {
+    "mtime": 1789563626.3125336,
+    "seen": 1789608453.186472,
+    "ast_hash": "59c2eb64d5820fbcb56338c574858df2",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/client/screen/package-info.java": {
+    "mtime": 1789563626.3190572,
+    "seen": 1789608453.1864738,
+    "ast_hash": "4aace4f163a130f424ca4982c38a649c",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/FIAHIContent.java": {
+    "mtime": 1789563626.3426206,
+    "seen": 1789608453.1864753,
+    "ast_hash": "8cb9a97fb07358add9a81c365bb7a2b1",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/ForgeEventHandler.java": {
+    "mtime": 1789563626.349445,
+    "seen": 1789608453.1864767,
+    "ast_hash": "4236df656e3953a4bc2c3a195a2f359a",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/config/FIAHICommonConfig.java": {
+    "mtime": 1789563626.3758054,
+    "seen": 1789608453.1864781,
+    "ast_hash": "e0957447a4f730b76a5f08a8f4c421d9",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/config/package-info.java": {
+    "mtime": 1789563626.3828106,
+    "seen": 1789608453.1864793,
+    "ast_hash": "23b6c2b7ab5d57ac3255a8e45760b975",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/effect/ShiverEffect.java": {
+    "mtime": 1789563626.4042344,
+    "seen": 1789608453.186481,
+    "ast_hash": "7d01ecf90ec0b77711725fc2253ee6e9",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/effect/package-info.java": {
+    "mtime": 1789563626.4122565,
+    "seen": 1789608453.1864822,
+    "ast_hash": "1a6d1a5e972d3e91d93d4e366d4b958e",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/event/ApplySpecialEatEffectEvent.java": {
+    "mtime": 1789563626.434595,
+    "seen": 1789608453.1864836,
+    "ast_hash": "dd8d4767809a0684202214f33fd98c99",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/event/package-info.java": {
+    "mtime": 1789563626.4416165,
+    "seen": 1789608453.1864853,
+    "ast_hash": "d1ca9601e96ea8f15f27444c76da0062",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/FoodPouchItem.java": {
+    "mtime": 1789563626.4632318,
+    "seen": 1789608453.1864865,
+    "ast_hash": "e8f8dc9dc73cb77e4b43a17549e00487",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/capability/IFrozenRottenFood.java": {
+    "mtime": 1789563626.4933171,
+    "seen": 1789608453.186488,
+    "ast_hash": "e7e0a62642377a95577edc27cad46a49",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/capability/IFrozenRottenItemStack.java": {
+    "mtime": 1789563626.5018418,
+    "seen": 1789608453.186489,
+    "ast_hash": "844487e2b0aeaef3fa2062236e9815db",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/capability/impl/FoodPouchData.java": {
+    "mtime": 1789563626.525415,
+    "seen": 1789608453.1864908,
+    "ast_hash": "cad8733e3a9b6a8454e11fb1bfbde432",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/capability/impl/FrozenRottenFood.java": {
+    "mtime": 1789563626.5329347,
+    "seen": 1789608453.1864927,
+    "ast_hash": "e0ef9b24f6f559f7b9536e5ecad53833",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/capability/impl/package-info.java": {
+    "mtime": 1789563626.544966,
+    "seen": 1789608453.186494,
+    "ast_hash": "1900da8ba26c385b745c968abc6fd731",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/data/IPouchedFoodData.java": {
+    "mtime": 1789563626.569044,
+    "seen": 1789608453.1864955,
+    "ast_hash": "a84b8fafd66a429cfb7193112af0108a",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/data/IPouchedFoodDataType.java": {
+    "mtime": 1789563626.577572,
+    "seen": 1789608453.1864965,
+    "ast_hash": "9ad417ab855160513a0062daff779acf",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/data/PouchedFoodDataNames.java": {
+    "mtime": 1789563626.5850754,
+    "seen": 1789608453.1864977,
+    "ast_hash": "54f50003852886b0d96fc04b7ce51185",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/data/PouchedFoodDataTypes.java": {
+    "mtime": 1789563626.593092,
+    "seen": 1789608453.1864989,
+    "ast_hash": "1468c062b1765856d915f124f7680bee",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/data/PouchedFoodKey.java": {
+    "mtime": 1789563626.60162,
+    "seen": 1789608453.1865,
+    "ast_hash": "022029193c410b06ddc75682548978cc",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/data/impl/SuspiciousStewEffectsData.java": {
+    "mtime": 1789563626.6327055,
+    "seen": 1789608453.1865013,
+    "ast_hash": "0125bf1f388523830bc0e289d5e34038",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/data/impl/package-info.java": {
+    "mtime": 1789563626.641238,
+    "seen": 1789608453.1865025,
+    "ast_hash": "be8ecfc022112396894e59fcb9046f39",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/data/package-info.java": {
+    "mtime": 1789563626.612144,
+    "seen": 1789608453.1865036,
+    "ast_hash": "251b21de5e41db35f81753a94ec4d3d1",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/item/package-info.java": {
+    "mtime": 1789563626.4702663,
+    "seen": 1789608453.1865048,
+    "ast_hash": "3d6c17458374a0af1c3821e3bd529d83",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/menu/FoodPouchMenu.java": {
+    "mtime": 1789563626.6657977,
+    "seen": 1789608453.186506,
+    "ast_hash": "48e607390c363894cc417e691e612520",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/menu/package-info.java": {
+    "mtime": 1789563626.6753235,
+    "seen": 1789608453.1865075,
+    "ast_hash": "12197dc5e5cb06c6024f39bc70be8967",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/network/ClientboundFoodPouchPacketPayload.java": {
+    "mtime": 1789563626.6973717,
+    "seen": 1789608453.1865087,
+    "ast_hash": "23c673c44b56e390f03f9243961e4425",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/network/package-info.java": {
+    "mtime": 1789563626.706898,
+    "seen": 1789608453.1865098,
+    "ast_hash": "e5537c85fcccbc210044608cb43e780d",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/package-info.java": {
+    "mtime": 1789563626.3577669,
+    "seen": 1789608453.186511,
+    "ast_hash": "3bc9e0758eebf33e354db62fa56562f3",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/recipe/FoodRottingRecipe.java": {
+    "mtime": 1789563626.7274432,
+    "seen": 1789608453.1865122,
+    "ast_hash": "f82d9cbc94ba8a0dda270888244bfb4a",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/recipe/package-info.java": {
+    "mtime": 1789563626.7334516,
+    "seen": 1789608453.1865134,
+    "ast_hash": "dccebde35d92d24ffa1a38aba9fa45f5",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/util/FIAHILogger.java": {
+    "mtime": 1789563626.7534986,
+    "seen": 1789608453.1865146,
+    "ast_hash": "4fe3a5277e7305fc08f40ebc02ff84d0",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/util/RegistryHelper.java": {
+    "mtime": 1789563626.765548,
+    "seen": 1789608453.1865158,
+    "ast_hash": "7be8da58624f8820dc94b968feb9b5e2",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/common/util/package-info.java": {
+    "mtime": 1789563626.772559,
+    "seen": 1789608453.1865168,
+    "ast_hash": "ab451ef3b1f9071bbeaef4915f632374",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/mixin/InventoryMixin.java": {
+    "mtime": 1789563626.7971168,
+    "seen": 1789608453.186518,
+    "ast_hash": "2ccd370a646d2f607b400430981dac83",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/mixin/ItemEntityMixin.java": {
+    "mtime": 1789563626.8046253,
+    "seen": 1789608453.1865194,
+    "ast_hash": "29b7e193d13a179c324b4ada163d889f",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/mixin/ItemStackMixin.java": {
+    "mtime": 1789563626.8116424,
+    "seen": 1789608453.1865206,
+    "ast_hash": "91e227f93a4bfd71303549aa5e79eeca",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/mixin/LivingEntityMixin.java": {
+    "mtime": 1789563626.81916,
+    "seen": 1789608453.186522,
+    "ast_hash": "35bb33880cba493d3457509b50a2d848",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/mixin/ModelBakeryMixin.java": {
+    "mtime": 1789563626.8281796,
+    "seen": 1789608453.186523,
+    "ast_hash": "876eb269abd5b4c6badfcf0af3279ab5",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/mixin/SpriteLoaderMixin.java": {
+    "mtime": 1789563626.8367004,
+    "seen": 1789608453.186524,
+    "ast_hash": "ce363d99f6df5f9d6e6a0a0b5ea60d08",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/mixin/cold_sweat/BoilerBlockEntityMixin.java": {
+    "mtime": 1789563626.8742132,
+    "seen": 1789608453.1865249,
+    "ast_hash": "132730adac69d4977cf585c7cbaec0e2",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/mixin/cold_sweat/BoilerContainerSlotMixin.java": {
+    "mtime": 1789563626.8842323,
+    "seen": 1789608453.1865263,
+    "ast_hash": "26ad18438b5ad4fd5f29b9a320fe4d5c",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/mixin/cold_sweat/IceBoxBlockEntityMixin.java": {
+    "mtime": 1789563626.8917623,
+    "seen": 1789608453.1865275,
+    "ast_hash": "c30e9cda45ac006130bf4b2548ecd892",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/mixin/cold_sweat/IceboxContainerSlotMixin.java": {
+    "mtime": 1789563626.8992927,
+    "seen": 1789608453.1865287,
+    "ast_hash": "b56323c3f0f57185ddf6044231ce45b0",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/mixin/package-info.java": {
+    "mtime": 1789563626.8442206,
+    "seen": 1789608453.18653,
+    "ast_hash": "f4440096e0bd8200da1283356d172814",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/package-info.java": {
+    "mtime": 1789563626.182891,
+    "seen": 1789608453.1865315,
+    "ast_hash": "9fc0815078b839937bc3f05e1bfbb85c",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/FIAHIAttachmentTypes.java": {
+    "mtime": 1789563626.9223435,
+    "seen": 1789608453.1865325,
+    "ast_hash": "076a4599219579d63bbb264899dce767",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/FIAHICapabilities.java": {
+    "mtime": 1789563626.9303806,
+    "seen": 1789608453.186534,
+    "ast_hash": "8e942a65d5e82abcc7e5228f13602f4a",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/FIAHICreativeModeTabs.java": {
+    "mtime": 1789563626.9377635,
+    "seen": 1789608453.186535,
+    "ast_hash": "40bc25b65ff47dbf78c752aef25ef3f1",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/FIAHICustomPayloadTypes.java": {
+    "mtime": 1789563626.94427,
+    "seen": 1789608453.1865356,
+    "ast_hash": "57ffeebb5e81150db5f64d479b3a8296",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/FIAHIFoods.java": {
+    "mtime": 1789563626.952287,
+    "seen": 1789608453.186537,
+    "ast_hash": "971c30b7d14435a19c885b221282bf54",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/FIAHIItemTags.java": {
+    "mtime": 1789563626.959827,
+    "seen": 1789608453.186538,
+    "ast_hash": "f2ab941508eb0e79007711656b4391de",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/FIAHIItems.java": {
+    "mtime": 1789563626.9683483,
+    "seen": 1789608453.1865392,
+    "ast_hash": "1f1550eceac095271eead0b5166afbb2",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/FIAHIMenuTypes.java": {
+    "mtime": 1789563626.975868,
+    "seen": 1789608453.1865404,
+    "ast_hash": "61ca03b6d4d569ce581bc2192b638c4f",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/FIAHIMobEffects.java": {
+    "mtime": 1789563626.9828813,
+    "seen": 1789608453.1865416,
+    "ast_hash": "994c312155f28239fc95d3230f94cdc4",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/FIAHIParticleTypes.java": {
+    "mtime": 1789563626.9914122,
+    "seen": 1789608453.1865425,
+    "ast_hash": "5c6955ee2f7f35e00769e3bf1af606e7",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/FIAHIRecipeSerializers.java": {
+    "mtime": 1789563626.999933,
+    "seen": 1789608453.1865442,
+    "ast_hash": "36836ea15b7da45dee27c8234630da18",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/FIAHIRecipes.java": {
+    "mtime": 1789563627.012467,
+    "seen": 1789608453.1865454,
+    "ast_hash": "1c2e7706ddcc15c54dbdd25161f7684d",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/java/com/hexagram2021/fiahi/register/package-info.java": {
+    "mtime": 1789563627.0405705,
+    "seen": 1789608453.1865468,
+    "ast_hash": "45b213a567a22c682bbdda9173df0cc6",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/atlases/misc.json": {
+    "mtime": 1789563630.9206872,
+    "seen": 1789608453.1865478,
+    "ast_hash": "f87bf9a1e20b95b8b3109d3289a929e4",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/lang/en_us.json": {
+    "mtime": 1789563630.9898763,
+    "seen": 1789608453.1865487,
+    "ast_hash": "727cd96904ec9e4b74ecbbaf0b5c1429",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/lang/zh_cn.json": {
+    "mtime": 1789563631.041021,
+    "seen": 1789608453.1865497,
+    "ast_hash": "56ec5bee5405798393c81b7f724e82bf",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/lang/zh_tw.json": {
+    "mtime": 1789563631.083629,
+    "seen": 1789608453.1865509,
+    "ast_hash": "74f728c81d55141475bf8cf664f98e1f",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/models/item/food_pouch.json": {
+    "mtime": 1789563631.1402977,
+    "seen": 1789608453.1865523,
+    "ast_hash": "7f09d3578864746bd5912989364ee3b7",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/models/item/leftover_meat.json": {
+    "mtime": 1789563631.1678662,
+    "seen": 1789608453.1865532,
+    "ast_hash": "6da65526f9daaaecd5df0ff7c896b7d9",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/models/item/leftover_vegetable.json": {
+    "mtime": 1789563631.180398,
+    "seen": 1789608453.1865547,
+    "ast_hash": "24c314a97bd8e9248f2e326205607835",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/particles/breathe_out.json": {
+    "mtime": 1789563631.205962,
+    "seen": 1789608453.1865556,
+    "ast_hash": "068dd13cbd084e7d66e562cc8924609d",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/data/biomancy/tags/item/cannot_be_eaten_by_cradle.json": {
+    "mtime": 1789563631.4566052,
+    "seen": 1789608453.1865568,
+    "ast_hash": "01c05514edfe322654305d2c269c5dce",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/data/cold_sweat/tags/item/boiler_valid.json": {
+    "mtime": 1789563631.498746,
+    "seen": 1789608453.186558,
+    "ast_hash": "01c05514edfe322654305d2c269c5dce",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/data/cold_sweat/tags/item/icebox_valid.json": {
+    "mtime": 1789563631.50425,
+    "seen": 1789608453.186559,
+    "ast_hash": "01c05514edfe322654305d2c269c5dce",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/data/fiahi/recipe/food_pouch.json": {
+    "mtime": 1789563631.5348895,
+    "seen": 1789608453.18656,
+    "ast_hash": "6c8c1fbeb97d4aba35ac76e6e205047b",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/data/fiahi/recipe/food_rotting/meat.json": {
+    "mtime": 1789563631.5521066,
+    "seen": 1789608453.186561,
+    "ast_hash": "02f6284b3223f9b4bd480d0142620dca",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/data/fiahi/tags/item/leftovers.json": {
+    "mtime": 1789563631.5852811,
+    "seen": 1789608453.1865623,
+    "ast_hash": "95a41ae81857172c0743dabc996a1483",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/data/minecraft/tags/item/meat.json": {
+    "mtime": 1789563631.6243618,
+    "seen": 1789608453.186563,
+    "ast_hash": "1684fddfb96e14d008e0e40ec933ff75",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/data/neoforge/data_maps/item/compostables.json": {
+    "mtime": 1789563631.6666486,
+    "seen": 1789608453.1865644,
+    "ast_hash": "39be6906a80078e8a4d661344e34653f",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/fiahi.mixins.json": {
+    "mtime": 1789563630.6114352,
+    "seen": 1789608453.1865654,
+    "ast_hash": "06cae59f3d4c365edc43f03e095e434e",
+    "semantic_hash": ""
+  },
+  "scratch/fiahi_cf_extract/assets/fiahi/lang/en_us.json": {
+    "mtime": 1775880442.0,
+    "seen": 1789608453.1888728,
+    "ast_hash": "727cd96904ec9e4b74ecbbaf0b5c1429",
+    "semantic_hash": ""
+  },
+  "scratch/fiahi_cf_extract/fiahi.mixins.json": {
+    "mtime": 1775880442.0,
+    "seen": 1789608453.1888747,
+    "ast_hash": "06cae59f3d4c365edc43f03e095e434e",
+    "semantic_hash": ""
+  },
+  "scratch/fiahi_extract/fabric.mod.json": {
+    "mtime": 1789525080.0,
+    "seen": 1789608453.1888764,
+    "ast_hash": "06f60fd227981c756401dfaf18627e8b",
+    "semantic_hash": ""
+  },
+  "scratch/fiahi_extract/fiahi.mixins.json": {
+    "mtime": 1789525080.0,
+    "seen": 1789608453.1888773,
+    "ast_hash": "af8344dbc2efcfa3182a0889a936449b",
+    "semantic_hash": ""
+  },
+  "scratch/find_fiahibakedmodel_refs.py": {
+    "mtime": 1789607640.5284927,
+    "seen": 1789608453.1888785,
+    "ast_hash": "c5d80d81e5a55e8428f512cb145f1653",
+    "semantic_hash": ""
+  },
+  "scratch/find_item_mixins.py": {
+    "mtime": 1789607722.552871,
+    "seen": 1789608453.18888,
+    "ast_hash": "158f7efd977075a31c0f298d09397b1a",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_fiahi_attach.py": {
+    "mtime": 1789607850.0768843,
+    "seen": 1789608453.188881,
+    "ast_hash": "cc6869f1066b4dad93a733d1e3747ffb",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_fiahi_model.py": {
+    "mtime": 1789607512.6934588,
+    "seen": 1789608453.188882,
+    "ast_hash": "e51da6242d757fb58ada2f4ec999f99d",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_gui.py": {
+    "mtime": 1789607538.3699145,
+    "seen": 1789608453.1888833,
+    "ast_hash": "5073801689a95c93ad506d4614f89e27",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_gui_renderitem.py": {
+    "mtime": 1789607547.9357028,
+    "seen": 1789608453.1888845,
+    "ast_hash": "08db30a6b7b49dda2ed338f1dee4a485",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_ifrozenrottenfood.py": {
+    "mtime": 1789608043.9104247,
+    "seen": 1789608453.1888855,
+    "ast_hash": "24ec3ebca3370a80f58b4962926d48a3",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_inner.py": {
+    "mtime": 1789607529.9429016,
+    "seen": 1789608453.1888871,
+    "ast_hash": "684f86aa2bc8789b133cac5444c7e5c0",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_kilt_annos.py": {
+    "mtime": 1789607660.885031,
+    "seen": 1789608453.1888883,
+    "ast_hash": "bba24943d3d778852a2af830e2265c94",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_kilt_bytecode.py": {
+    "mtime": 1789607589.2388518,
+    "seen": 1789608453.188889,
+    "ast_hash": "2eba37bf89640b74c4a977a45a9e7835",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_kilt_itemrenderer.py": {
+    "mtime": 1789607579.6341197,
+    "seen": 1789608453.1888905,
+    "ast_hash": "ba3401520d564a01681f2b015c463c19",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_mixins_detail.py": {
+    "mtime": 1789607733.8553598,
+    "seen": 1789608453.1888914,
+    "ast_hash": "748bb6b29b4541f9c40d57d134da591f",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_model_baker.py": {
+    "mtime": 1789607618.6228993,
+    "seen": 1789608453.1888926,
+    "ast_hash": "dce1081df34440df20965066509afa82",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_tryrender.py": {
+    "mtime": 1789607801.864813,
+    "seen": 1789608453.1888938,
+    "ast_hash": "ec0fd548a2e799e3dc2d714edf9cde3b",
+    "semantic_hash": ""
+  },
+  "scratch/search_renderers.py": {
+    "mtime": 1789607929.352777,
+    "seen": 1789608453.1888947,
+    "ast_hash": "075f8f3c989d5b3fb856e74f63bc2ca0",
+    "semantic_hash": ""
+  },
+  "src/client/java/com/example/client/mixin/GuiGraphicsFoodModelMixin.java": {
+    "mtime": 1789608110.4717717,
+    "seen": 1789608453.1889203,
+    "ast_hash": "4391fc3c801a240fbf63e729dbf58fd6",
+    "semantic_hash": ""
+  },
+  "src/client/java/com/example/client/mixin/ItemRendererFoodModelMixin.java": {
+    "mtime": 1789608119.2196198,
+    "seen": 1789608453.188922,
+    "ast_hash": "4eccc17f3e809ebcb289007219596470",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/FoodTemperatureTickMixin.java": {
+    "mtime": 1789609097.439077,
+    "seen": 1789609215.5230446,
+    "ast_hash": "b54008ab05c60b98f2e896481f1321b8",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/util/FoodTemperatureHelper.java": {
+    "mtime": 1789609090.6825583,
+    "seen": 1789609215.5230591,
+    "ast_hash": "715ee36a956ac2d59e1dd6f6b56488f4",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/.github/workflows/build.yml": {
+    "mtime": 1789563626.0107925,
+    "seen": 1789608453.1889844,
+    "ast_hash": "d80b94fe354a0a2d1e25d3e6ea5f20d5",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/QWEN.md": {
+    "mtime": 1789563625.9523852,
+    "seen": 1789608453.1889858,
+    "ast_hash": "d256e40a08c3f1f986fb37786753b4ef",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/README.md": {
+    "mtime": 1789563625.9609125,
+    "seen": 1789608453.1889875,
+    "ast_hash": "e4e48e9f7594b23db7cf340a81704d2d",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/docs/superpowers/plans/2026-07-09-ApplySpecialEatEffectEvent-plan.md": {
+    "mtime": 1789563626.0493908,
+    "seen": 1789608453.1889887,
+    "ast_hash": "32bd49175b2135e13868d5919a16b1ca",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/docs/superpowers/specs/2026-07-09-ApplySpecialEatEffectEvent-design.md": {
+    "mtime": 1789563626.06859,
+    "seen": 1789608453.1889899,
+    "ast_hash": "7a536dbdcef757ec7a73ea3adad39a26",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/docs/superpowers/specs/2026-07-09-ApplySpecialEatEffectEvent-integration.md": {
+    "mtime": 1789563626.0801115,
+    "seen": 1789608453.188991,
+    "ast_hash": "9344199a81b100b21d165f0690647446",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/textures/gui/container/food_pouch.png": {
+    "mtime": 1789563631.253455,
+    "seen": 1789608453.1890156,
+    "ast_hash": "96e7374919c595c7017961072f69c25b",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/textures/item/food_pouch.png": {
+    "mtime": 1789563631.2775352,
+    "seen": 1789608453.189017,
+    "ast_hash": "de51629a233427c782d94373a5b97712",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/textures/item/leftover_meat.png": {
+    "mtime": 1789563631.2870538,
+    "seen": 1789608453.1890187,
+    "ast_hash": "6dc6cacb003d010cebfd4f828208be89",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/textures/item/leftover_vegetable.png": {
+    "mtime": 1789563631.2985797,
+    "seen": 1789608453.1890202,
+    "ast_hash": "c52b89bd15a130631d3754ee68875a0b",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/textures/misc/frozen.png": {
+    "mtime": 1789563631.3216212,
+    "seen": 1789608453.189022,
+    "ast_hash": "9b46828aa11afe423281c1a41cd3ab3f",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/textures/misc/rotten.png": {
+    "mtime": 1789563631.3336592,
+    "seen": 1789608453.189023,
+    "ast_hash": "d122ab146facce219dbb9aec67600604",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/textures/mob_effect/shiver.png": {
+    "mtime": 1789563631.3545296,
+    "seen": 1789608453.1890247,
+    "ast_hash": "42b7b81d4dcce3d2163f2a5089a998ec",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/textures/particle/breathe_out_0.png": {
+    "mtime": 1789563631.3789237,
+    "seen": 1789608453.1890259,
+    "ast_hash": "20830224fb843b70592135929d611478",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/textures/particle/breathe_out_1.png": {
+    "mtime": 1789563631.3874426,
+    "seen": 1789608453.1890273,
+    "ast_hash": "e621caa3c9cac1092c799fb94a9319fa",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/textures/particle/breathe_out_2.png": {
+    "mtime": 1789563631.3979642,
+    "seen": 1789608453.1890295,
+    "ast_hash": "fba344d40883a177c73b7096c53da1a1",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/assets/fiahi/textures/particle/breathe_out_3.png": {
+    "mtime": 1789563631.4064913,
+    "seen": 1789608453.1890306,
+    "ast_hash": "21a742a84e596a42b6972c6d9ff7ad48",
+    "semantic_hash": ""
+  },
+  "Freeze-It-And-Heat-It-dev-NeoForge-1.21.1/src/main/resources/logo.png": {
+    "mtime": 1789563630.6319828,
+    "seen": 1789608453.1890316,
+    "ast_hash": "64e012dc222f8260f64e8f0dc1a24d9b",
+    "semantic_hash": ""
+  },
+  "scratch/inspect_coldsweat_temp.py": {
+    "mtime": 1789608550.350309,
+    "seen": 1789608951.9709237,
+    "ast_hash": "329b095f487f3754362cec6c72b31125",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/SereneSeasonsWinterSnowMixin.java": {
+    "mtime": 1789608848.6932268,
+    "seen": 1789608951.9710011,
+    "ast_hash": "0cd7665ff69d10f61041a6c4049465cf",
+    "semantic_hash": ""
+  },
+  "walkthrough.md": {
+    "mtime": 1789608402.5852199,
+    "seen": 1789608951.971067,
+    "ast_hash": "d2ec904a38dda3ab338086332c51f481",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/example/mixin/FoodTemperatureItemEntityMixin.java": {
+    "mtime": 1789609103.5169537,
+    "seen": 1789609215.523041,
+    "ast_hash": "2e6a648aa738408d5c396a0c42a67e3c",
     "semantic_hash": ""
   }
 }

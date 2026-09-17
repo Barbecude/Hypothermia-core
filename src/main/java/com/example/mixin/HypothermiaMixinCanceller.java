@@ -58,6 +58,13 @@ public class HypothermiaMixinCanceller implements MixinCanceller {
             return true;
         }
 
+        // Task 7: Snow Real Magic's ServerLevelMixin suppresses vanilla/Serene Seasons tickPrecipitation
+        if (mixinClassName.contains("snownee.snow.mixin.ServerLevelMixin")
+                || (mixinClassName.contains("ServerLevelMixin") && mixinClassName.contains("snownee"))) {
+            System.out.println("[HypothermiaCore] MixinSquared cancelled incompatible mixin: " + mixinClassName);
+            return true;
+        }
+
         return false;
     }
 }

@@ -9,7 +9,9 @@
 		"FlashlightBeamFlashbackMixin",
 		"LightEditorScreenPersistenceMixin",
 		"GameRendererBlurFixMixin",
-		"OptionsBlurFixMixin"
+		"OptionsBlurFixMixin",
+		"GuiGraphicsFoodModelMixin",
+		"ItemRendererFoodModelMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
