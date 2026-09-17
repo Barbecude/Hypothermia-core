@@ -19,6 +19,9 @@ public class ExampleMod implements ModInitializer {
 		// Register /freezefood and /freeze_food commands
 		CommandRegistrationCallback.EVENT.register(FoodTemperatureHelper::registerCommands);
 
+		// Disable FIAHI's broken 20x/sec inventory tick so unified food temp runs consistently
+		FoodTemperatureHelper.disableFiahiBrokenTick();
+
 		LOGGER.info("[HypothermiaCore] Registered food temperature system and /freezefood commands!");
 	}
 

@@ -35,17 +35,115 @@ public class FoodTemperatureHelper {
     private static final ResourceLocation FIAHI_FOOD_ID = ResourceLocation.fromNamespaceAndPath("fiahi", "food");
 
     /**
-     * Ticks food items in a player's inventory and any open container menu.
+     * Disables FIAHI's broken InventoryMixin by setting ForgeEventHandler.tickAfterCheck != 0.
+     * On Fabric/Kilt, FIAHI's NeoForge LevelTickEvent never fires, leaving tickAfterCheck = 0 forever,
+     * which caused InventoryMixin to execute every single tick (20x/sec) and desync with containers.
+     */
+    public static void disableFiahiBrokenTick() {
+        try {
+            Class<?> feh = Class.forName("com.hexagram2021.fiahi.common.ForgeEventHandler");
+            java.lang.reflect.Field f = feh.getDeclaredField("tickAfterCheck");
+            f.setAccessible(true);
+            f.setInt(null, 999999);
+        } catch (Throwable ignored) {}
+    }
+
+    public static double getFrozenSpeedMultiplier() {
+        try {
+            Class<?> cfg = Class.forName("com.hexagram2021.fiahi.common.config.FIAHICommonConfig");
+            java.lang.reflect.Field f = cfg.getField("FROZEN_SPEED_MULTIPLIER");
+            Object val = f.get(null);
+            if (val != null) {
+                Method getM = val.getClass().getMethod("get");
+                Object res = getM.invoke(val);
+                if (res instanceof Number num) {
+                    return num.doubleValue();
+                }
+            }
+        } catch (Throwable ignored) {}
+        return 1.0;
+    }
+
+    public static double getRottenSpeedMultiplier() {
+        try {
+            Class<?> cfg = Class.forName("com.hexagram2021.fiahi.common.config.FIAHICommonConfig");
+            java.lang.reflect.Field f = cfg.getField("ROTTEN_SPEED_MULTIPLIER");
+            Object val = f.get(null);
+            if (val != null) {
+                Method getM = val.getClass().getMethod("get");
+                Object res = getM.invoke(val);
+                if (res instanceof Number num) {
+                    return num.doubleValue();
+                }
+            }
+        } catch (Throwable ignored) {}
+        return 0.75;
+    }
+
+    public static boolean isFrozenEnabled() {
+        try {
+            Class<?> cfg = Class.forName("com.hexagram2021.fiahi.common.config.FIAHICommonConfig");
+            java.lang.reflect.Field f = cfg.getField("ENABLE_FROZEN");
+            Object val = f.get(null);
+            if (val != null) {
+                Method getM = val.getClass().getMethod("get");
+                Object res = getM.invoke(val);
+                if (res instanceof Boolean b) {
+                    return b;
+                }
+            }
+        } catch (Throwable ignored) {}
+        return true;
+    }
+
+    public static boolean isRottenEnabled() {
+        try {
+            Class<?> cfg = Class.forName("com.hexagram2021.fiahi.common.config.FIAHICommonConfig");
+            java.lang.reflect.Field f = cfg.getField("ENABLE_ROTTEN");
+            Object val = f.get(null);
+            if (val != null) {
+                Method getM = val.getClass().getMethod("get");
+                Object res = getM.invoke(val);
+                if (res instanceof Boolean b) {
+                    return b;
+                }
+            }
+        } catch (Throwable ignored) {}
+        return true;
+    }
+
+    public static boolean isNeverFrozen(ItemStack stack) {
+        try {
+            Class<?> cfg = Class.forName("com.hexagram2021.fiahi.common.config.FIAHICommonConfig");
+            java.lang.reflect.Field f = cfg.getField("NEVER_FROZEN_FOODS");
+            Object val = f.get(null);
+            if (val != null) {
+                Method getM = val.getClass().getMethod("get");
+                Object res = getM.invoke(val);
+                if (res instanceof List<?> list) {
+                    String itemId = BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
+                    return list.contains(itemId);
+                }
+            }
+        } catch (Throwable ignored) {}
+        return false;
+    }
+
+    /**
+     * Ticks food items in a player's inventory (hands, hotbar, inventory, offhand).
+     * Does NOT tick container menus to prevent double-ticking open containers.
      */
     public static void tickInventory(Player player) {
         if (player == null || !(player.level() instanceof ServerLevel)) return;
+
+        disableFiahiBrokenTick();
 
         double ambientTemp = getAmbientTemperatureForPlayer(player);
 
         boolean changed = false;
         Inventory inv = player.getInventory();
 
-        // 1. Tick player inventory items
+        // Tick all player inventory items (hotbar, hands, main inventory, offhand)
         for (int i = 0; i < inv.getContainerSize(); i++) {
             ItemStack stack = inv.getItem(i);
             if (!stack.isEmpty() && stack.has(DataComponents.FOOD)) {
@@ -58,63 +156,43 @@ public class FoodTemperatureHelper {
             }
         }
 
-        // 2. Tick open container menu (e.g. chest, barrel, ender chest open on player's screen)
-        if (player.containerMenu != null && player.containerMenu != player.inventoryMenu) {
-            for (Slot slot : player.containerMenu.slots) {
-                if (slot.container != inv) {
-                    ItemStack stack = slot.getItem();
-                    if (!stack.isEmpty() && stack.has(DataComponents.FOOD)) {
-                        double before = getFoodTemperature(stack);
-                        tickFood(stack, ambientTemp);
-                        double after = getFoodTemperature(stack);
-                        if (Math.abs(after - before) > 0.1) {
-                            changed = true;
-                            slot.setChanged();
-                        }
-                    }
-                }
-            }
-        }
-
-        // Broadcast inventory and container changes immediately to client
+        // Broadcast inventory changes immediately to client
         if (changed && player instanceof ServerPlayer sp) {
             sp.inventoryMenu.broadcastChanges();
-            if (sp.containerMenu != null && sp.containerMenu != sp.inventoryMenu) {
-                sp.containerMenu.broadcastChanges();
-            }
         }
     }
 
     /**
      * Ticks all containers (chests, barrels, shulker boxes, etc.) in a ticking chunk.
-     * Called from ContainerFoodTemperatureTickMixin.
+     * Single source of truth for containers: ensures identical speed whether open or closed.
      */
     public static void tickChunkContainers(ServerLevel level, LevelChunk chunk) {
         if (chunk == null || chunk.isEmpty()) return;
+
+        disableFiahiBrokenTick();
 
         for (BlockEntity be : chunk.getBlockEntities().values()) {
             if (!(be instanceof Container container)) continue;
 
             // Skip iceboxes and boilers (handled by Cold Sweat / FIAHI)
             ResourceLocation beType = BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(be.getType());
-            if (beType != null && (beType.getPath().contains("icebox") || beType.getPath().contains("boiler"))) {
-                continue;
+            if (beType != null) {
+                String path = beType.getPath();
+                if (path.contains("icebox") || path.contains("boiler")) {
+                    continue;
+                }
             }
 
             double ambientTemp = getAmbientTemperature(level, be.getBlockPos());
 
-            // Check if container contains ice or cooling items (acts as a portable icebox/cooler)
+            // Check if container contains ice or cooling items (acts as a freezer)
             for (int i = 0; i < container.getContainerSize(); i++) {
                 ItemStack s = container.getItem(i);
                 if (!s.isEmpty()) {
-                    if (s.is(Items.BLUE_ICE)) {
-                        ambientTemp = Math.min(ambientTemp, -100.0);
-                    } else if (s.is(Items.PACKED_ICE)) {
-                        ambientTemp = Math.min(ambientTemp, -80.0);
-                    } else if (s.is(Items.ICE)) {
-                        ambientTemp = Math.min(ambientTemp, -60.0);
-                    } else if (s.is(Items.SNOW_BLOCK) || s.is(Items.SNOWBALL)) {
-                        ambientTemp = Math.min(ambientTemp, -40.0);
+                    if (s.is(Items.BLUE_ICE) || s.is(Items.PACKED_ICE) || s.is(Items.ICE) ||
+                        s.is(Items.SNOW_BLOCK) || s.is(Items.SNOWBALL)) {
+                        ambientTemp = -100.0;
+                        break;
                     }
                 }
             }
@@ -135,16 +213,35 @@ public class FoodTemperatureHelper {
             if (changed) {
                 be.setChanged();
                 container.setChanged();
+
+                // If any player has this container open on screen, broadcast changes immediately
+                for (ServerPlayer sp : level.players()) {
+                    if (sp.containerMenu != null && sp.containerMenu != sp.inventoryMenu) {
+                        for (Slot slot : sp.containerMenu.slots) {
+                            if (slot.container == container) {
+                                sp.containerMenu.broadcastChanges();
+                                break;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 
     /**
      * Ticks a single food stack towards targetTemp.
-     * Adjusts temperature smoothly by up to 5.0 degrees per interval (1 second).
+     * Uniform rate of 5.0 degrees per 20 ticks (1 second), modified by FIAHI speed multiplier.
      */
     public static void tickFood(ItemStack stack, double targetTemp) {
         if (stack.isEmpty() || !stack.has(DataComponents.FOOD)) return;
+
+        if (targetTemp < 0 && (!isFrozenEnabled() || isNeverFrozen(stack))) {
+            return;
+        }
+        if (targetTemp > 0 && !isRottenEnabled()) {
+            return;
+        }
 
         double currentTemp = getFoodTemperature(stack);
         double diff = targetTemp - currentTemp;
@@ -152,9 +249,9 @@ public class FoodTemperatureHelper {
         // If very close to target, stop adjusting
         if (Math.abs(diff) < 0.5) return;
 
-        // Apply up to 5.0 degrees change per interval (1 second)
-        // Reaches -25 in 5 ticks, -100 in 20 ticks!
-        double step = Math.signum(diff) * Math.min(Math.abs(diff), 5.0);
+        double speedMultiplier = diff < 0 ? getFrozenSpeedMultiplier() : getRottenSpeedMultiplier();
+        double baseStep = 5.0 * speedMultiplier;
+        double step = Math.signum(diff) * Math.min(Math.abs(diff), baseStep);
         double newTemp = currentTemp + step;
 
         setFoodTemperature(stack, newTemp);
@@ -162,7 +259,7 @@ public class FoodTemperatureHelper {
 
     /**
      * Calculates ambient temperature for a player.
-     * Checks powder snow ticks, Cold Sweat player traits (WORLD and BODY), Serene Seasons, nearby blocks, and biome.
+     * Freezing conditions drive directly to -100.0 (Completely Frozen).
      */
     public static double getAmbientTemperatureForPlayer(Player player) {
         if (player == null) return 0.0;
@@ -203,7 +300,7 @@ public class FoodTemperatureHelper {
                 }
 
                 // In Cold Sweat: Habitable is 0.40 to 1.51 MC units
-                // Anything <= 0.42 MC units causes player hypothermia
+                // Anything <= 0.42 MC units causes player hypothermia (Freezing!)
                 double effectiveCold = Double.NaN;
                 if (!Double.isNaN(worldTemp) && worldTemp <= 0.42) {
                     effectiveCold = worldTemp;
@@ -215,12 +312,10 @@ public class FoodTemperatureHelper {
                 }
 
                 if (!Double.isNaN(effectiveCold)) {
-                    // Map: 0.42 -> -25.0 (Lightly Frozen), 0.20 -> -65.0 (Mostly Frozen), <= 0.0 -> -100.0 (Completely Frozen)
-                    double coldTarget = -25.0 - ((0.42 - effectiveCold) / 0.42) * 75.0;
-                    return Math.max(-100.0, Math.min(-25.0, coldTarget));
+                    // Freezing conditions drive to Completely Frozen (-100.0)
+                    return -100.0;
                 } else if (!Double.isNaN(worldTemp) && worldTemp >= 1.2) {
-                    double hotTarget = 50.0 + ((worldTemp - 1.2) / 0.8) * 50.0;
-                    return Math.min(100.0, hotTarget);
+                    return 100.0;
                 }
             }
         } catch (Throwable ignored) {}
@@ -231,16 +326,14 @@ public class FoodTemperatureHelper {
 
     /**
      * Gets ambient temperature at a given location.
-     * Prioritizes:
-     * 1. Cold blocks (Powder Snow, Blue Ice, Packed Ice, Ice, Snow)
-     * 2. Serene Seasons (coldEnoughToSnow / seasonal biome temperature)
-     * 3. Cold Sweat WorldHelper (World temperature at block pos)
-     * 4. Vanilla Biome base temperature
+     * Below-freezing environments drive to -100.0 (Completely Frozen).
+     * Hot environments drive to 100.0 (Completely Rotten).
+     * Comfortable environments settle at 0.0 (Fresh).
      */
     public static double getAmbientTemperature(Level level, BlockPos pos) {
         if (level == null || pos == null) return 0.0;
 
-        // 1. Nearby cold blocks (Ice, Snow, Powder Snow)
+        // 1. Nearby cold or hot blocks
         double blockTemp = checkNearbyColdBlocks(level, pos);
         if (!Double.isNaN(blockTemp)) {
             return blockTemp;
@@ -261,12 +354,10 @@ public class FoodTemperatureHelper {
         // 4. Vanilla Biome Fallback
         try {
             double biomeBase = level.getBiome(pos).value().getBaseTemperature();
-            if (biomeBase <= 0.15) {
-                return -100.0; // Snowy Plains, Ice Spikes, Frozen Peaks
-            } else if (biomeBase <= 0.35) {
-                return -50.0;  // Taiga, Grove, Windswept Hills
+            if (biomeBase <= 0.35) {
+                return -100.0; // Cold biomes drive to completely frozen
             } else if (biomeBase >= 1.5) {
-                return 80.0;   // Desert, Badlands, Nether
+                return 100.0;  // Hot biomes drive to rotten
             }
         } catch (Throwable ignored) {}
 
@@ -274,7 +365,7 @@ public class FoodTemperatureHelper {
     }
 
     /**
-     * Checks if pos or directly adjacent blocks are icy or snowy.
+     * Checks if pos or directly adjacent blocks are icy, snowy, or hot.
      */
     private static double checkNearbyColdBlocks(Level level, BlockPos pos) {
         try {
@@ -284,17 +375,15 @@ public class FoodTemperatureHelper {
             };
             for (BlockPos p : checkPositions) {
                 BlockState state = level.getBlockState(p);
-                if (state.is(Blocks.POWDER_SNOW) || state.is(Blocks.BLUE_ICE)) {
+                if (state.is(Blocks.POWDER_SNOW) || state.is(Blocks.BLUE_ICE) ||
+                    state.is(Blocks.PACKED_ICE) || state.is(Blocks.ICE) ||
+                    state.is(Blocks.SNOW) || state.is(Blocks.SNOW_BLOCK)) {
                     return -100.0;
                 }
-                if (state.is(Blocks.PACKED_ICE)) {
-                    return -80.0;
-                }
-                if (state.is(Blocks.ICE)) {
-                    return -60.0;
-                }
-                if (state.is(Blocks.SNOW) || state.is(Blocks.SNOW_BLOCK)) {
-                    return -50.0;
+                if (state.is(Blocks.LAVA) || state.is(Blocks.FIRE) ||
+                    state.is(Blocks.SOUL_FIRE) || state.is(Blocks.CAMPFIRE) ||
+                    state.is(Blocks.SOUL_CAMPFIRE)) {
+                    return 100.0;
                 }
             }
         } catch (Throwable ignored) {}
@@ -308,28 +397,34 @@ public class FoodTemperatureHelper {
         try {
             Class<?> seasonHooks = Class.forName("sereneseasons.season.SeasonHooks");
 
-            // Method 1: coldEnoughToSnowSeasonal(Level/LevelReader, BlockPos)
+            // Method 1: coldEnoughToSnowSeasonal
             for (Method m : seasonHooks.getMethods()) {
-                if (m.getName().equals("coldEnoughToSnowSeasonal") && m.getParameterCount() == 2) {
-                    Boolean isCold = (Boolean) m.invoke(null, level, pos);
-                    if (Boolean.TRUE.equals(isCold)) {
-                        return -80.0; // Winter / freezing snow season!
+                if (m.getName().startsWith("coldEnoughToSnow") && m.getParameterCount() >= 2) {
+                    Object result = null;
+                    if (m.getParameterCount() == 2) {
+                        result = m.invoke(null, level, pos);
+                    } else if (m.getParameterCount() == 3) {
+                        result = m.invoke(null, level, level.getBiome(pos), pos);
+                    }
+                    if (Boolean.TRUE.equals(result)) {
+                        return -100.0; // Winter freezing!
                     }
                 }
             }
 
-            // Method 2: getBiomeTemperature(Level/LevelReader, Holder<Biome>, BlockPos)
+            // Method 2: getBiomeTemperature
             for (Method m : seasonHooks.getMethods()) {
-                if (m.getName().equals("getBiomeTemperature") && m.getParameterCount() == 3) {
-                    Object biomeHolder = level.getBiome(pos);
-                    Number tempNum = (Number) m.invoke(null, level, biomeHolder, pos);
-                    if (tempNum != null) {
-                        float sTemp = tempNum.floatValue();
-                        if (sTemp <= 0.15f) {
-                            return -100.0;
-                        } else if (sTemp <= 0.42f) {
-                            double target = -25.0 - ((0.42 - sTemp) / 0.42) * 75.0;
-                            return Math.max(-100.0, Math.min(-25.0, target));
+                if (m.getName().startsWith("getBiomeTemperature") && m.getParameterCount() >= 2) {
+                    Object result = null;
+                    if (m.getParameterCount() == 3) {
+                        result = m.invoke(null, level, level.getBiome(pos), pos);
+                    }
+                    if (result instanceof Number num) {
+                        float sTemp = num.floatValue();
+                        if (sTemp <= 0.42f) {
+                            return -100.0; // Cold enough to freeze
+                        } else if (sTemp >= 1.2f) {
+                            return 100.0;
                         }
                     }
                 }
@@ -350,11 +445,11 @@ public class FoodTemperatureHelper {
                     if (val instanceof Number num) {
                         double raw = num.doubleValue();
                         if (raw <= 0.42) {
-                            double target = -25.0 - ((0.42 - raw) / 0.42) * 75.0;
-                            return Math.max(-100.0, Math.min(-25.0, target));
+                            return -100.0; // Freezing world temp drives to Completely Frozen
                         } else if (raw >= 1.2) {
-                            double hotTarget = 50.0 + ((raw - 1.2) / 0.8) * 50.0;
-                            return Math.min(100.0, hotTarget);
+                            return 100.0;  // Hot world temp drives to Rotten
+                        } else {
+                            return 0.0;    // Comfortable / room temperature
                         }
                     }
                 }
