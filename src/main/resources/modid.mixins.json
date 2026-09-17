@@ -19,6 +19,7 @@
 		"ServerChunkCacheThreadFixMixin",
 		"FoodTemperatureTickMixin",
 		"FoodTemperatureItemEntityMixin",
+		"ContainerFoodTemperatureTickMixin",
 		"SereneSeasonsWinterSnowMixin"
 	],
 	"injectors": {

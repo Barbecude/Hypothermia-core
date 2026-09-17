@@ -13,14 +13,12 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ChunkHolder;
-import net.minecraft.server.level.ServerChunkCache;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -36,12 +34,8 @@ import java.util.List;
 public class FoodTemperatureHelper {
     private static final ResourceLocation FIAHI_FOOD_ID = ResourceLocation.fromNamespaceAndPath("fiahi", "food");
 
-    private static Method getChunksMethod = null;
-    private static boolean getChunksMethodChecked = false;
-    private static int containerTickCounter = 0;
-
     /**
-     * Ticks food items in a player's inventory based on ambient/player temperature.
+     * Ticks food items in a player's inventory and any open container menu.
      */
     public static void tickInventory(Player player) {
         if (player == null || !(player.level() instanceof ServerLevel)) return;
@@ -50,6 +44,8 @@ public class FoodTemperatureHelper {
 
         boolean changed = false;
         Inventory inv = player.getInventory();
+
+        // 1. Tick player inventory items
         for (int i = 0; i < inv.getContainerSize(); i++) {
             ItemStack stack = inv.getItem(i);
             if (!stack.isEmpty() && stack.has(DataComponents.FOOD)) {
@@ -62,7 +58,25 @@ public class FoodTemperatureHelper {
             }
         }
 
-        // Broadcast inventory changes immediately to client
+        // 2. Tick open container menu (e.g. chest, barrel, ender chest open on player's screen)
+        if (player.containerMenu != null && player.containerMenu != player.inventoryMenu) {
+            for (Slot slot : player.containerMenu.slots) {
+                if (slot.container != inv) {
+                    ItemStack stack = slot.getItem();
+                    if (!stack.isEmpty() && stack.has(DataComponents.FOOD)) {
+                        double before = getFoodTemperature(stack);
+                        tickFood(stack, ambientTemp);
+                        double after = getFoodTemperature(stack);
+                        if (Math.abs(after - before) > 0.1) {
+                            changed = true;
+                            slot.setChanged();
+                        }
+                    }
+                }
+            }
+        }
+
+        // Broadcast inventory and container changes immediately to client
         if (changed && player instanceof ServerPlayer sp) {
             sp.inventoryMenu.broadcastChanges();
             if (sp.containerMenu != null && sp.containerMenu != sp.inventoryMenu) {
@@ -72,61 +86,57 @@ public class FoodTemperatureHelper {
     }
 
     /**
-     * Ticks containers (chests, barrels, etc.) in loaded ticking chunks.
-     * Called on ServerTickEvents.END_WORLD_TICK every 20 ticks (~1 second).
+     * Ticks all containers (chests, barrels, shulker boxes, etc.) in a ticking chunk.
+     * Called from ContainerFoodTemperatureTickMixin.
      */
-    public static void onWorldTick(ServerLevel level) {
-        containerTickCounter++;
-        if (containerTickCounter < 20) return;
-        containerTickCounter = 0;
+    public static void tickChunkContainers(ServerLevel level, LevelChunk chunk) {
+        if (chunk == null || chunk.isEmpty()) return;
 
-        try {
-            ServerChunkCache chunkCache = level.getChunkSource();
-            if (!getChunksMethodChecked) {
-                getChunksMethodChecked = true;
-                try {
-                    getChunksMethod = net.minecraft.server.level.ChunkMap.class.getDeclaredMethod("getChunks");
-                    getChunksMethod.setAccessible(true);
-                } catch (Throwable ignored) {}
+        for (BlockEntity be : chunk.getBlockEntities().values()) {
+            if (!(be instanceof Container container)) continue;
+
+            // Skip iceboxes and boilers (handled by Cold Sweat / FIAHI)
+            ResourceLocation beType = BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(be.getType());
+            if (beType != null && (beType.getPath().contains("icebox") || beType.getPath().contains("boiler"))) {
+                continue;
             }
-            if (getChunksMethod == null) return;
 
-            @SuppressWarnings("unchecked")
-            Iterable<ChunkHolder> chunks = (Iterable<ChunkHolder>) getChunksMethod.invoke(chunkCache.chunkMap);
-            for (ChunkHolder holder : chunks) {
-                LevelChunk chunk = holder.getTickingChunk();
-                if (chunk == null || chunk.isEmpty()) continue;
+            double ambientTemp = getAmbientTemperature(level, be.getBlockPos());
 
-                for (BlockEntity be : chunk.getBlockEntities().values()) {
-                    if (!(be instanceof Container container)) continue;
-
-                    // Skip iceboxes and boilers (handled by Cold Sweat / FIAHI)
-                    ResourceLocation beType = BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(be.getType());
-                    if (beType != null && (beType.getPath().contains("icebox") || beType.getPath().contains("boiler"))) {
-                        continue;
-                    }
-
-                    double ambientTemp = getAmbientTemperature(level, be.getBlockPos());
-                    boolean changed = false;
-
-                    for (int i = 0; i < container.getContainerSize(); i++) {
-                        ItemStack stack = container.getItem(i);
-                        if (!stack.isEmpty() && stack.has(DataComponents.FOOD)) {
-                            double before = getFoodTemperature(stack);
-                            tickFood(stack, ambientTemp);
-                            double after = getFoodTemperature(stack);
-                            if (Math.abs(after - before) > 0.1) {
-                                changed = true;
-                            }
-                        }
-                    }
-
-                    if (changed) {
-                        be.setChanged();
+            // Check if container contains ice or cooling items (acts as a portable icebox/cooler)
+            for (int i = 0; i < container.getContainerSize(); i++) {
+                ItemStack s = container.getItem(i);
+                if (!s.isEmpty()) {
+                    if (s.is(Items.BLUE_ICE)) {
+                        ambientTemp = Math.min(ambientTemp, -100.0);
+                    } else if (s.is(Items.PACKED_ICE)) {
+                        ambientTemp = Math.min(ambientTemp, -80.0);
+                    } else if (s.is(Items.ICE)) {
+                        ambientTemp = Math.min(ambientTemp, -60.0);
+                    } else if (s.is(Items.SNOW_BLOCK) || s.is(Items.SNOWBALL)) {
+                        ambientTemp = Math.min(ambientTemp, -40.0);
                     }
                 }
             }
-        } catch (Throwable ignored) {}
+
+            boolean changed = false;
+            for (int i = 0; i < container.getContainerSize(); i++) {
+                ItemStack stack = container.getItem(i);
+                if (!stack.isEmpty() && stack.has(DataComponents.FOOD)) {
+                    double before = getFoodTemperature(stack);
+                    tickFood(stack, ambientTemp);
+                    double after = getFoodTemperature(stack);
+                    if (Math.abs(after - before) > 0.1) {
+                        changed = true;
+                    }
+                }
+            }
+
+            if (changed) {
+                be.setChanged();
+                container.setChanged();
+            }
+        }
     }
 
     /**
@@ -143,7 +153,7 @@ public class FoodTemperatureHelper {
         if (Math.abs(diff) < 0.5) return;
 
         // Apply up to 5.0 degrees change per interval (1 second)
-        // With tick rate 100 or fast ticks, reaches -25 in 5 ticks, -100 in 20 ticks!
+        // Reaches -25 in 5 ticks, -100 in 20 ticks!
         double step = Math.signum(diff) * Math.min(Math.abs(diff), 5.0);
         double newTemp = currentTemp + step;
 
@@ -462,7 +472,7 @@ public class FoodTemperatureHelper {
     }
 
     /**
-     * Reports comprehensive temperature status for the player to chat.
+     * Reports comprehensive temperature status for the player and nearby containers to chat.
      */
     public static int executeCheckCommand(CommandSourceStack source, ServerPlayer player) {
         double ambient = getAmbientTemperatureForPlayer(player);
@@ -489,7 +499,40 @@ public class FoodTemperatureHelper {
             }
         }
         final int finalFoodCount = foodCount;
-        source.sendSuccess(() -> Component.literal("§7Food items in inventory: §a" + finalFoodCount + (foodItems.isEmpty() ? "" : " §8[" + String.join(", ", foodItems) + "]")), false);
+        source.sendSuccess(() -> Component.literal("§7Player Inventory Food: §a" + finalFoodCount + (foodItems.isEmpty() ? "" : " §8[" + String.join(", ", foodItems) + "]")), false);
+
+        // Scan nearby containers within 5 blocks
+        int containerCount = 0;
+        Level level = player.level();
+        for (int x = -4; x <= 4; x++) {
+            for (int y = -2; y <= 2; y++) {
+                for (int z = -4; z <= 4; z++) {
+                    BlockPos p = pos.offset(x, y, z);
+                    BlockEntity be = level.getBlockEntity(p);
+                    if (be instanceof Container container) {
+                        containerCount++;
+                        double cAmbient = getAmbientTemperature(level, p);
+                        List<String> cFoods = new ArrayList<>();
+                        for (int s = 0; s < container.getContainerSize(); s++) {
+                            ItemStack cStack = container.getItem(s);
+                            if (!cStack.isEmpty() && cStack.has(DataComponents.FOOD)) {
+                                cFoods.add(cStack.getHoverName().getString() + ": " + (int) Math.round(getFoodTemperature(cStack)) + "°");
+                            }
+                        }
+                        String typeName = BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(be.getType()).getPath();
+                        source.sendSuccess(() -> Component.literal(
+                            "§7Container §e" + typeName + " §7at §f" + p.getX() + "," + p.getY() + "," + p.getZ() +
+                            " §7| Ambient: §b" + String.format("%.1f", cAmbient) + "° §7| Food: §a" + cFoods.size() +
+                            (cFoods.isEmpty() ? "" : " §8[" + String.join(", ", cFoods) + "]")
+                        ), false);
+                    }
+                }
+            }
+        }
+        if (containerCount == 0) {
+            source.sendSuccess(() -> Component.literal("§7Nearby Containers: §8None found within 4 blocks"), false);
+        }
+
         return 1;
     }
 
