@@ -29,7 +29,7 @@ public class FoodTemperatureTickMixin {
         if (this.player == null || !(this.player.level() instanceof ServerLevel)) return;
 
         hypothermia$tickCounter++;
-        if (hypothermia$tickCounter < 40) return;
+        if (hypothermia$tickCounter < 20) return;
         hypothermia$tickCounter = 0;
 
         FoodTemperatureHelper.tickInventory(this.player);

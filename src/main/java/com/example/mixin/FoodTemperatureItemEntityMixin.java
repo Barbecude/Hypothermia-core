@@ -19,12 +19,17 @@ public class FoodTemperatureItemEntityMixin {
     private void hypothermia$tickDroppedFood(CallbackInfo ci) {
         ItemEntity entity = (ItemEntity) (Object) this;
         if (entity.level().isClientSide() || !(entity.level() instanceof ServerLevel level)) return;
-        if (entity.tickCount % 40 != 0) return;
+        if (entity.tickCount % 20 != 0) return;
 
         ItemStack stack = entity.getItem();
         if (!stack.isEmpty() && stack.has(DataComponents.FOOD)) {
             double ambientTemp = FoodTemperatureHelper.getAmbientTemperature(level, entity.blockPosition());
+            double before = FoodTemperatureHelper.getFoodTemperature(stack);
             FoodTemperatureHelper.tickFood(stack, ambientTemp);
+            double after = FoodTemperatureHelper.getFoodTemperature(stack);
+            if (Math.abs(after - before) > 0.1) {
+                entity.setItem(stack); // Sync DataComponents change to tracking clients
+            }
         }
     }
 }
