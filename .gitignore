@@ -38,3 +38,6 @@ hs_err_*.log
 replay_*.log
 *.hprof
 *.jfr
+
+# large jars (>100MB exceeds GitHub limit)
+libs/Flashback*.jar
