@@ -22,15 +22,15 @@ public class FoodTemperatureTickMixin {
     public Player player;
 
     @Unique
-    private int hypothermia$tickCounter = 0;
+    private long hypothermia$lastTickedGameTime = -1;
 
     @Inject(method = "tick", at = @At("TAIL"))
     private void hypothermia$tickFoodTemperature(CallbackInfo ci) {
-        if (this.player == null || !(this.player.level() instanceof ServerLevel)) return;
+        if (this.player == null || !(this.player.level() instanceof ServerLevel level)) return;
 
-        hypothermia$tickCounter++;
-        if (hypothermia$tickCounter < 20) return;
-        hypothermia$tickCounter = 0;
+        long gameTime = level.getGameTime();
+        if (gameTime % 20 != 0 || this.hypothermia$lastTickedGameTime == gameTime) return;
+        this.hypothermia$lastTickedGameTime = gameTime;
 
         FoodTemperatureHelper.tickInventory(this.player);
     }

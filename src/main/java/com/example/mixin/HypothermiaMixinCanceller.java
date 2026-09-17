@@ -65,6 +65,12 @@ public class HypothermiaMixinCanceller implements MixinCanceller {
             return true;
         }
 
+        // Task 8: FIAHI's InventoryMixin and ItemEntityMixin cause desynced food freezing with different rates/times
+        if (mixinClassName.contains("fiahi") && (mixinClassName.contains("InventoryMixin") || mixinClassName.contains("ItemEntityMixin"))) {
+            System.out.println("[HypothermiaCore] MixinSquared cancelled FIAHI mixin for unified food temperature: " + mixinClassName);
+            return true;
+        }
+
         return false;
     }
 }

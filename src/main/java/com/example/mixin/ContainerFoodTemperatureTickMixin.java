@@ -17,9 +17,8 @@ public class ContainerFoodTemperatureTickMixin {
     @Inject(method = "tickChunk", at = @At("TAIL"))
     private void hypothermia$tickChunkContainers(LevelChunk chunk, int randomTickSpeed, CallbackInfo ci) {
         ServerLevel level = (ServerLevel) (Object) this;
-        // Distribute chunk container ticking smoothly across ticks (each chunk ticks once every 20 ticks / 1 second)
-        long chunkKey = chunk.getPos().toLong();
-        if (Math.floorMod(level.getGameTime() + chunkKey, 20) != 0) return;
+        // Tick containers synchronously every 20 ticks (1 second) in lockstep with inventory
+        if (level.getGameTime() % 20 != 0) return;
 
         FoodTemperatureHelper.tickChunkContainers(level, chunk);
     }

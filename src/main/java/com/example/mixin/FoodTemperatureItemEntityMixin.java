@@ -15,11 +15,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  */
 @Mixin(ItemEntity.class)
 public class FoodTemperatureItemEntityMixin {
+    @org.spongepowered.asm.mixin.Unique
+    private long hypothermia$lastTickedGameTime = -1;
+
     @Inject(method = "tick", at = @At("TAIL"))
     private void hypothermia$tickDroppedFood(CallbackInfo ci) {
         ItemEntity entity = (ItemEntity) (Object) this;
         if (entity.level().isClientSide() || !(entity.level() instanceof ServerLevel level)) return;
-        if (entity.tickCount % 20 != 0) return;
+        long gameTime = level.getGameTime();
+        if (gameTime % 20 != 0 || this.hypothermia$lastTickedGameTime == gameTime) return;
+        this.hypothermia$lastTickedGameTime = gameTime;
 
         ItemStack stack = entity.getItem();
         if (!stack.isEmpty() && stack.has(DataComponents.FOOD)) {

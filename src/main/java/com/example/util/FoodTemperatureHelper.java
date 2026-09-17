@@ -156,9 +156,12 @@ public class FoodTemperatureHelper {
             }
         }
 
-        // Broadcast inventory changes immediately to client
+        // Broadcast inventory changes immediately to client (both inventoryMenu and any open containerMenu)
         if (changed && player instanceof ServerPlayer sp) {
             sp.inventoryMenu.broadcastChanges();
+            if (sp.containerMenu != null && sp.containerMenu != sp.inventoryMenu) {
+                sp.containerMenu.broadcastChanges();
+            }
         }
     }
 
@@ -171,7 +174,7 @@ public class FoodTemperatureHelper {
 
         disableFiahiBrokenTick();
 
-        for (BlockEntity be : chunk.getBlockEntities().values()) {
+        for (BlockEntity be : new ArrayList<>(chunk.getBlockEntities().values())) {
             if (!(be instanceof Container container)) continue;
 
             // Skip iceboxes and boilers (handled by Cold Sweat / FIAHI)
@@ -269,7 +272,27 @@ public class FoodTemperatureHelper {
             return -100.0;
         }
 
-        // 2. Direct Cold Sweat player traits
+        // 2. Inventory contains ice or cooling items (acts as a portable freezer, identical to container)
+        Inventory inv = player.getInventory();
+        for (int i = 0; i < inv.getContainerSize(); i++) {
+            ItemStack s = inv.getItem(i);
+            if (!s.isEmpty()) {
+                if (s.is(Items.BLUE_ICE) || s.is(Items.PACKED_ICE) || s.is(Items.ICE) ||
+                    s.is(Items.SNOW_BLOCK) || s.is(Items.SNOWBALL)) {
+                    return -100.0;
+                }
+            }
+        }
+
+        // 3. Ambient temperature at player's location (identical calculation to container at same position)
+        double posAmbient = getAmbientTemperature(player.level(), player.blockPosition());
+        if (posAmbient <= -75.0) {
+            return -100.0;
+        } else if (posAmbient >= 75.0) {
+            return 100.0;
+        }
+
+        // 4. Direct Cold Sweat player traits
         try {
             Class<?> tempClass = Class.forName("com.momosoftworks.coldsweat.api.util.Temperature");
             Class<?> traitClass = Class.forName("com.momosoftworks.coldsweat.api.util.Temperature$Trait");
@@ -320,8 +343,7 @@ public class FoodTemperatureHelper {
             }
         } catch (Throwable ignored) {}
 
-        // 3. Fall back to position-based calculation (Serene Seasons, nearby ice/snow blocks, biome)
-        return getAmbientTemperature(player.level(), player.blockPosition());
+        return posAmbient;
     }
 
     /**
@@ -448,8 +470,6 @@ public class FoodTemperatureHelper {
                             return -100.0; // Freezing world temp drives to Completely Frozen
                         } else if (raw >= 1.2) {
                             return 100.0;  // Hot world temp drives to Rotten
-                        } else {
-                            return 0.0;    // Comfortable / room temperature
                         }
                     }
                 }
