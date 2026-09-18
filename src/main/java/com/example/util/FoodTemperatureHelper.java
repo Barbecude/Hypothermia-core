@@ -34,8 +34,8 @@ import java.util.List;
 public class FoodTemperatureHelper {
     private static final ResourceLocation FIAHI_FOOD_ID = ResourceLocation.fromNamespaceAndPath("fiahi", "food");
 
-    // Tick interval for food temperature updates: 25 ticks (1.25s at 20 TPS), 5x slower than 5 ticks
-    public static final int TICK_INTERVAL = 25;
+    // Tick interval for food temperature updates: 40 ticks (2.0s at 20 TPS)
+    public static final int TICK_INTERVAL = 40;
 
     // Temperature targets matching FIAHI food states
     public static final double TEMP_COMPLETELY_FROZEN = -100.0;
@@ -489,7 +489,7 @@ public class FoodTemperatureHelper {
         if (Math.abs(diff) < 0.5) return;
 
         double speedMultiplier = diff < 0 ? getFrozenSpeedMultiplier() : getRottenSpeedMultiplier();
-        double baseStep = 3.0 * speedMultiplier;
+        double baseStep = 1.0 * speedMultiplier;
         double step = Math.signum(diff) * Math.min(Math.abs(diff), baseStep);
         double newTemp = currentTemp + step;
 
