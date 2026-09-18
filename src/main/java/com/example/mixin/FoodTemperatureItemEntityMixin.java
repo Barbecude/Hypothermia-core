@@ -23,7 +23,7 @@ public class FoodTemperatureItemEntityMixin {
         ItemEntity entity = (ItemEntity) (Object) this;
         if (entity.level().isClientSide() || !(entity.level() instanceof ServerLevel level)) return;
         long gameTime = level.getGameTime();
-        if (gameTime % 5 != 0 || this.hypothermia$lastTickedGameTime == gameTime) return;
+        if (gameTime % FoodTemperatureHelper.TICK_INTERVAL != 0 || this.hypothermia$lastTickedGameTime == gameTime) return;
         this.hypothermia$lastTickedGameTime = gameTime;
 
         ItemStack stack = entity.getItem();
