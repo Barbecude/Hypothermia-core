@@ -29,7 +29,7 @@ public class FoodTemperatureTickMixin {
         if (this.player == null || !(this.player.level() instanceof ServerLevel level)) return;
 
         long gameTime = level.getGameTime();
-        if (gameTime % 20 != 0 || this.hypothermia$lastTickedGameTime == gameTime) return;
+        if (gameTime % 5 != 0 || this.hypothermia$lastTickedGameTime == gameTime) return;
         this.hypothermia$lastTickedGameTime = gameTime;
 
         FoodTemperatureHelper.tickInventory(this.player);

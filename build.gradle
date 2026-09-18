@@ -61,6 +61,8 @@ jar {
 tasks.register('copyToModrinth') {
     doLast {
         def targetProfiles = [
+            "C:\\Users\\chill\\AppData\\Roaming\\ModrinthApp\\profiles\\Fabric 1.21.1 (1)\\mods",
+            "C:\\Users\\chill\\AppData\\Roaming\\ModrinthApp\\profiles\\Fabric 1.21\\mods",
             "D:\\Users\\Zevaldo\\curseforge\\minecraft\\Instances\\Fabric 1.21\\mods",
             "D:\\Users\\Zevaldo\\AppData\\Roaming\\ModrinthApp\\profiles\\Fabric 1.21\\mods",
             "D:\\Users\\Zevaldo\\AppData\\Roaming\\ModrinthApp\\profiles\\Alaskan Wilderness 1.0.0\\mods",

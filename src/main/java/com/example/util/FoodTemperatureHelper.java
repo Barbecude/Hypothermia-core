@@ -44,7 +44,7 @@ public class FoodTemperatureHelper {
             Class<?> feh = Class.forName("com.hexagram2021.fiahi.common.ForgeEventHandler");
             java.lang.reflect.Field f = feh.getDeclaredField("tickAfterCheck");
             f.setAccessible(true);
-            f.setInt(null, 999999);
+            f.setInt(null, 1);
         } catch (Throwable ignored) {}
     }
 
@@ -262,7 +262,7 @@ public class FoodTemperatureHelper {
         if (Math.abs(diff) < 0.5) return;
 
         double speedMultiplier = diff < 0 ? getFrozenSpeedMultiplier() : getRottenSpeedMultiplier();
-        double baseStep = 1.5 * speedMultiplier;
+        double baseStep = 3.0 * speedMultiplier;
         double step = Math.signum(diff) * Math.min(Math.abs(diff), baseStep);
         double newTemp = currentTemp + step;
 
@@ -293,7 +293,7 @@ public class FoodTemperatureHelper {
                 } else if (s.is(Items.PACKED_ICE)) {
                     if (Double.isNaN(invCoolerTemp) || -75.0 < invCoolerTemp) invCoolerTemp = -75.0;
                 } else if (s.is(Items.ICE)) {
-                    if (Double.isNaN(invCoolerTemp) || -50.0 < invCoolerTemp) invCoolerTemp = -50.0;
+                    if (Double.isNaN(invCoolerTemp) || -60.0 < invCoolerTemp) invCoolerTemp = -60.0;
                 }
             }
         }
@@ -347,34 +347,32 @@ public class FoodTemperatureHelper {
                 double target = posAmbient;
 
                 if (!Double.isNaN(worldTemp)) {
-                    if (worldTemp <= 0.12) {
-                        target = -100.0; // Extreme freezing blizzard
-                    } else if (worldTemp <= 0.25) {
-                        target = -75.0;  // Deep subzero
-                    } else if (worldTemp <= 0.35) {
-                        target = -45.0;  // Freezing
-                    } else if (worldTemp <= 0.40) {
-                        target = -20.0;  // Light chill
-                    } else if (worldTemp >= 1.5) {
+                    if (worldTemp <= -20.0 || (worldTemp >= -2.0 && worldTemp <= -0.2)) {
+                        target = -100.0; // Extreme freezing blizzard (Level 3 Frozen)
+                    } else if (worldTemp <= -10.0 || (worldTemp > -0.2 && worldTemp <= 0.05)) {
+                        target = -75.0;  // Deep subzero (Level 2 Frozen)
+                    } else if (worldTemp <= 0.0 || (worldTemp > 0.05 && worldTemp <= 0.25)) {
+                        target = -55.0;  // Freezing (Level 1 Frozen)
+                    } else if (worldTemp >= 50.0 || (worldTemp >= 1.5 && worldTemp <= 5.0)) {
                         target = 80.0;   // Hot
                     } else {
-                        target = 0.0;    // Comfortable / habitable range (0.40 to 1.50)
+                        target = 0.0;    // Comfortable / habitable range
                     }
                 }
 
                 // Player body temperature moderates inventory food:
-                // If player is comfortably warm (bodyTemp >= 0.42), body warmth protects pocket food
+                // Normal body temp is ~37C. Hypothermia starts below 35C.
                 if (!Double.isNaN(bodyTemp)) {
-                    if (bodyTemp >= 0.42) {
-                        if (target < -20.0) {
-                            target = -20.0; // Insulated: will not freeze past lightly chilled
+                    if (bodyTemp >= 40.0 || (bodyTemp > 0.8 && bodyTemp <= 2.0)) {
+                        if (target < -55.0) {
+                            target = -55.0; // Insulated
                         }
-                    } else if (bodyTemp <= 0.20) {
-                        target = Math.min(target, -100.0); // Severe hypothermia
-                    } else if (bodyTemp <= 0.30) {
-                        target = Math.min(target, -75.0);  // Serious hypothermia
-                    } else if (bodyTemp <= 0.38) {
-                        target = Math.min(target, -45.0);  // Mild hypothermia
+                    } else if (bodyTemp <= 28.0 || (bodyTemp >= -2.0 && bodyTemp <= -0.5)) {
+                        target = Math.min(target, -100.0); // Severe hypothermia: Level 3 freezing
+                    } else if (bodyTemp <= 32.0 || (bodyTemp > -0.5 && bodyTemp <= 0.0)) {
+                        target = Math.min(target, -75.0);  // Moderate hypothermia: Level 2 freezing
+                    } else if (bodyTemp <= 35.0 || (bodyTemp > 0.0 && bodyTemp <= 0.2)) {
+                        target = Math.min(target, -55.0);  // Mild hypothermia: Level 1 freezing
                     }
                 }
 
@@ -425,13 +423,13 @@ public class FoodTemperatureHelper {
         try {
             double biomeBase = level.getBiome(pos).value().getBaseTemperature();
             if (biomeBase <= -0.2) {
-                return -100.0; // Ice Spikes, Frozen Peaks, Frozen Ocean
+                return -100.0; // Ice Spikes, Frozen Peaks, Frozen Ocean (Level 3)
             } else if (biomeBase <= 0.05) {
-                return -70.0;  // Snowy Plains, Snowy Slopes
+                return -75.0;  // Snowy Plains, Snowy Slopes (Level 2)
             } else if (biomeBase <= 0.20) {
-                return -35.0;  // Snowy Taiga
+                return -65.0;  // Snowy Taiga (Level 1)
             } else if (biomeBase <= 0.35) {
-                return -15.0;  // Taiga, Windswept Hills (mild chill)
+                return -55.0;  // Taiga, Windswept Hills (Level 1)
             } else if (biomeBase >= 1.5) {
                 return 80.0;   // Desert, Badlands
             }
@@ -470,11 +468,11 @@ public class FoodTemperatureHelper {
                 } else if (state.is(Blocks.ICE)) {
                     if (Double.isNaN(coldest) || -50.0 < coldest) coldest = -50.0;
                 } else if (state.is(Blocks.SNOW_BLOCK)) {
-                    if (Double.isNaN(coldest) || -30.0 < coldest) coldest = -30.0;
+                    if (Double.isNaN(coldest) || -55.0 < coldest) coldest = -55.0;
                 } else if (state.is(Blocks.SNOW)) {
-                    // Snow layer only chills if directly inside or on top of it
+                    // Snow layer chills item to Lightly Frozen (-55°C / Level 1)
                     if (p.equals(pos) || p.equals(pos.below())) {
-                        if (Double.isNaN(coldest) || -15.0 < coldest) coldest = -15.0;
+                        if (Double.isNaN(coldest) || -55.0 < coldest) coldest = -55.0;
                     }
                 }
             }
@@ -521,7 +519,7 @@ public class FoodTemperatureHelper {
                         } else if (sTemp <= 0.25f) {
                             return -75.0;
                         } else if (sTemp <= 0.40f) {
-                            return -30.0;
+                            return -55.0;
                         } else if (sTemp >= 1.3f) {
                             return 80.0;
                         }
@@ -543,15 +541,13 @@ public class FoodTemperatureHelper {
                     Object val = m.invoke(null, level, pos);
                     if (val instanceof Number num) {
                         double raw = num.doubleValue();
-                        if (raw <= 0.15) {
+                        if (raw <= -20.0 || (raw >= -2.0 && raw <= -0.2)) {
                             return -100.0;
-                        } else if (raw <= 0.28) {
+                        } else if (raw <= -10.0 || (raw > -0.2 && raw <= 0.05)) {
                             return -75.0;
-                        } else if (raw <= 0.36) {
-                            return -45.0;
-                        } else if (raw <= 0.40) {
-                            return -20.0;
-                        } else if (raw >= 1.5) {
+                        } else if (raw <= 0.0 || (raw > 0.05 && raw <= 0.25)) {
+                            return -55.0;
+                        } else if (raw >= 50.0 || (raw >= 1.5 && raw <= 5.0)) {
                             return 80.0;
                         }
                     }
@@ -620,9 +616,7 @@ public class FoodTemperatureHelper {
                 Object foodObj = getFood.invoke(stack);
                 if (foodObj != null) {
                     Method setTemp = foodObj.getClass().getMethod("setTemperature", double.class);
-                    Method updateTag = foodObj.getClass().getMethod("updateFoodTag");
                     setTemp.invoke(foodObj, (double) intTemp);
-                    updateTag.invoke(foodObj);
                 }
             }
         } catch (Throwable ignored) {}
@@ -632,9 +626,9 @@ public class FoodTemperatureHelper {
      * Returns a human-readable state description matching FIAHI tooltip levels.
      */
     public static String getTempStateDescription(int temp) {
-        if (temp <= -75) return "Completely Frozen";
-        if (temp <= -50) return "Mostly Frozen";
-        if (temp <= -25) return "Lightly Frozen";
+        if (temp <= -100) return "Completely Frozen (Level 3)";
+        if (temp <= -75) return "Mostly Frozen (Level 2)";
+        if (temp <= -50) return "Lightly Frozen (Level 1)";
         if (temp >= 75) return "Completely Rotten";
         if (temp >= 50) return "Mostly Rotten";
         if (temp >= 25) return "Lightly Rotten";

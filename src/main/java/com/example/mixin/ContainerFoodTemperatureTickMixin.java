@@ -18,7 +18,7 @@ public class ContainerFoodTemperatureTickMixin {
     private void hypothermia$tickChunkContainers(LevelChunk chunk, int randomTickSpeed, CallbackInfo ci) {
         ServerLevel level = (ServerLevel) (Object) this;
         // Tick containers synchronously every 20 ticks (1 second) in lockstep with inventory
-        if (level.getGameTime() % 20 != 0) return;
+        if (level.getGameTime() % 5 != 0) return;
 
         FoodTemperatureHelper.tickChunkContainers(level, chunk);
     }

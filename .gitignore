@@ -41,3 +41,4 @@ replay_*.log
 
 # large jars (>100MB exceeds GitHub limit)
 libs/Flashback*.jar
+*.class
