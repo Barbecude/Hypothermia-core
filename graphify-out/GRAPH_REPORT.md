@@ -1,7 +1,7 @@
-# Graph Report - Hypothermia core  (2026-09-18)
+# Graph Report - Hypothermia core  (2026-09-19)
 
 ## Corpus Check
-- 1619 files · ~241,687 words
+- 1619 files · ~241,702 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 60 file(s) not represented in the graph (top: (none) 16, .properties 12, .bat 4)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `eefa3d68`
+- Built from commit: `4e2b3e03`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
