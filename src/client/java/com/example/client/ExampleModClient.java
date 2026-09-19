@@ -1,24 +1,26 @@
 package com.example.client;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 
 public class ExampleModClient implements ClientModInitializer {
-	@Override
-	public void onInitializeClient() {
-		IrlRedactorConfigPersistence.init();
 
-		ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {
-			IrlRedactorConfigPersistence.loadConfig();
-		});
+    @Override
+    public void onInitializeClient() {
+        IrlRedactorConfigPersistence.init();
 
-		ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> {
-			IrlRedactorConfigPersistence.saveAll();
-		});
+        // Load settings whenever joining a world.
+        ClientPlayConnectionEvents.JOIN.register(
+                (handler, sender, client) -> {
+                    IrlRedactorConfigPersistence.loadConfig();
+                }
+        );
 
-		ClientLifecycleEvents.CLIENT_STOPPING.register(client -> {
-			IrlRedactorConfigPersistence.saveAll();
-		});
-	}
+        // Save settings when leaving a world.
+        ClientPlayConnectionEvents.DISCONNECT.register(
+                (handler, client) -> {
+                    IrlRedactorConfigPersistence.saveAll();
+                }
+        );
+    }
 }

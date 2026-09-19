@@ -8,29 +8,47 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * Mixin to persist IRL Redactor settings when the editor screen is opened,
- * closed, or actively tweaked.
+ * Persists IRL Redactor settings when the editor is opened or closed.
+ *
+ * No periodic saving is performed while the editor is rendering.
  */
 @Pseudo
 @Mixin(targets = "org.qualet.irlredactor.editor.LightEditorScreen")
 public class LightEditorScreenPersistenceMixin {
 
-    @Inject(method = "setVisible", at = @At("HEAD"), remap = false, require = 0)
-    private static void hypothermia$onSetVisible(boolean visible, CallbackInfo ci) {
-        if (!visible) {
-            IrlRedactorConfigPersistence.saveAll();
-        } else {
+    /**
+     * Load settings when the editor becomes visible.
+     * Save settings when the editor becomes hidden.
+     */
+    @Inject(
+            method = "setVisible",
+            at = @At("HEAD"),
+            remap = false,
+            require = 0
+    )
+    private static void hypothermia$onSetVisible(
+            boolean visible,
+            CallbackInfo ci
+    ) {
+        if (visible) {
             IrlRedactorConfigPersistence.loadConfig();
+        } else {
+            IrlRedactorConfigPersistence.saveAll();
         }
     }
 
-    @Inject(method = {"close", "method_25432"}, at = @At("HEAD"), require = 0)
+    /**
+     * Also save when the editor is explicitly closed.
+     *
+     * This is kept as a fallback for versions where close() is used
+     * without setVisible(false).
+     */
+    @Inject(
+            method = {"close", "method_25432"},
+            at = @At("HEAD"),
+            require = 0
+    )
     private void hypothermia$onClose(CallbackInfo ci) {
         IrlRedactorConfigPersistence.saveAll();
-    }
-
-    @Inject(method = "renderActiveOverlay", at = @At("HEAD"), remap = false, require = 0)
-    private static void hypothermia$onRenderActiveOverlay(CallbackInfo ci) {
-        IrlRedactorConfigPersistence.tickPeriodicSave();
     }
 }
